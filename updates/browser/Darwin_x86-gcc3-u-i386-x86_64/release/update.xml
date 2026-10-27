@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <updates>
-  <update type="minor" displayVersion="0.1.1" appVersion="0.1.1" platformVersion="159.0" buildID="20261027211532">
-    <patch type="complete" URL="https://github.com/FlasterMC/OverNet/releases/download/0.1.1/macos.mar" hashFunction="sha512" hashValue="463edb9671c68b77f9b12ebde5f3bf29dffcf8edfd3eb4ea2603407388817436ebfdede6682ab440033a003053c0c5161d62b584fe567029c90588ebd679fafd" size="102622879"/>
+  <update type="minor" displayVersion="0.1.2" appVersion="0.1.2" platformVersion="159.0" buildID="20261027222414">
+    <patch type="complete" URL="https://github.com/FlasterMC/OverNet/releases/download/0.1.2/macos.mar" hashFunction="sha512" hashValue="d320ec057d2c2b5615c772f567c3555ec74ebcc431869b258147d60baae686809db91d48bd850f0845af5f2e778fd2af03b27f77451f510bbacc19c1da870387" size="102626951"/>
   </update>
 </updates>
