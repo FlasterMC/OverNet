@@ -1,6 +1,6 @@
 {
-  "name": "Zen Browser",
-  "vendor": "Zen OSS Team",
+  "name": "OverNet",
+  "vendor": "OverClouds",
   "appId": "zen",
   "binaryName": "zen",
   "version": {
@@ -15,10 +15,10 @@
   "addons": {},
   "brands": {
     "release": {
-      "backgroundColor": "#282A33",
-      "brandShorterName": "Zen",
-      "brandShortName": "Zen",
-      "brandFullName": "Zen Browser",
+      "backgroundColor": "#101010",
+      "brandShorterName": "OverNet",
+      "brandShortName": "OverNet",
+      "brandFullName": "OverNet",
       "release": {
         "displayVersion": "0.1.0",
         "github": {
@@ -35,10 +35,10 @@
       }
     },
     "twilight": {
-      "backgroundColor": "#282A33",
-      "brandShorterName": "Zen",
-      "brandShortName": "Twilight",
-      "brandFullName": "Zen Twilight",
+      "backgroundColor": "#101010",
+      "brandShorterName": "OverNet",
+      "brandShortName": "OverNet Beta",
+      "brandFullName": "OverNet Beta",
       "release": {
         "displayVersion": "1.24t",
         "github": {

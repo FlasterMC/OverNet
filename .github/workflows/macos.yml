@@ -90,6 +90,18 @@ jobs:
       - name: Package
         run: npm run package
 
+      - name: Sign app
+        run: |
+          cargo install apple-codesign --locked
+          obj="$PWD/$(ls -d engine/obj-*)"
+          branding="$PWD/engine/browser/branding/release"
+          stage="$obj/dist/zen"
+          rcodesign sign "$stage/OverNet.app"
+          rm -f dist/*.dmg dist/output.mar
+          (cd engine && ./mach python -m mozbuild.action.make_dmg --dsstore "$branding/dsstore" --background "$branding/background.png" --icon "$branding/disk.icns" --volume-name OverNet "$stage" "$GITHUB_WORKSPACE/desktop/dist/OverNet-$VERSION.dmg")
+          mv "$stage/OverNet.app" "$obj/dist/OverNet.app"
+          JUST_MAR=1 npm run package
+
       - name: Sign update
         env:
           OVERNET_MAR_KEY: ${{ secrets.OVERNET_MAR_KEY }}
