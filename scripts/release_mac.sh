@@ -7,6 +7,7 @@ out="$root/dist/$version"
 
 export PATH="/opt/homebrew/opt/node@22/bin:/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
 export ZEN_RELEASE=1
+export SURFER_FORCE_CANDIDATE=1
 export ZEN_GA_DISABLE_PGO=1
 export ZEN_DISABLE_LTO="${ZEN_DISABLE_LTO-1}"
 jobs="${OVERNET_JOBS:-4}"

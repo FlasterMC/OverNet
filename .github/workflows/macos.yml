@@ -26,6 +26,7 @@ jobs:
       VERSION: ${{ inputs.version }}
       SURFER_PLATFORM: darwin
       SURFER_COMPAT: aarch64
+      SURFER_FORCE_CANDIDATE: 1
       ZEN_CROSS_COMPILING: 1
       ZEN_RELEASE: 1
       ZEN_GA_DISABLE_PGO: 1
