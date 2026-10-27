@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-zen-welcome-title-line1 = Üdvözöljük
-zen-welcome-title-line2 = egy nyugodtabb interneten
+zen-welcome-title-line1 = Üdvözöl az
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = Egy új kezdet, ugyanazok a könyvjelzők
 zen-welcome-import-description-1 = A könyvjelzői, előzményei és jelszavai olyanok, mint a kenyérmorzsák az interneten - ne hagyja hátra őket!
 zen-welcome-import-description-2 = Könnyedén áthozhatja őket egy másik böngészőből, és ott folytathatja, ahol abbahagyta..
@@ -23,4 +23,4 @@ zen-welcome-start-browsing = Merüljön el!
 zen-welcome-default-search-title = Az Ön alapértelmezett keresőmotorja
 zen-welcome-default-search-description = Válassza ki az alapértelmezett keresőmotort. Később bármikor megváltoztathatja!
 zen-welcome-skip-button = Kihagyás
-zen-welcome-finished = A Zen helyesen lett beállítva!
+zen-welcome-finished = A { -brand-short-name } helyesen lett beállítva!

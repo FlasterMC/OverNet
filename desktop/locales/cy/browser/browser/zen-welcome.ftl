@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 zen-welcome-title-line1 = Croeso i
-zen-welcome-title-line2 = rhyngrwyd llonyddach
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = Dechrau Newydd, Yr Un Nodau Tudalen
 zen-welcome-import-description-1 = Mae eich nodau tudalen, hanes a chyfrineiriau fel llwybr o friwsion ar draws y rhyngrwyd—peidiwch eu gadael ar eich hôl!
 zen-welcome-import-description-2 = Dewch â nhw drosodd yn hawdd o borwr arall a phara ymlaen o le roeddech chi.
@@ -23,4 +23,4 @@ zen-welcome-start-browsing = Ymlaen!
 zen-welcome-default-search-title = Eich Peiriant Chwilio Arferol
 zen-welcome-default-search-description = Dewiswch eich peiriant chwilio arferol. Gallwch chi ei newid yn nes ymlaen!
 zen-welcome-skip-button = Hepgor
-zen-welcome-finished = Mae eich Zen wedi'i osog yn gywir!
+zen-welcome-finished = Mae eich { -brand-short-name } wedi'i osog yn gywir!

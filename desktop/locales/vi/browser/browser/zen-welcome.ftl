@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-zen-welcome-title-line1 = Chào mừng bạn đã đến với
-zen-welcome-title-line2 = một internet thư thả hơn
+zen-welcome-title-line1 = Chào mừng đến với
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = Khởi đầu mới mẻ, với những dấu trang quen thuộc
 zen-welcome-import-description-1 = Dấu trang, lịch sử, mật khẩu là những dấu ấn của bạn trên internet - Đừng để chúng lại phía sau!
 zen-welcome-import-description-2 = Dễ dàng tiếp tục với những gì bạn bỏ dở từ trình duyệt khác.

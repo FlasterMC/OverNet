@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-zen-welcome-title-line1 = Вітаємо в
-zen-welcome-title-line2 = спокійніший інтернет
+zen-welcome-title-line1 = Ласкаво просимо до
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = Новий початок, ті ж закладки
 zen-welcome-import-description-1 = Ваші закладки, історія та паролі — це як слід від хлібних крихт в інтернеті, не залишайте їх!
 zen-welcome-import-description-2 = Easily bring them over from another browser and pick up right where you left off..
@@ -23,4 +23,4 @@ zen-welcome-start-browsing = Зануритися!
 zen-welcome-default-search-title = Ваша типова пошукова система
 zen-welcome-default-search-description = Оберіть вашу типову пошукову систему. Ви завжди зможете змінити її пізніше!
 zen-welcome-skip-button = Пропустити
-zen-welcome-finished = Zen налаштовано правильно!
+zen-welcome-finished = { -brand-short-name } налаштовано правильно!

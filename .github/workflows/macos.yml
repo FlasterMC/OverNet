@@ -7,6 +7,10 @@ on:
         description: Version
         required: true
         type: string
+      notes:
+        description: What's new
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -40,6 +44,8 @@ jobs:
           tool-cache: false
 
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -83,6 +89,12 @@ jobs:
       - name: Import
         run: |
           npm run import
+          releases="https://github.com/FlasterMC/OverNet/releases"
+          sed -i -E \
+            -e "s#https://(www\.)?zen-browser\.app/(release-notes/%VERSION%/|whatsnew\?v=%VERSION%)#$releases/tag/%VERSION%#" \
+            -e "s#https://(www\.)?zen-browser\.app/(whatsnew/|release-notes/latest/|download/)#$releases/latest#" \
+            engine/browser/branding/*/pref/firefox-branding.js
+          ! grep -E "zen-browser\.app/(release-notes|whatsnew|download)" engine/browser/branding/*/pref/firefox-branding.js
           bash scripts/mar_sign.sh -i
           npm run bootstrap
           sh scripts/download-language-packs.sh
@@ -131,11 +143,16 @@ jobs:
       - name: Release
         env:
           GH_TOKEN: ${{ github.token }}
+          NOTES: ${{ inputs.notes }}
         run: |
           mkdir -p "$RUNNER_TEMP/release"
           cp "$(ls -t dist/*.dmg | head -1)" "$RUNNER_TEMP/release/OverNet-$VERSION.dmg"
           cp dist/output.mar "$RUNNER_TEMP/release/macos.mar"
-          gh release create "$VERSION" "$RUNNER_TEMP/release/OverNet-$VERSION.dmg" "$RUNNER_TEMP/release/macos.mar" --title "OverNet $VERSION" --notes "OverNet $VERSION" --target "$GITHUB_SHA"
+          if [ -z "$NOTES" ]; then
+            previous="$(git describe --tags --abbrev=0 2>/dev/null || true)"
+            NOTES="$(git log --no-merges --format='- %s' ${previous:+$previous..}HEAD | grep -v '^- Squashed ' | head -50)"
+          fi
+          gh release create "$VERSION" "$RUNNER_TEMP/release/OverNet-$VERSION.dmg" "$RUNNER_TEMP/release/macos.mar" --title "OverNet $VERSION" --notes "${NOTES:-OverNet $VERSION}" --target "$GITHUB_SHA"
 
       - name: Update manifest
         run: |

@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-zen-welcome-title-line1 = Benvenuto a
-zen-welcome-title-line2 = un internet più calmo
+zen-welcome-title-line1 = Benvenuto in
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = Un nuovo Inizio, Stessi Segnalibri
 zen-welcome-import-description-1 = I tuoi segnalibri, la tua cronologia e le tue password sono come una scia di briciole attraverso internet—non lasciartele alle spalle!
 zen-welcome-import-description-2 = Portali facilmente da un altro browser e riprendi da dove hai lasciato.
@@ -23,4 +23,4 @@ zen-welcome-start-browsing = Andiamo!
 zen-welcome-default-search-title = Il tuo Motore di Ricerca Predefinito
 zen-welcome-default-search-description = Scegli il tuo motore di ricerca predefinito. Puoi sempre cambiarlo più tardi!
 zen-welcome-skip-button = Salta
-zen-welcome-finished = Il tuo Zen è stato configurato correttamente!
+zen-welcome-finished = Il tuo { -brand-short-name } è stato configurato correttamente!

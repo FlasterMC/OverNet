@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 zen-welcome-title-line1 = Welcome to
-zen-welcome-title-line2 = a calmer internet
+zen-welcome-title-line2 = { -brand-short-name }
 
 zen-welcome-back = Back
 zen-welcome-skip = Skip for now

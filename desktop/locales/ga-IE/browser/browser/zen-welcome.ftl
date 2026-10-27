@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 zen-welcome-title-line1 = Fáilte go
-zen-welcome-title-line2 = idirlíon níos ciúine
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = Tús Úr, Leabharmharcanna Céanna
 zen-welcome-import-description-1 = Tá do leabharmharcanna, do stair agus do phasfhocail cosúil le rian brioscaí aráin tríd an idirlíon—ná fág i do dhiaidh iad!
 zen-welcome-import-description-2 = Tabhair anonn iad go héasca ó bhrabhsálaí eile agus lean ar aghaidh díreach san áit ar fhág tú iad.
@@ -23,4 +23,4 @@ zen-welcome-start-browsing = Tum isteach!
 zen-welcome-default-search-title = D'Inneall Cuardaigh Réamhshocraithe
 zen-welcome-default-search-description = Roghnaigh d'inneall cuardaigh réamhshocraithe. Is féidir leat é a athrú níos déanaí!
 zen-welcome-skip-button = Scipeáil
-zen-welcome-finished = Tá do Zen socraithe i gceart!
+zen-welcome-finished = Tá do { -brand-short-name } socraithe i gceart!

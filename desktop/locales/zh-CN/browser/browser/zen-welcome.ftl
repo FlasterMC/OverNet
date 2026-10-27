@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-zen-welcome-title-line1 = 欢迎来到
-zen-welcome-title-line2 = 更平静的互联网
+zen-welcome-title-line1 = 欢迎使用
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = 全新出发，收藏如旧
 zen-welcome-import-description-1 = 收藏足迹贴心伴，迁移升级别落下！
 zen-welcome-import-description-2 = 一键迁移数据，无缝续览网络。
@@ -23,4 +23,4 @@ zen-welcome-start-browsing = 出发！
 zen-welcome-default-search-title = 您的默认搜索引擎
 zen-welcome-default-search-description = 选择您的默认搜索引擎。您可以随时更改它！
 zen-welcome-skip-button = 跳过
-zen-welcome-finished = 您的 Zen 已设置妥当！
+zen-welcome-finished = 您的 { -brand-short-name } 已设置妥当！

@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-zen-welcome-title-line1 = ようこそ
-zen-welcome-title-line2 = 静かなインターネットへ
+zen-welcome-title-line1 = { -brand-short-name } へ
+zen-welcome-title-line2 = ようこそ
 zen-welcome-import-title = 新鮮なスタート、同じブックマーク
 zen-welcome-import-description-1 = ブックマーク、履歴、パスワードはインターネット上のパンくずの跡のようなものです。残さないでください！
 zen-welcome-import-description-2 = 別のブラウザから簡単に移行し、中断したところから再開できます。

@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 zen-welcome-title-line1 = 歡迎使用
-zen-welcome-title-line2 = 更寧靜的網路體驗
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = 全新開始，書籤依舊
 zen-welcome-import-description-1 = 您的書籤、歷史記錄和密碼，是您網路足跡的珍貴紀錄——別把它們遺忘了！
 zen-welcome-import-description-2 = 輕鬆匯入其他瀏覽器的資料，無縫接續瀏覽體驗。
@@ -23,4 +23,4 @@ zen-welcome-start-browsing = 立即開始！
 zen-welcome-default-search-title = 您的預設搜尋引擎
 zen-welcome-default-search-description = 選擇您的預設搜尋引擎，您可以隨時更改它！
 zen-welcome-skip-button = 跳過
-zen-welcome-finished = 您的 Zen 瀏覽器已成功設定！
+zen-welcome-finished = 您的 { -brand-short-name } 瀏覽器已成功設定！

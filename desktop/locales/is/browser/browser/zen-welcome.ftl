@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-zen-welcome-title-line1 = Velkomin í
-zen-welcome-title-line2 = rólegra internet
+zen-welcome-title-line1 = Velkomin í vafrann
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = Ný byrjun, sömu bókamerkin
 zen-welcome-import-description-1 = Bókamerkin þín, vafurferillinn þinn og lykilorð eru eins og brauðmolaslóð út um internetið - ekki skilja þá eftir fyrir úlfana!
 zen-welcome-import-description-2 = Flyttu á einfaldan hátt inn gögn frá öðrum vafra og haltu áfram þar sem þú skildir við síðast.

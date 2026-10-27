@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-zen-welcome-title-line1 = 환영합니다
-zen-welcome-title-line2 = 차분한 인터넷에 잘 오셨습니다
+zen-welcome-title-line1 = { -brand-short-name }에 오신 것을
+zen-welcome-title-line2 = 환영합니다
 zen-welcome-import-title = 새로운 시작, 여전한 북마크
 zen-welcome-import-description-1 = 당신의 북마크, 방문 기록, 비밀번호는 인터넷에 떨어진 빵 조각들의 길과 같습니다 - 뒤에 남겨두지 마세요!
 zen-welcome-import-description-2 = 간단하게 다른 브라우저에서 가져오고 마지막 지점에서 다시 시작할 수 있습니다..

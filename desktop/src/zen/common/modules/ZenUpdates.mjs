@@ -37,11 +37,6 @@ export default function checkForZenUpdates() {
         icon: "chrome://browser/skin/zen-icons/sparkles.svg",
       },
       {
-        url: "https://www.zen-browser.app/donate",
-        l10nId: "zen-sidebar-notification-donate",
-        icon: "chrome://browser/skin/zen-icons/heart-circle-fill.svg",
-      },
-      {
         action: () => {
           Services.obs.notifyObservers(window, "restart-in-safe-mode");
         },

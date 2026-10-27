@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-zen-welcome-title-line1 = Sveiki atvykę į
-zen-welcome-title-line2 = ramesnį internetą
+zen-welcome-title-line1 = Sveiki atvykę į naršyklę
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = Nauja pradžia, tas pats adresynas
 zen-welcome-import-description-1 = Jūsų adresynas, istorija ir slaptažodžiai – tai tarsi duonos trupiniai per internetą. Nepalikite jų!
 zen-welcome-import-description-2 = Lengvai perkelkite juos iš kitos naršyklės ir tęskite ten, kur baigėte.
@@ -23,4 +23,4 @@ zen-welcome-start-browsing = Pirmyn!
 zen-welcome-default-search-title = Jūsų numatytasis paieškos variklis
 zen-welcome-default-search-description = Pasirinkite numatytąjį paieškos variklį. Vėliau visada galite ją pakeisti!
 zen-welcome-skip-button = Praleisti
-zen-welcome-finished = Jūsų „Zen“ nustatytas teisingai!
+zen-welcome-finished = Jūsų „{ -brand-short-name }“ nustatytas teisingai!

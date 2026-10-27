@@ -135,7 +135,7 @@ zen-vertical-tabs-expand-tabs-on-hover = Expand Tabs on Hover (Won't work on com
 zen-vertical-tabs-expand-tabs-header = How to expand tabs
 zen-vertical-tabs-expand-tabs-description = Choose how to expand tabs in the sidebar
 
-zen-theme-marketplace-header = Zen Mods
+zen-theme-marketplace-header = { -brand-short-name } Mods
 zen-theme-disable-all-enabled =
     .title = Disable all mods
 zen-theme-disable-all-disabled =
@@ -167,7 +167,7 @@ zen-theme-marketplace-dropdown-default-label =
     .label = None
 zen-theme-marketplace-input-default-placeholder =
     .placeholder = Type something...
-pane-zen-marketplace-title = Zen Mods
+pane-zen-marketplace-title = { -brand-short-name } Mods
 zen-themes-auto-update =
    .label = Automatically update installed mods on startup
 
@@ -192,11 +192,11 @@ category-zen-CKS =
     .tooltiptext = { pane-zen-CKS-title }
 
 category-zen-marketplace =
-    .tooltiptext = Zen Mods
+    .tooltiptext = { -brand-short-name } Mods
 
 zenCKSOption-group-zen-compact-mode = Compact Mode
 zenCKSOption-group-zen-workspace = Workspaces
-zenCKSOption-group-zen-other = Other Zen Features
+zenCKSOption-group-zen-other = Other { -brand-short-name } Features
 zenCKSOption-group-zen-split-view = Split View
 
 zen-text-action-copy-url-shortcut = Copy current URL

@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-zen-welcome-title-line1 = Přivítejte
-zen-welcome-title-line2 = klidnější internet
+zen-welcome-title-line1 = Vítejte v
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = Nový začátek, stejné záložky
 zen-welcome-import-description-1 = Vaše záložky, historie a hesla jsou jako stopa drobků po internetu—nenechávejte je za sebou!
 zen-welcome-import-description-2 = Snadno je přeneste z jiného prohlížeče a pokračujte přesně tam, kde jste skončili..
@@ -23,4 +23,4 @@ zen-welcome-start-browsing = Pustit se do toho!
 zen-welcome-default-search-title = Váš výchozí vyhledávač
 zen-welcome-default-search-description = Vyberte si svůj výchozí vyhledávač. Později jej můžete změnit!
 zen-welcome-skip-button = Přeskočit
-zen-welcome-finished = Váš Zen byl úspěšně nastaven!
+zen-welcome-finished = Váš { -brand-short-name } byl úspěšně nastaven!

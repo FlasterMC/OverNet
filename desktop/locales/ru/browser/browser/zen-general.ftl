@@ -135,8 +135,12 @@ zen-sidebar-notification-restart-safe-mode-label = Что-то пошло не �
 zen-sidebar-notification-restart-safe-mode-tooltip = 
     .title = Перезапустить в безопасном режиме
 zen-window-sync-migration-dialog-title = Синхронизируйте окна
-zen-window-sync-migration-dialog-message = Теперь Zen синхронизирует окна на одном устройстве, поэтому изменения в одном окне будут мгновенно отображаться в других.
+zen-window-sync-migration-dialog-message = Теперь { -brand-short-name } синхронизирует окна на одном устройстве, поэтому изменения в одном окне будут мгновенно отображаться в других.
 zen-window-sync-migration-dialog-learn-more = Узнать больше
 zen-window-sync-migration-dialog-accept = Понятно
 zen-appmenu-new-blank-window = 
     .label = Новое пустое окно
+
+zen-sidebar-drag-collapsed-toast = Боковая панель скрыта! Нажмите <span>{ $shortcut }</span>, чтобы вернуть её.
+zen-site-data-header-boost =
+    .tooltiptext = Создать буст

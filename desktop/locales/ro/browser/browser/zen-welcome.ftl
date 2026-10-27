@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-zen-welcome-title-line1 = Bine ai venit la
-zen-welcome-title-line2 = un internet mai calm
+zen-welcome-title-line1 = Bun venit în
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = Un Început Proaspăt, Aceleași Marcaje
 zen-welcome-import-description-1 = Marcajele, istoricul și parolele tale sunt ca un șir de firimituri care îți dezvăluie traseul pe internet — nu le lăsa în urmă!
 zen-welcome-import-description-2 = Adu-le cu ușurință din alt browser și continuă exact de unde ai rămas.

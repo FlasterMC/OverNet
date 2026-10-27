@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-zen-welcome-title-line1 = ברוך בואך אל
-zen-welcome-title-line2 = אינטרנט רגוע יותר
+zen-welcome-title-line1 = ברוכים הבאים ל־
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = התחלה חדשה, אותן סימניות
 zen-welcome-import-description-1 = הסימניות, ההיסטוריה, והסיסמאות שלך הן כמו שביל פירורי לחם דרך האינטרנט—לא להשאיר אותן מאחור!
 zen-welcome-import-description-2 = אפשר להחזיר אותן בקלות מדפדפן אחר ולהמשיך בדיוק מאיפה שהפסקת..
@@ -23,4 +23,4 @@ zen-welcome-start-browsing = מתחילים!
 zen-welcome-default-search-title = מנוע חיפוש ברירת מחדל
 zen-welcome-default-search-description = נא לבחור מנוע החיפוש ברירת מחדל. תמיד ניתן לשנות הגדרה זו!
 zen-welcome-skip-button = דילוג
-zen-welcome-finished = דפדפן Zen שלך הוגדר בהצלחה!
+zen-welcome-finished = דפדפן { -brand-short-name } שלך הוגדר בהצלחה!

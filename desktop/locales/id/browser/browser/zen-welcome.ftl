@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 zen-welcome-title-line1 = Selamat datang di
-zen-welcome-title-line2 = internet yang lebih tenang
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = Permulaan baru, Bookmark tetap sama
 zen-welcome-import-description-1 = Bookmark, histori dan password anda adalah Jejak remah roti yang anda tinggalkan di internet--jangan tinggalkan begitu saja!
 zen-welcome-import-description-2 = Semudah mengambil dari peramban lain dan melanjutkan dari yang anda tinggalkan.
@@ -23,4 +23,4 @@ zen-welcome-start-browsing = Ayo, mulai!
 zen-welcome-default-search-title = Mesin Pencari Default Anda
 zen-welcome-default-search-description = Pilih mesin pencari default Anda. Anda selalu dapat mengubahnya nanti!
 zen-welcome-skip-button = Lewati
-zen-welcome-finished = Anda berhasil mengatur Zen milik anda!
+zen-welcome-finished = Anda berhasil mengatur { -brand-short-name } milik anda!

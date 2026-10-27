@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 zen-welcome-title-line1 = Vitajte v
-zen-welcome-title-line2 = pokojnejšom internete
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = Nový začiatok, Rovnaké záložky
 zen-welcome-import-description-1 = Vaše záložky, história a heslá sú ako omrvinky roztrúsené po internete – nenechajte ich za sebou!
 zen-welcome-import-description-2 = Jednoducho si ich preneste z iného prehliadača a pokračujte presne tam, kde ste skončili.
@@ -23,4 +23,4 @@ zen-welcome-start-browsing = Ponorte sa do toho!
 zen-welcome-default-search-title = Váš predvolený vyhľadávač
 zen-welcome-default-search-description = Vyberte si predvolený vyhľadávač. Neskôr ho môžete kedykoľvek zmeniť!
 zen-welcome-skip-button = Preskočiť
-zen-welcome-finished = Váš Zen bol úspešne nastavený!
+zen-welcome-finished = Váš { -brand-short-name } bol úspešne nastavený!

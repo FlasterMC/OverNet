@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-zen-welcome-title-line1 = Tere tulemast
-zen-welcome-title-line2 = rahulikumasse internetti
+zen-welcome-title-line1 = Tere tulemast brauserisse
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = Värske algus, samad järjehoidjad
 zen-welcome-import-description-1 = Sinu järjehoidjad, ajalugu ja paroolid on nagu seni läbitud rada internetis—ära jäta seda maha!
 zen-welcome-import-description-2 = Easily bring them over from another browser and pick up right where you left off..
@@ -23,4 +23,4 @@ zen-welcome-start-browsing = Hakkame pihta!
 zen-welcome-default-search-title = Sinu vaikimisi otsingumootor
 zen-welcome-default-search-description = Vali oma vaikimisi otsingumootor. Saad seda alati hiljem muuta!
 zen-welcome-skip-button = Jäta vahele
-zen-welcome-finished = Zen on edukalt seadistatud!
+zen-welcome-finished = { -brand-short-name } on edukalt seadistatud!

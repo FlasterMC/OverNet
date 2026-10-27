@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 zen-welcome-title-line1 = Velkommen til
-zen-welcome-title-line2 = et roligere internett
+zen-welcome-title-line2 = { -brand-short-name }
 zen-welcome-import-title = En ny start, samme bokmerker
 zen-welcome-import-description-1 = Bokmerker, historikken og passordene dine er som en sti av brødsmuler gjennom internettet — ikke la dem ligge igjen!
 zen-welcome-import-description-2 = Overfør dem enkelt fra en annen nettleser og fortsett akkurat der du slapp.
@@ -23,4 +23,4 @@ zen-welcome-start-browsing = Dykk inn!
 zen-welcome-default-search-title = Din standard søkemotor
 zen-welcome-default-search-description = Velg din standard søkemotor. Du kan alltids endre den senere!
 zen-welcome-skip-button = Hopp over
-zen-welcome-finished = Din Zen har blitt satt opp riktig!
+zen-welcome-finished = Din { -brand-short-name } har blitt satt opp riktig!
