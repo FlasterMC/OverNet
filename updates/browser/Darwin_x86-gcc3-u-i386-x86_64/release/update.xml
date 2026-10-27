@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<updates>
+  <update type="minor" displayVersion="0.1.0" appVersion="0.1.0" platformVersion="159.0" buildID="20261027145534">
+    <patch type="complete" URL="https://github.com/FlasterMC/OverNet/releases/download/0.1.0/macos.mar" hashFunction="sha512" hashValue="7ca9f047c12d1e2c763c6fa92a1051d7d72b00763d5fcaf2f20b2c403b0dd9f46fc89e8efff7887de0ac9b890ef82310f1bf98eaa5f65886bb1ecbe937d091de" size="102618036"/>
+  </update>
+</updates>
