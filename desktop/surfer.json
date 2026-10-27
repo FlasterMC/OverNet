@@ -1,0 +1,57 @@
+{
+  "name": "Zen Browser",
+  "vendor": "Zen OSS Team",
+  "appId": "zen",
+  "binaryName": "zen",
+  "version": {
+    "product": "firefox",
+    "version": "158.0.1",
+    "candidate": "159.0",
+    "candidateBuild": 1
+  },
+  "buildOptions": {
+    "generateBranding": true
+  },
+  "addons": {},
+  "brands": {
+    "release": {
+      "backgroundColor": "#282A33",
+      "brandShorterName": "Zen",
+      "brandShortName": "Zen",
+      "brandFullName": "Zen Browser",
+      "release": {
+        "displayVersion": "0.1.0",
+        "github": {
+          "repo": "FlasterMC/OverNet"
+        },
+        "archives": {
+          "windows": "windows.mar",
+          "macos-aarch64": "macos-aarch64.mar",
+          "linux": "linux.mar",
+          "macos-x64": "macos-x64.mar",
+          "windows-arm64": "windows-arm64.mar",
+          "linux-aarch64": "linux-aarch64.mar"
+        }
+      }
+    },
+    "twilight": {
+      "backgroundColor": "#282A33",
+      "brandShorterName": "Zen",
+      "brandShortName": "Twilight",
+      "brandFullName": "Zen Twilight",
+      "release": {
+        "displayVersion": "1.24t",
+        "github": {
+          "repo": "FlasterMC/OverNet"
+        }
+      }
+    }
+  },
+  "license": {
+    "ignoredFiles": [
+      ".*\\.json"
+    ],
+    "licenseType": "MPL-2.0"
+  },
+  "updateHostname": "raw.githubusercontent.com/FlasterMC/OverNet/updates"
+}

@@ -1,52 +1,23 @@
-<!--
-   - This Source Code Form is subject to the terms of the Mozilla Public
-   - License, v. 2.0. If a copy of the MPL was not distributed with this
-   - file, You can obtain one at http://mozilla.org/MPL/2.0/.
-   -->
-<!-- TODO: Get a job -->
-<img src="./docs/assets/zen-dark.svg" width="100px" align="left">
+# OverNet
 
-### `Zen Browser`
+[English](README.en.md) · **Русский**
 
-[![Downloads](https://img.shields.io/github/downloads/zen-browser/desktop/total.svg)](https://github.com/zen-browser/desktop/releases)
-[![Crowdin](https://badges.crowdin.net/zen-browser/localized.svg)](https://crowdin.com/project/zen-browser)
-[![Zen Release builds](https://github.com/zen-browser/desktop/actions/workflows/build.yml/badge.svg?branch=stable)](https://github.com/zen-browser/desktop/actions/workflows/build.yml)
+> **Это тестовая версия браузера.** Проект экспериментальный, и я пока не уверен, что буду развивать его дальше. Возможны ошибки, а обновления могут прекратиться в любой момент.
 
-Zen is a firefox-based browser with the aim of pushing your productivity to a new level!
+Браузер из семейства OverClouds на основе [Zen Browser](https://github.com/zen-browser/desktop) и Firefox. Вкладки слева, группы-папки и удобные пространства.
 
-<div flex="true">
-  <a href="https://zen-browser.app/download">
-    Download
-  </a>
-  •
-  <a href="https://zen-browser.app">
-    Website
-  </a>
-  •
-  <a href="https://docs.zen-browser.app">
-    Documentation
-  </a>
-  •
-  <a href="https://zen-browser.app/release-notes/latest">
-    Release Notes
-  </a>
-</div>
+## Возможности
 
-### Firefox Versions
+- **Боковая панель вкладок** в духе Arc и Vivaldi: закреплённые вкладки, пространства и группы, которые сворачиваются как папки.
+- **Автоматические обновления** прямо в браузере.
+- **Движок Firefox (Gecko)**: расширения, приватность, без телеметрии.
 
-- [`Release`](https://zen-browser.app/download) - Is currently built using Firefox version `158.0`!
-- [`Twilight`](https://zen-browser.app/download?twilight) - Is currently built using Firefox version `RC 158.0`!
+В планах: корректная работа российских сайтов без установки сертификатов и закадровый перевод видео.
 
-### Contributing
+## Установка
 
-If you'd like to report a bug, please do so on our [GitHub Issues page](https://github.com/zen-browser/desktop/issues/) and for feature requests, you can use [GitHub Discussions](https://github.com/zen-browser/desktop/discussions).
+macOS на Apple Silicon: скачайте `OverNet-<версия>.dmg` из [релизов](https://github.com/FlasterMC/OverNet/releases) и перетащите OverNet в «Программы». Приложение не подписано сертификатом Apple, поэтому при первом запуске откройте «Системные настройки → Конфиденциальность и безопасность» и нажмите «Открыть всё равно».
 
-Zen is an open-source project, and we welcome contributions from the community! Please take a look at the [contribution guidelines](./docs/contribute.md) before getting started!
+## Лицензия
 
-#### Partners
-
-Thanks to all the [sponsors](https://zen-browser.app/#sponsors) of Zen for their support and contributions, including:
-
-<a href="https://blacksmith.sh">
-  <img src="./docs/assets/blacksmith-yellow.png" width="350px"/>
-</a>
+Код основан на Zen Browser и Firefox и распространяется под лицензией [Mozilla Public License 2.0](desktop/LICENSE).
