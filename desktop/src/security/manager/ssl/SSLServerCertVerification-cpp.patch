@@ -1,5 +1,5 @@
 diff --git a/security/manager/ssl/SSLServerCertVerification.cpp b/security/manager/ssl/SSLServerCertVerification.cpp
-index e4f312526b..502381e82f 100644
+index e4f312526b..db0da6766f 100644
 --- a/security/manager/ssl/SSLServerCertVerification.cpp
 +++ b/security/manager/ssl/SSLServerCertVerification.cpp
 @@ -104,6 +104,7 @@
@@ -10,15 +10,16 @@ index e4f312526b..502381e82f 100644
  #include "mozilla/UniquePtr.h"
  #include "mozilla/glean/SecurityManagerSslMetrics.h"
  #include "mozpkix/pkix.h"
-@@ -113,6 +114,7 @@
+@@ -113,6 +114,8 @@
  #include "nsComponentManagerUtils.h"
  #include "nsContentUtils.h"
  #include "nsICertOverrideService.h"
++#include "nsCharSeparatedTokenizer.h"
 +#include "nsIX509CertValidity.h"
  #include "nsIPublicKeyPinningService.h"
  #include "nsISiteSecurityService.h"
  #include "nsISocketProvider.h"
-@@ -653,6 +655,62 @@ Result AuthCertificate(
+@@ -653,6 +656,62 @@ Result AuthCertificate(
    return rv;
  }
  
@@ -81,7 +82,7 @@ index e4f312526b..502381e82f 100644
  PRErrorCode AuthCertificateParseResults(
      uint64_t aPtrForLog, const nsACString& aHostName, int32_t aPort,
      const OriginAttributes& aOriginAttributes,
-@@ -664,6 +722,11 @@ PRErrorCode AuthCertificateParseResults(
+@@ -664,6 +723,11 @@ PRErrorCode AuthCertificateParseResults(
    uint32_t probeValue = MapCertErrorToProbeValue(aCertVerificationError);
    glean::ssl::cert_verification_errors.AccumulateSingleSample(probeValue);
  
