@@ -142,6 +142,7 @@ jobs:
           touch "$obj/CLOBBER"
           printf '#define MOZ_BUILDID %s\n' "$MOZ_BUILD_DATE" > "$obj/buildid.h"
           rm -f "$obj/config.status" "$obj"/build/application.ini*
+          make -C "$obj/xpcom/glue/standalone" target-objects
           npm run build:ui
           make -C "$obj/build" application.ini.h
           make -C "$obj/browser/app"
@@ -222,7 +223,7 @@ jobs:
         run: |
           obj="$(ls -d engine/obj-*)"
           rm -rf "$obj/dist/zen"
-          find "$obj" -name '*.o' -delete
+          find "$obj" -name '*.o' -not -path '*/browser/app/*' -not -path '*/xpcom/glue/standalone/*' -delete
           find "$obj" -maxdepth 3 -type d -path '*/release/*' \( -name deps -o -name build -o -name incremental -o -name .fingerprint \) -prune -exec rm -rf {} +
           du -sh "$obj"
 
