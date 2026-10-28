@@ -36,7 +36,7 @@
   value: ctrl
 
 - name: zen.workspaces.separate-essentials
-  value: true
+  value: false
 
 - name: zen.workspaces.dnd-switch-padding
   value: 20
