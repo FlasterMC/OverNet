@@ -1,0 +1,2 @@
+- name: browser.translations.automaticallyPopup
+  value: false
