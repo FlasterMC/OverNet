@@ -1,5 +1,5 @@
 diff --git a/browser/components/preferences/preferences.xhtml b/browser/components/preferences/preferences.xhtml
-index e8da75f2c27e312e0170520959d3daf883f56048..e1be6c694ab7d9d7268a48e3ae76154971ca939a 100644
+index e8da75f2c27e312e0170520959d3daf883f56048..423d8a4069b17597760c6ceaaad1c10b2160f388 100644
 --- a/browser/components/preferences/preferences.xhtml
 +++ b/browser/components/preferences/preferences.xhtml
 @@ -39,6 +39,8 @@
@@ -38,6 +38,15 @@ index e8da75f2c27e312e0170520959d3daf883f56048..e1be6c694ab7d9d7268a48e3ae761549
        <html:moz-page-nav-button id="category-sync"
          hidden="true"
          view="paneSync"
+@@ -191,7 +213,7 @@
+       </html:moz-page-nav-button>
+       <html:moz-page-nav-button id="category-about-firefox"
+         view="paneAbout"
+-        iconsrc="chrome://browser/skin/sidebar/firefox.svg"
++        iconsrc="chrome://browser/skin/zen-icons/info.svg"
+         data-l10n-id="pane-about-firefox-title">
+       </html:moz-page-nav-button>
+       <html:moz-page-nav-button id="category-more-from-mozilla"
 @@ -257,6 +279,9 @@
  #include privacy.inc.xhtml
  #include sync.inc.xhtml
