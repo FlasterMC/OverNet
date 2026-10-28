@@ -1,0 +1,2 @@
+- name: security.webauth.webauthn
+  value: false

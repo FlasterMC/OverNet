@@ -78,6 +78,7 @@ else
     mode=full
   fi
 fi
+(cd src && find . -name '*.patch' | wc -l | tr -d ' ') > .surfer/patchCount
 
 if [ "$mode" = full ]; then
   caffeinate -i nice -n 19 npx surfer build -j "$jobs"
