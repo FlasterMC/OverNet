@@ -1197,6 +1197,10 @@ zen-library {
 
   position: absolute;
 
+  #navigator-toolbox[movingtab] &:not([hidden="true"]):empty {
+    min-height: 36px;
+  }
+
   :root[zen-single-toolbar="true"] &:not(:empty) {
     padding-top: 6px;
     padding-bottom: 2px;

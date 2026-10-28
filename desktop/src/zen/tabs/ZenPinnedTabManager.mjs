@@ -525,16 +525,15 @@ class nsZenPinnedTabManager extends nsZenDOMOperatedFeature {
     for (let i = 0; i < tabs.length; i++) {
       // eslint-disable-next-line no-shadow
       let tab = tabs[i];
-      const section = gZenWorkspaces.getEssentialsSection(tab);
-      // canEssentialBeAdded gates user-initiated adds on the *active* space's
-      // container. A replicated add mirrors a decision already made in another
-      // window or on another device, always into the tab's own container
-      // section.
       if (!replicating && !this.canEssentialBeAdded(tab)) {
         this.log(`addToEssentials rejected for ${tab.id}`);
         movedAll = false;
         continue;
       }
+      if (!replicating && !tab.hasAttribute("zen-essential")) {
+        tab = this.#reopenInSpaceContainer(tab);
+      }
+      const section = gZenWorkspaces.getEssentialsSection(tab);
       if (tab.hasAttribute("zen-essential")) {
         continue;
       }
@@ -570,6 +569,26 @@ class nsZenPinnedTabManager extends nsZenDOMOperatedFeature {
     }
     gZenUIManager.updateTabsToolbar();
     return movedAll;
+  }
+
+  #reopenInSpaceContainer(tab) {
+    const userContextId =
+      gZenWorkspaces.getActiveWorkspaceFromCache()?.containerTabId || 0;
+    if (
+      !gZenWorkspaces.containerSpecificEssentials ||
+      (tab.getAttribute("usercontextid") || 0) == userContextId
+    ) {
+      return tab;
+    }
+    const newTab = gBrowser.addTrustedTab(
+      tab.linkedBrowser.currentURI.spec,
+      { userContextId, index: tab._tPos + 1, skipAnimation: true }
+    );
+    if (tab.selected) {
+      gBrowser.selectedTab = newTab;
+    }
+    gBrowser.removeTab(tab, { animate: false });
+    return newTab;
   }
 
   removeEssentials(tab, unpin = true) {
@@ -1040,13 +1059,8 @@ class nsZenPinnedTabManager extends nsZenDOMOperatedFeature {
   canEssentialBeAdded(tab) {
     const isExistingEssentialTab = tab.hasAttribute("zen-essential");
     return (
-      !(
-        (tab.getAttribute("usercontextid") || 0) !=
-          (gZenWorkspaces.getActiveWorkspaceFromCache().containerTabId || 0) &&
-        gZenWorkspaces.containerSpecificEssentials
-      ) &&
-      (isExistingEssentialTab ||
-        gBrowser._numZenEssentials < this.maxEssentialTabs)
+      isExistingEssentialTab ||
+      gBrowser._numZenEssentials < this.maxEssentialTabs
     );
   }
 
