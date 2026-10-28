@@ -80,11 +80,29 @@ else
 fi
 (cd src && find . -name '*.patch' | wc -l | tr -d ' ') > .surfer/patchCount
 
+l10n_commit="$(cat build/firefox-cache/l10n-last-commit-hash)"
+l10n_cache="$HOME/Library/Caches/overnet-firefox-l10n"
+if [ "$(git -C "$l10n_cache" rev-parse HEAD 2>/dev/null)" != "$l10n_commit" ]; then
+  rm -rf "$l10n_cache"
+  git clone -q --filter=blob:none --sparse --no-checkout https://github.com/mozilla-l10n/firefox-l10n "$l10n_cache"
+  git -C "$l10n_cache" sparse-checkout set ru
+  git -C "$l10n_cache" checkout -q "$l10n_commit"
+fi
+bash "$root/scripts/branding_prefs.sh" > /dev/null
+python3 scripts/copy_language_pack.py en-US > /dev/null
+rsync -a --delete "$l10n_cache/ru/" "$engine/browser/locales/ru/"
+rsync -a locales/ru/ "$engine/browser/locales/ru/"
+
 if [ "$mode" = full ]; then
   caffeinate -i nice -n 19 npx surfer build -j "$jobs"
 else
   nice -n 19 npx surfer build --ui
 fi
+(cd "$engine" && MOZ_CHROME_MULTILOCALE=ru nice -n 19 ./mach build chrome-ru)
+echo "ru,en-US" > "$engine/obj-overnet-dev/toolkit/locales/multilocale.txt"
+(cd "$engine/obj-overnet-dev/dist/bin" && rsync -aR chrome.manifest chrome/ru.manifest chrome/ru localization/ru browser/chrome.manifest browser/chrome/ru.manifest browser/chrome/ru browser/chrome/browser/locale/ru browser/localization/ru ../OverNet.app/Contents/Resources/)
+mkdir -p "$engine/obj-overnet-dev/tmp/profile-default"
+printf 'user_pref("security.sandbox.content.mac.testing_read_path1", "%s");\n' "$desktop/src" > "$engine/obj-overnet-dev/tmp/profile-default/user.js"
 touch "$state/stamp"
 
 if [ "${1:-}" = run ]; then

@@ -29,6 +29,10 @@ zen-library {
   visibility: hidden;
   pointer-events: none;
 
+  :root[inDOMFullscreen="true"] & {
+    display: none;
+  }
+
   & #zen-library-panel {
     flex-direction: row;
   }
@@ -289,7 +293,7 @@ zen-library[customizing] .zen-library-tab {
   width: calc(36 * var(--zen-library-sprite-size));
   height: var(--zen-library-sprite-size);
   background-size: 100% 100%;
-  --stroke: var(--zen-accent-button-color);
+  --stroke: currentColor;
   --fill: color-mix(in srgb, var(--stroke), light-dark(white, black) 60%);
   fill: var(--fill);
   stroke: var(--stroke);
@@ -305,7 +309,7 @@ zen-library[customizing] .zen-library-tab {
   background-image: url("chrome://browser/skin/zen-icons/library/library-history-sprite.svg");
 }
 
-[data-section="settings"] .zen-library-tab-icon-image {
+.zen-library-tab[data-section="settings"] .zen-library-tab-icon-image {
   width: 100%;
   height: 100%;
   background: url("chrome://browser/skin/zen-icons/settings.svg") center / 75% no-repeat;

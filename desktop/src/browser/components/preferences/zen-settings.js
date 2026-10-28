@@ -248,10 +248,10 @@ var gZenMarketplaceManager = {
 
       fp.init(
         window.browsingContext,
-        "Export Zen Mods",
+        "Export OverNet Mods",
         nsIFilePicker.modeSave
       );
-      fp.defaultString = "zen-mods-export";
+      fp.defaultString = "overnet-mods-export";
       fp.defaultExtension = "json";
       fp.appendFilter("JSON Files", "*.json");
       fp.appendFilters(nsIFilePicker.filterAll);

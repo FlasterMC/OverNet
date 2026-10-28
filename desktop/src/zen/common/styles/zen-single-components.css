@@ -950,6 +950,7 @@
   .space-section & {
     position: static;
     translate: none;
+    --background: color-mix(in srgb, var(--toolbox-textcolor) 12%, transparent);
   }
 }
 

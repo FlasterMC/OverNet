@@ -15,6 +15,7 @@ export CARGO_BUILD_JOBS="$jobs"
 
 cd "$root/desktop"
 npx surfer ci --brand release --display-version "$version"
+bash "$root/scripts/branding_prefs.sh" > /dev/null
 nice -n 19 npx surfer build -j "$jobs"
 nice -n 19 npx surfer package
 

@@ -2366,6 +2366,7 @@ class nsZenWorkspaces {
           previousBackgroundOpacity
         );
       });
+      gZenThemePicker.onWorkspaceChange(newWorkspace);
       animations.push(
         gZenUIManager.motion.animate(
           elements,
@@ -2679,16 +2680,19 @@ class nsZenWorkspaces {
 
     gBrowser.tabContainer.arrowScrollbox = this.activeScrollbox;
 
+    const shouldAnimate = !onInit && !this._animatingChange;
     // Update workspace UI
-    requestAnimationFrame(() => {
-      gZenThemePicker.onWorkspaceChange(workspace);
-    });
+    if (!shouldAnimate || !previousWorkspace) {
+      requestAnimationFrame(() => {
+        gZenThemePicker.onWorkspaceChange(workspace);
+      });
+    }
 
     gZenUIManager.tabsWrapper.scrollbarWidth = "none";
     this.workspaceIcons.activeIndex = workspace.uuid;
     await this.#animateTabs(
       workspace,
-      !onInit && !this._animatingChange,
+      shouldAnimate,
       tabToSelect,
       {
         previousWorkspaceIndex,
