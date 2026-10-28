@@ -20,14 +20,16 @@
   isolation: isolate;
 }
 
-#zen-welcome-video {
+#zen-welcome-background {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   pointer-events: none;
-  will-change: opacity;
+  background:
+    radial-gradient(ellipse at 70% 80%, #2b1150 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 10%, #1d0d38 0%, transparent 55%),
+    #0b0614;
 }
 
 :root[zen-welcome-stage] {
@@ -36,6 +38,15 @@
 }
 
 #zen-welcome {
+  --zen-welcome-theme: #a166ee;
+  --zen-accent-button-color: light-dark(
+    oklch(from var(--zen-welcome-theme) clamp(0.35, l, 0.6) c h),
+    oklch(from var(--zen-welcome-theme) clamp(0.7, l, 0.85) c h)
+  );
+  --zen-accent-button-background: light-dark(
+    oklch(from var(--zen-welcome-theme) clamp(0.35, l, 0.6) c h),
+    oklch(from var(--zen-welcome-theme) clamp(0.55, l, 0.7) c h)
+  );
   --zen-welcome-accent: var(--zen-accent-button-color);
   --zen-welcome-sidebar-bg: light-dark(#ffffff, #1c1c1e);
   --zen-welcome-content-bg: light-dark(#f6f6f8f5, #2b2b30ed);
@@ -51,6 +62,10 @@
   );
 }
 
+#zen-welcome[themed] {
+  --zen-welcome-theme: var(--zen-primary-color);
+}
+
 #zen-welcome-start {
   flex-direction: column;
   -moz-window-dragging: drag;
@@ -58,43 +73,96 @@
   color: white;
 
   #zen-welcome-start-button {
+    --glass-x: 50%;
+    --glass-y: 0%;
     opacity: 0;
-    list-style-image: url(chrome://browser/skin/zen-icons/forward.svg);
-    padding: 1em !important;
-    min-width: 100px;
-    background: rgb(62, 115, 62) !important;
-    fill: white !important;
-
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: 2.6rem;
+    padding: 1rem 1.6rem 1rem 2.2rem;
+    appearance: none;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+    overflow: hidden;
+    color: white;
+    font: inherit;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    background:
+      radial-gradient(
+        circle 90px at var(--glass-x) var(--glass-y),
+        rgba(255, 255, 255, 0.35),
+        transparent 70%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.24),
+        rgba(255, 255, 255, 0.04) 55%,
+        color-mix(in srgb, var(--zen-welcome-theme) 28%, transparent)
+      );
+    backdrop-filter: blur(16px) saturate(180%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.6),
+      inset 0 -1px 1px rgba(255, 255, 255, 0.18),
+      inset 0 0 24px color-mix(in srgb, var(--zen-welcome-theme) 45%, transparent),
+      0 12px 40px -10px color-mix(in srgb, var(--zen-welcome-theme) 90%, transparent);
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
     will-change: transform;
-    transition: scale 0.15s ease-out;
+    transition:
+      scale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.3s ease-out;
+
+    &::after {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background: url(chrome://browser/skin/zen-icons/forward.svg) center /
+        contain no-repeat;
+      -moz-context-properties: fill;
+      fill: currentColor;
+      transition: translate 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
 
     &:hover {
-      scale: 1.03;
-      filter: brightness(1.1);
+      scale: 1.05;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        inset 0 -1px 1px rgba(255, 255, 255, 0.22),
+        inset 0 0 30px color-mix(in srgb, var(--zen-welcome-theme) 60%, transparent),
+        0 16px 56px -8px color-mix(in srgb, var(--zen-welcome-theme) 100%, transparent);
+
+      &::after {
+        translate: 4px 0;
+      }
     }
 
     &:active {
-      scale: 1;
-      transform: none;
+      scale: 0.97;
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.8);
+      outline-offset: 3px;
     }
   }
 
   #zen-welcome-title {
     text-align: center;
-    font-size: 5.2rem;
+    margin: 0;
+    font-size: min(4.6rem, 6vw);
     font-weight: 700;
     line-height: 1.05;
     letter-spacing: -0.03em;
-    max-width: 50%;
     white-space: nowrap;
+    text-shadow: 0 4px 40px color-mix(in srgb, var(--zen-welcome-theme) 55%, transparent);
     /* Layered (transformed) glyphs are drawn with grayscale AA on macOS;
      * use it for the whole title so animating characters don't look bolder. */
     -moz-osx-font-smoothing: grayscale;
     transform: translateY(-5%);
-
-    & > span {
-      display: block;
-    }
 
     .zen-welcome-char {
       display: inline-block;
@@ -113,10 +181,13 @@
   background: var(--zen-welcome-content-bg);
   color: light-dark(#111111, #ffffff);
   border-radius: 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   position: relative;
   width: 86%;
   height: 82%;
-  box-shadow: 0 3px 8px rgba(0,0,0,.05);
+  box-shadow:
+    0 24px 80px -20px rgba(0, 0, 0, 0.6),
+    0 0 120px -40px var(--zen-welcome-theme);
   overflow: hidden;
 
   @media (max-width: 1000px) {

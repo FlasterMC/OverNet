@@ -26,7 +26,7 @@ Answer the user in Russian; write code and identifiers in English.
 
 ## Video Translation
 
-- Voice-over translation of videos like in Yandex Browser: first on top of the open `vot.js` project (check its license before shipping), later an optional local mode (whisper.cpp, translation, speech synthesis). Not implemented yet.
+- Voice-over translation of videos like in Yandex Browser: `ZenVideoTranslation.sys.mjs` installs the official Mozilla-signed VOT extension (`vot-ext@firefox`, MIT, `ilyhalight/voice-over-translation`) from its GitHub release once per profile and grants its host permissions; the extension updates itself. Later: an optional local mode (whisper.cpp, translation, speech synthesis).
 
 ## Repository
 

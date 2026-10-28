@@ -4,6 +4,7 @@
 
 zen-welcome-title-line1 = Добро пожаловать в
 zen-welcome-title-line2 = { -brand-short-name }
+zen-welcome-get-started = Начать
 zen-welcome-import-title = Новое начало, прежние закладки
 zen-welcome-import-description-1 = Ваши закладки, история и пароли — как след из хлебных крошек в интернете, не оставляйте их!
 zen-welcome-import-description-2 = Легко импортируйте их из другого браузера и продолжите работу там, где остановились.

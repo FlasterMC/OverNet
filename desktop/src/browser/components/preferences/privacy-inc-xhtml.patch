@@ -2,11 +2,13 @@ diff --git a/browser/components/preferences/privacy.inc.xhtml b/browser/componen
 index 78e2e934cf..e305953ec6 100644
 --- a/browser/components/preferences/privacy.inc.xhtml
 +++ b/browser/components/preferences/privacy.inc.xhtml
-@@ -581,6 +581,8 @@
+@@ -581,6 +581,10 @@
  <!-- Certificates -->
  <html:setting-group groupid="certificates" data-category="panePrivacy" hidden="true" data-srd-migrated=""></html:setting-group>
  
 +#include zenRussianSites.inc.xhtml
++
++#include zenBrowsing.inc.xhtml
 +
  <!-- HTTPS-ONLY Mode -->
  <html:setting-group groupid="httpsOnly" data-category="panePrivacy" hidden="true" data-srd-migrated=""/>

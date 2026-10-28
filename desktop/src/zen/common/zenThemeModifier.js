@@ -53,7 +53,22 @@
       this._inMainBrowserWindow =
         window.location.href == "chrome://browser/content/browser.xhtml";
       this.listenForEvents();
+      this.listenForSpaceAccentColor();
       this.updateAllThemeBasics();
+    },
+
+    listenForSpaceAccentColor() {
+      const chromeRoot =
+        !this._inMainBrowserWindow &&
+        window.browsingContext?.topChromeWindow?.document.documentElement;
+      if (!chromeRoot) {
+        return;
+      }
+      const observer = new MutationObserver(() => this.updateAccentColor());
+      observer.observe(chromeRoot, { attributeFilter: ["style"] });
+      window.addEventListener("unload", () => observer.disconnect(), {
+        once: true,
+      });
     },
 
     listenForEvents() {
@@ -202,9 +217,14 @@
      * Update the accent color.
      */
     updateAccentColor() {
-      const accentColor = Services.prefs.getStringPref(
-        "zen.theme.accent-color"
-      );
+      const spaceAccentColor = this._inMainBrowserWindow
+        ? ""
+        : window.browsingContext?.topChromeWindow?.document.documentElement.style.getPropertyValue(
+            "--zen-primary-color"
+          );
+      const accentColor =
+        spaceAccentColor ||
+        Services.prefs.getStringPref("zen.theme.accent-color");
       document.documentElement.style.setProperty(
         "--zen-primary-color",
         accentColor

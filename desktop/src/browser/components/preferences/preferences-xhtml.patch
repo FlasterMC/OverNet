@@ -17,7 +17,7 @@ index e8da75f2c27e312e0170520959d3daf883f56048..423d8a4069b17597760c6ceaaad1c10b
        </html:moz-page-nav-button>
 +      <html:moz-page-nav-button id="category-zen-looks"
 +        view="paneOvernetLooks"
-+        iconsrc="chrome://browser/skin/customize.svg"
++        iconsrc="chrome://browser/skin/zen-icons/paintbrush.svg"
 +        data-l10n-id="pane-zen-looks-title">
 +      </html:moz-page-nav-button>
 +      <html:moz-page-nav-button id="category-zen-tabs-management"
@@ -27,12 +27,12 @@ index e8da75f2c27e312e0170520959d3daf883f56048..423d8a4069b17597760c6ceaaad1c10b
 +      </html:moz-page-nav-button>
 +      <html:moz-page-nav-button id="category-zen-CKS"
 +        href="about:keyboard"
-+        iconsrc="chrome://browser/skin/preferences/category-accessibility.svg"
++        iconsrc="chrome://browser/skin/zen-icons/bolt.svg"
 +        data-l10n-id="pane-zen-CKS-title">
 +      </html:moz-page-nav-button>
 +      <html:moz-page-nav-button id="category-zen-marketplace"
 +        view="paneOvernetMarketplace"
-+        iconsrc="chrome://mozapps/skin/extensions/category-themes.svg"
++        iconsrc="chrome://browser/skin/zen-icons/palette.svg"
 +        data-l10n-id="pane-zen-marketplace-title">
 +      </html:moz-page-nav-button>
        <html:moz-page-nav-button id="category-sync"

@@ -7,6 +7,7 @@ EXTRA_JS_MODULES += [
     "sys/ZenCustomizableUI.sys.mjs",
     "sys/ZenRussianSites.sys.mjs",
     "sys/ZenUIMigration.sys.mjs",
+    "sys/ZenVideoTranslation.sys.mjs",
 ]
 
 if CONFIG["MOZ_PROFILE_GENERATE"] or CONFIG["MOZ_CS_PROFILE_GENERATE"]:

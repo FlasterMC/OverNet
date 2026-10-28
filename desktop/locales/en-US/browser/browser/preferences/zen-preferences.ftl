@@ -238,3 +238,13 @@ zen-russian-sites-remove =
     .label = Remove
 zen-russian-sites-error-address = Only sites in the .ru, .su and .рф zones can be added
 zen-russian-sites-error-certificate = Couldn’t get the site’s certificate. Check the address and your connection
+
+zen-browsing-header = Browsing
+zen-browsing-show-punycode =
+    .label = Show the real address of sites with lookalike letters to spot fake addresses
+zen-browsing-prefetch-links =
+    .label = Preload pages the site suggests visiting next
+zen-browsing-find-highlight-all =
+    .label = Highlight all matches when finding in page
+zen-browsing-open-pdf-inline =
+    .label = Open PDF attachments in the browser instead of downloading them

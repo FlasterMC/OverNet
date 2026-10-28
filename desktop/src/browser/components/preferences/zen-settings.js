@@ -868,6 +868,21 @@ Preferences.addAll([
     id: "zen.window-sync.sync-only-pinned-tabs",
     type: "bool",
     default: false,
+  },  {
+    id: "network.IDN_show_punycode",
+    type: "bool",
+  },
+  {
+    id: "network.prefetch-next",
+    type: "bool",
+  },
+  {
+    id: "findbar.highlightAll",
+    type: "bool",
+  },
+  {
+    id: "browser.download.open_pdf_attachments_inline",
+    type: "bool",
   },
 ]);
 

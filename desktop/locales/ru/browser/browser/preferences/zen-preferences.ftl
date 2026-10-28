@@ -2,7 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-pane-zen-looks-title = Внешний вид
+pane-zen-looks-title = Оформление
 category-zen-looks = 
     .tooltiptext = { pane-zen-looks-title }
 zen-warning-language = Изменение языка по умолчанию может упростить сайтам слежку за вами.
@@ -336,3 +336,13 @@ zen-russian-sites-remove =
     .label = Удалить
 zen-russian-sites-error-address = Можно добавить только сайты в зонах .ru, .su и .рф
 zen-russian-sites-error-certificate = Не удалось получить сертификат сайта. Проверьте адрес и подключение
+
+zen-browsing-header = Просмотр сайтов
+zen-browsing-show-punycode =
+    .label = Показывать настоящий адрес сайтов с похожими на латиницу буквами, чтобы отличать поддельные адреса
+zen-browsing-prefetch-links =
+    .label = Заранее загружать страницы, на которые сайт предлагает перейти дальше
+zen-browsing-find-highlight-all =
+    .label = Подсвечивать все совпадения при поиске на странице
+zen-browsing-open-pdf-inline =
+    .label = Открывать PDF-вложения в браузере, а не скачивать их

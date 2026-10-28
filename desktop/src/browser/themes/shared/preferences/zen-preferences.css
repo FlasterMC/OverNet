@@ -7,7 +7,7 @@
 @namespace html "http://www.w3.org/1999/xhtml";
 
 .pane-container {
-  margin: auto;
+  margin-inline: auto;
 }
 
 description {
@@ -54,6 +54,13 @@ html|dialog {
   --zen-settings-control-background-hover: color-mix(in srgb, currentColor 12%, transparent);
   --zen-settings-row-hover: color-mix(in srgb, currentColor 7%, transparent);
   --zen-settings-row-selected: color-mix(in srgb, currentColor 12%, transparent);
+  --color-accent-primary: var(--zen-primary-color) !important;
+  --color-accent-primary-hover: color-mix(in srgb, var(--zen-primary-color) 85%, currentColor) !important;
+  --color-accent-primary-active: color-mix(in srgb, var(--zen-primary-color) 70%, currentColor) !important;
+  --focus-outline-color: var(--zen-primary-color) !important;
+  --link-color: var(--zen-primary-color) !important;
+  --link-color-hover: color-mix(in srgb, var(--zen-primary-color) 80%, currentColor) !important;
+  accent-color: var(--zen-primary-color);
 }
 
 html|moz-card {
@@ -120,6 +127,26 @@ groupbox menulist {
 groupbox h2 {
   font-size: 15px;
   font-weight: 600;
+}
+
+groupbox hbox[align="center"]:has(> menulist, > html|input) {
+  flex-wrap: wrap;
+  gap: 8px;
+
+  & > label {
+    flex: 1;
+    min-width: 0;
+    margin-inline: 0;
+  }
+
+  & > :is(menulist, button, html|input) {
+    margin-inline: 0;
+  }
+
+  & > html|input {
+    flex: 1;
+    min-width: 200px;
+  }
 }
 
 #searchInput {
@@ -375,10 +402,33 @@ groupbox h2 {
   margin: 15px 0;
 }
 
-.zenThemeMarketplaceItemUninstallButton,
-#zenThemeMarketplaceImport {
+.zenThemeMarketplaceItemUninstallButton {
   margin-left: auto;
   cursor: pointer;
+}
+
+#zenThemeMarketplaceActions {
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block: 12px 4px;
+
+  & > button {
+    margin: 0;
+    cursor: pointer;
+  }
+}
+
+#zenThemeMarketplaceIntro {
+  flex-wrap: wrap;
+  column-gap: 6px;
+
+  & > description {
+    margin: 0;
+  }
+
+  & > #zenThemeMarketplaceLink {
+    white-space: nowrap;
+  }
 }
 
 #zenThemeMarketplaceExport,
@@ -407,6 +457,8 @@ groupbox h2 {
 #zenMarketplaceHeader {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 
   & h2 {
     margin: 0;

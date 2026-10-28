@@ -166,7 +166,7 @@ zen-library:is([transitioning], [sizing])
 #zen-library-sidebar-tabs {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: clamp(2px, 1vh - 2px, 8px);
   justify-content: space-between;
   height: min-content;
   min-height: 0;
@@ -179,12 +179,12 @@ zen-library:is([transitioning], [sizing])
   --zen-library-sprite-size: 28px;
 
   -moz-window-dragging: no-drag;
-  margin: 8px;
+  margin: clamp(0px, 1.5vh - 6px, 8px) 8px;
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
-  padding: 16px 0;
+  padding: clamp(4px, 2vh - 6px, 16px) 0;
   font-weight: 600;
   flex-direction: column;
   gap: 4px;
@@ -271,12 +271,6 @@ zen-library[customizing] .zen-library-tab {
     height: 9px;
     -moz-context-properties: fill;
     fill: currentColor;
-  }
-}
-
-@media (max-height: 700px) {
-  .zen-library-tab {
-    margin-block: 0;
   }
 }
 

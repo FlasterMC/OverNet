@@ -1,0 +1,131 @@
+- name: content.notify.interval
+  value: 100000
+
+- name: gfx.canvas.accelerated.cache-size
+  value: 512
+
+- name: gfx.content.skia-font-cache-size
+  value: 20
+
+- name: image.mem.decode_bytes_at_a_time
+  value: 32768
+
+- name: media.memory_cache_max_size
+  value: 65536
+
+- name: media.cache_readahead_limit
+  value: 3600
+
+- name: media.cache_resume_threshold
+  value: 1800
+
+- name: network.http.max-connections
+  value: 1800
+
+- name: network.http.max-persistent-connections-per-server
+  value: 10
+
+- name: network.http.max-urgent-start-excessive-connections-per-host
+  value: 5
+
+- name: network.http.request.max-start-delay
+  value: 5
+
+- name: network.buffer.cache.count
+  value: 48
+
+- name: network.buffer.cache.size
+  value: 65535
+
+- name: network.dnsCacheExpiration
+  value: 3600
+
+- name: editor.truncate_user_pastes
+  value: false
+
+- name: findbar.highlightAll
+  value: true
+
+- name: full-screen-api.transition-duration.enter
+  value: "0 0"
+
+- name: full-screen-api.transition-duration.leave
+  value: "0 0"
+
+- name: browser.bookmarks.openInTabClosesMenu
+  value: false
+
+- name: browser.download.open_pdf_attachments_inline
+  value: true
+
+- name: browser.aboutConfig.showWarning
+  value: false
+
+- name: browser.startup.homepage_override.mstone
+  value: "ignore"
+
+- name: browser.xul.error_pages.expert_bad_cert
+  value: true
+
+- name: network.IDN_show_punycode
+  value: true
+
+- name: network.auth.subresource-http-auth-allow
+  value: 1
+
+- name: network.http.referer.XOriginTrimmingPolicy
+  value: 2
+
+- name: privacy.antitracking.isolateContentScriptResources
+  value: true
+
+- name: security.csp.reporting.enabled
+  value: false
+
+- name: security.ssl.treat_unsafe_negotiation_as_broken
+  value: true
+
+- name: signon.formlessCapture.enabled
+  value: false
+
+- name: signon.privateBrowsingCapture.enabled
+  value: false
+
+- name: permissions.manager.defaultsUrl
+  value: ""
+
+- name: geo.provider.network.url
+  value: "https://beacondb.net/v1/geolocate"
+
+- name: browser.safebrowsing.downloads.remote.enabled
+  value: false
+
+- name: browser.search.update
+  value: false
+
+- name: browser.ai.control.default
+  value: "blocked"
+
+- name: browser.tabs.groups.smart.enabled
+  value: false
+
+- name: browser.newtabpage.activity-stream.default.sites
+  value: ""
+
+- name: browser.newtabpage.activity-stream.showSponsored
+  value: false
+
+- name: browser.newtabpage.activity-stream.showSponsoredTopSites
+  value: false
+
+- name: nimbus.rollouts.enabled
+  value: false
+
+- name: datareporting.usage.uploadEnabled
+  value: false
+
+- name: breakpad.reportURL
+  value: ""
+
+- name: browser.crashReports.unsubmittedCheck.enabled
+  value: false
