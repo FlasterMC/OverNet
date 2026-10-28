@@ -10,8 +10,6 @@ library-footer-close-button =
     .tooltiptext = Close library
 library-footer-donate-button =
     .tooltiptext = Donate to { -brand-short-name }
-library-footer-settings-button =
-    .tooltiptext = Settings
 library-footer-customize-button =
     .tooltiptext = Choose tabs
 library-tab-remove-button =
@@ -20,6 +18,7 @@ library-tab-restore-button =
     .title = Put this tab back
 
 library-history-section-title = History
+library-settings-section-title = Settings
 library-downloads-section-title = Downloads
 library-boosts-section-title = Boosts
 library-media-section-title = Media

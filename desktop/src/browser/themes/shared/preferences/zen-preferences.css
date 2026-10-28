@@ -31,9 +31,22 @@ html|dialog {
 }
 
 :root {
+  --background-color-canvas: light-dark(
+    color-mix(in srgb, var(--zen-primary-color) 4%, rgb(244, 244, 244)),
+    color-mix(in srgb, var(--zen-primary-color) 4%, rgb(28, 28, 28))
+  );
+  --background-color-box: light-dark(
+    color-mix(in srgb, var(--zen-primary-color) 3%, white),
+    color-mix(in srgb, var(--zen-primary-color) 6%, rgb(38, 38, 38))
+  );
+  --in-content-page-background: var(--background-color-canvas) !important;
+  --text-color: light-dark(rgb(24, 24, 24), rgb(238, 238, 238));
+  --border-color: color-mix(in srgb, currentColor 10%, transparent);
+  --border-color-card: var(--border-color);
+  --border-color-interactive: color-mix(in srgb, currentColor 18%, transparent);
   --zen-settings-card-background: light-dark(
     color-mix(in srgb, var(--zen-primary-color) 4%, white),
-    color-mix(in srgb, var(--zen-primary-color) 6%, rgba(255, 255, 255, 0.05))
+    color-mix(in srgb, var(--zen-primary-color) 8%, rgba(255, 255, 255, 0.05))
   );
   --zen-settings-card-radius: 14px;
   --zen-settings-card-padding: 16px 20px;
@@ -56,6 +69,10 @@ html|*:is(moz-box-group, moz-box-item, moz-box-button, moz-box-link) {
   --box-border-radius: var(--border-radius-medium) !important;
 }
 
+html|moz-page-nav {
+  --page-nav-heading-logo-size: 0px !important;
+}
+
 html|*:is(moz-page-nav, moz-page-nav-button) {
   --page-nav-button-border-radius: var(--border-radius-medium) !important;
   --page-nav-button-border-radius-focused: var(--border-radius-medium) !important;
@@ -75,7 +92,7 @@ html|*:is(moz-page-nav, moz-page-nav-button) {
 
 .navigation {
   padding: 4%;
-  background: var(--zen-colors-tertiary);
+  background: transparent;
 }
 
 groupbox[data-category] {
@@ -435,7 +452,7 @@ groupbox h2 {
     }
 
     &.selected img {
-      border: 4px solid var(--zen-colors-primary);
+      border: 4px solid var(--text-color);
     }
   }
 }

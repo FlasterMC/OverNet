@@ -15,6 +15,7 @@ unset ZEN_RELEASE
 
 cd "$desktop"
 
+previous_mozconfig="$(cat mozconfig 2>/dev/null || true)"
 cat > mozconfig <<'EOF'
 if test -z "$ZEN_RELEASE"; then
   ac_add_options --with-macos-sdk=/Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk
@@ -25,6 +26,7 @@ if test -z "$ZEN_RELEASE"; then
   ac_add_options --disable-debug-symbols
   ac_add_options --disable-tests
   ac_add_options --disable-crashreporter
+  ac_add_options --disable-updater
   ac_add_options --disable-lto
   mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-overnet-dev
   mk_add_options 'export SCCACHE_CACHE_SIZE=30G'
@@ -32,6 +34,7 @@ fi
 EOF
 
 mode=ui
+[ "$previous_mozconfig" = "$(cat mozconfig)" ] || mode=full
 
 if [ ! -f "$state/stamp" ]; then
   git -C "$engine" reset -q --hard

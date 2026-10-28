@@ -973,3 +973,26 @@ document.addEventListener("paneshown", event => {
     gZenRussianSitesSettings.init();
   }
 });
+
+function syncZenThemeColor() {
+  const chromeRoot =
+    window.browsingContext.topChromeWindow?.document.documentElement;
+  if (!chromeRoot) {
+    return;
+  }
+  const color = getComputedStyle(chromeRoot)
+    .getPropertyValue("--zen-primary-color")
+    .trim();
+  if (color) {
+    document.documentElement.style.setProperty("--zen-primary-color", color);
+  }
+}
+
+syncZenThemeColor();
+Services.obs.addObserver(syncZenThemeColor, "zen-space-gradient-update");
+window.addEventListener(
+  "unload",
+  () =>
+    Services.obs.removeObserver(syncZenThemeColor, "zen-space-gradient-update"),
+  { once: true }
+);

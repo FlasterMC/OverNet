@@ -1029,15 +1029,6 @@ export class ZenLibrary extends MozLitElement {
         command: () => ZenLibrary.animateProgress(0),
       },
       {
-        image: "chrome://browser/skin/zen-icons/settings.svg",
-        l10nId: "library-footer-settings-button",
-        id: "zen-library-settings-button",
-        command: () => {
-          ZenLibrary.animateProgress(0);
-          window.openPreferences();
-        },
-      },
-      {
         image: "chrome://browser/skin/zen-icons/paintbrush-fill.svg",
         l10nId: "library-footer-customize-button",
         id: "zen-library-customize-button",
@@ -1053,7 +1044,7 @@ export class ZenLibrary extends MozLitElement {
       if (id) {
         button.id = id;
       }
-      if (id === "zen-library-customize-button") {
+      if (id) {
         this.#customizeButton = button;
       }
       button.addEventListener("command", command);
@@ -1174,6 +1165,20 @@ export class ZenLibrary extends MozLitElement {
                 </vbox>
               `
             )}
+            <vbox
+              class="zen-library-tab"
+              data-section="settings"
+              ?hidden=${this.customizing}
+              @click=${() => {
+                ZenLibrary.animateProgress(0);
+                window.openPreferences();
+              }}
+            >
+              <div class="zen-library-tab-icon">
+                <div class="zen-library-tab-icon-image"></div>
+              </div>
+              <label data-l10n-id="library-settings-section-title"></label>
+            </vbox>
           </vbox>
           <toolbar
             id="zen-library-footer"
