@@ -214,8 +214,8 @@ jobs:
             git -C "$site" checkout --orphan updates
             git -C "$site" rm -rfq .
           fi
-          rm -rf "$site/updates"
-          cp -R dist/update "$site/updates"
+          mkdir -p "$site/updates"
+          cp -R dist/update/. "$site/updates/"
           git -C "$site" add -A
           git -C "$site" commit -qm "OverNet $VERSION"
           git -C "$site" push origin HEAD:updates
