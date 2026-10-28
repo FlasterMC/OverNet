@@ -142,6 +142,8 @@ jobs:
           touch "$obj/CLOBBER"
           printf '#define MOZ_BUILDID %s\n' "$MOZ_BUILD_DATE" > "$obj/buildid.h"
           rm -f "$obj/config.status" "$obj"/build/application.ini*
+          SURFER_MOZCONFIG_ONLY=1 npm run build:ui
+          (cd engine && ./mach configure)
           make -C "$obj/xpcom/glue/standalone" target-objects
           npm run build:ui
           make -C "$obj/build" application.ini.h
