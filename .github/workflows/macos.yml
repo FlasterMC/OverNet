@@ -11,9 +11,15 @@ on:
         description: What's new
         required: false
         type: string
+      full:
+        description: Full build
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: macos-release
@@ -46,6 +52,24 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Mode
+        id: mode
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FULL: ${{ inputs.full }}
+        run: |
+          key="$(gh cache list -R "$GITHUB_REPOSITORY" --key obj- --sort created_at --order desc --limit 1 --json key --jq '.[0].key // empty')"
+          base="${key#obj-}"
+          fast=false
+          if [ "$FULL" != true ] && [ -n "$base" ] && git merge-base --is-ancestor "$base" HEAD 2>/dev/null; then
+            if ! git diff --name-only "$base" HEAD | grep -vE '^(\.github/|[^/]+\.md$|\.gitignore$|desktop/locales/|desktop/src/.*\.(mjs|js|css|ftl|html|xhtml|svg|png|jpg|webp|json)$)' | grep -q .; then
+              fast=true
+            fi
+          fi
+          if [ "$fast" = true ]; then echo "::notice::Быстрая сборка поверх $base"; else echo "::notice::Полная сборка"; fi
+          echo "fast=$fast" >> "$GITHUB_OUTPUT"
+          echo "key=$key" >> "$GITHUB_OUTPUT"
 
       - uses: actions/setup-node@v4
         with:
@@ -99,10 +123,34 @@ jobs:
           npm run bootstrap
           sh scripts/download-language-packs.sh
 
+      - uses: actions/cache/restore@v4
+        if: steps.mode.outputs.fast == 'true'
+        with:
+          path: desktop/engine/obj-*
+          key: ${{ steps.mode.outputs.key }}
+          fail-on-cache-miss: true
+
       - name: Build
+        env:
+          FAST: ${{ steps.mode.outputs.fast }}
         run: |
           ulimit -n 4096
-          npm run build
+          if [ "$FAST" != true ]; then
+            npm run build
+            exit 0
+          fi
+          obj="$PWD/$(ls -d engine/obj-*)"
+          export MOZ_BUILD_DATE="$(date -u +%Y%m%d%H%M%S)"
+          touch "$obj/CLOBBER"
+          printf '#define MOZ_BUILDID %s\n' "$MOZ_BUILD_DATE" > "$obj/buildid.h"
+          rm -f "$obj/config.status" "$obj"/build/application.ini*
+          npm run build:ui
+          make -C "$obj/build" application.ini.h
+          make -C "$obj/browser/app"
+          grep -q "BuildID=$MOZ_BUILD_DATE" "$obj/dist/bin/platform.ini"
+          grep -q "BuildID=$MOZ_BUILD_DATE" "$obj/dist/bin/application.ini"
+          grep -q "^Version=$VERSION$" "$obj/dist/bin/application.ini"
+          grep -qa "$MOZ_BUILD_DATE" "$obj/dist/bin/zen"
 
       - name: Package
         run: npm run package
@@ -170,3 +218,26 @@ jobs:
           git -C "$site" add -A
           git -C "$site" commit -qm "OverNet $VERSION"
           git -C "$site" push origin HEAD:updates
+
+      - name: Prune build
+        if: steps.mode.outputs.fast != 'true'
+        run: |
+          obj="$(ls -d engine/obj-*)"
+          rm -rf "$obj/dist/zen"
+          find "$obj" -name '*.o' -delete
+          find "$obj" -maxdepth 3 -type d -path '*/release/*' \( -name deps -o -name build -o -name incremental -o -name .fingerprint \) -prune -exec rm -rf {} +
+          du -sh "$obj"
+
+      - uses: actions/cache/save@v4
+        if: steps.mode.outputs.fast != 'true'
+        continue-on-error: true
+        with:
+          path: desktop/engine/obj-*
+          key: obj-${{ github.sha }}
+
+      - name: Drop old builds
+        if: steps.mode.outputs.fast != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh cache list -R "$GITHUB_REPOSITORY" --key obj- --json key --jq '.[].key' | grep -vx "obj-$GITHUB_SHA" | xargs -r -n1 gh cache delete -R "$GITHUB_REPOSITORY" || true
