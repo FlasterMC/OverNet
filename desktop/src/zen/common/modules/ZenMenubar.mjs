@@ -17,6 +17,7 @@ export class nsZenMenuBar {
   #init() {
     this.#initViewMenu();
     this.#initSpacesMenu();
+    this.#nestHistoryMenu();
     this.#initAppMenu();
     this.#hideWindowRestoreMenus();
   }
@@ -91,7 +92,7 @@ export class nsZenMenuBar {
             key="zen-workspace-backward"/>
         </menupopup>
       </menu>`);
-    document.getElementById("view-menu").after(spacesMenubar);
+    document.getElementById("view-menu").menupopup.prepend(spacesMenubar);
     document
       .getElementById("zen-spaces-menubar")
       .addEventListener("popupshowing", () => {
@@ -103,6 +104,12 @@ export class nsZenMenuBar {
         }
         gZenWorkspaces.updateWorkspacesChangeContextMenu();
       });
+  }
+
+  #nestHistoryMenu() {
+    const bookmarksPopup = document.getElementById("bookmarksMenuPopup");
+    bookmarksPopup.prepend(document.createXULElement("menuseparator"));
+    bookmarksPopup.prepend(document.getElementById("history-menu"));
   }
 
   #initAppMenu() {
