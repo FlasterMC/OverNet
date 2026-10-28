@@ -1,0 +1,14 @@
+- name: zen.russian-sites.trusted-certificates
+  cpptype: DataMutexString
+  value: '""'
+  mirror: always
+  type: static
+
+- name: zen.russian-sites.list
+  value: ""
+
+- name: zen.russian-sites.disabled
+  value: ""
+
+- name: zen.russian-sites.custom
+  value: ""

@@ -113,12 +113,7 @@ jobs:
       - name: Import
         run: |
           npm run import
-          releases="https://github.com/FlasterMC/OverNet/releases"
-          sed -i -E \
-            -e "s#https://(www\.)?zen-browser\.app/(release-notes/%VERSION%/|whatsnew\?v=%VERSION%)#$releases/tag/%VERSION%#" \
-            -e "s#https://(www\.)?zen-browser\.app/(whatsnew/|release-notes/latest/|download/)#$releases/latest#" \
-            engine/browser/branding/*/pref/firefox-branding.js
-          ! grep -E "zen-browser\.app/(release-notes|whatsnew|download)" engine/browser/branding/*/pref/firefox-branding.js
+          bash ../scripts/branding_prefs.sh
           bash scripts/mar_sign.sh -i
           npm run bootstrap
           sh scripts/download-language-packs.sh

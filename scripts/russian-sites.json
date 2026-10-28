@@ -1,0 +1,13 @@
+{
+  "sites": [
+    { "id": "sberbank.ru", "hosts": ["sberbank.ru", "www.sberbank.ru", "online.sberbank.ru"] },
+    { "id": "vtb.ru", "hosts": ["vtb.ru", "www.vtb.ru", "online.vtb.ru"] },
+    { "id": "alfabank.ru", "hosts": ["alfabank.ru", "online.alfabank.ru", "web.alfabank.ru"] },
+    { "id": "tbank.ru", "hosts": ["tbank.ru", "www.tbank.ru", "id.tbank.ru"] },
+    { "id": "psbank.ru", "hosts": ["psbank.ru", "www.psbank.ru", "ib.psbank.ru"] },
+    { "id": "pochtabank.ru", "hosts": ["www.pochtabank.ru", "my.pochtabank.ru"] },
+    { "id": "sovcombank.ru", "hosts": ["sovcombank.ru", "www.sovcombank.ru"] },
+    { "id": "rshb.ru", "hosts": ["www.rshb.ru", "online.rshb.ru"] },
+    { "id": "nspk.ru", "hosts": ["www.nspk.ru"] }
+  ]
+}

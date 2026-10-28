@@ -20,7 +20,9 @@ Answer the user in Russian; write code and identifiers in English.
 ## Russian Sites
 
 - Russian banks and government sites must open without warnings and without the user installing any certificate.
-- Mechanism: the root and intermediate certificates of the Russian Trusted CA ship inside the browser NSS built-in store, constrained to Russian domains only (`.ru`, `.рф`, `.su` and other Russian TLDs) through NSS name constraints, with the matching Certificate Transparency exemption. The system keychain is never touched. Not implemented yet.
+- The owner rejected trusting the Russian Trusted CA (Минцифры) itself. Mechanism instead: the browser trusts only exact leaf certificates of listed sites. `scripts/russian-sites.json` lists the sites; the workflow `russian-sites.yml` collects their current certificates from GitHub runners outside Russia every 4 hours into `russian-sites.json` on the branch `updates`.
+- `ZenRussianSites.sys.mjs` downloads that list and writes the SHA-256 fingerprints of enabled sites into `zen.russian-sites.trusted-certificates`; the engine patch `SSLServerCertVerification-cpp.patch` accepts an `SEC_ERROR_UNKNOWN_ISSUER` certificate only if it is in that set, valid now, matches the host and the host is in `.ru`, `.su` or `.рф`.
+- Settings → Privacy → «Российские сайты»: the user turns listed sites off and adds or removes own sites (the certificate the site shows at that moment is pinned).
 
 ## Video Translation
 

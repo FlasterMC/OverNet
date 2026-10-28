@@ -1,0 +1,95 @@
+diff --git a/security/manager/ssl/SSLServerCertVerification.cpp b/security/manager/ssl/SSLServerCertVerification.cpp
+index e4f312526b..502381e82f 100644
+--- a/security/manager/ssl/SSLServerCertVerification.cpp
++++ b/security/manager/ssl/SSLServerCertVerification.cpp
+@@ -104,6 +104,7 @@
+ #include "mozilla/Assertions.h"
+ #include "mozilla/RefPtr.h"
+ #include "mozilla/StaticPrefs_security.h"
++#include "mozilla/StaticPrefs_zen.h"
+ #include "mozilla/UniquePtr.h"
+ #include "mozilla/glean/SecurityManagerSslMetrics.h"
+ #include "mozpkix/pkix.h"
+@@ -113,6 +114,7 @@
+ #include "nsComponentManagerUtils.h"
+ #include "nsContentUtils.h"
+ #include "nsICertOverrideService.h"
++#include "nsIX509CertValidity.h"
+ #include "nsIPublicKeyPinningService.h"
+ #include "nsISiteSecurityService.h"
+ #include "nsISocketProvider.h"
+@@ -653,6 +655,62 @@ Result AuthCertificate(
+   return rv;
+ }
+ 
++static bool IsTrustedRussianSiteCertificate(
++    const nsACString& aHostName, const nsCOMPtr<nsIX509Cert>& aCert) {
++  nsAutoCString host(aHostName);
++  ToLowerCase(host);
++  if (!StringEndsWith(host, ".ru"_ns) && !StringEndsWith(host, ".su"_ns) &&
++      !StringEndsWith(host, ".xn--p1ai"_ns)) {
++    return false;
++  }
++
++  nsAutoString fingerprint;
++  if (NS_FAILED(aCert->GetSha256Fingerprint(fingerprint))) {
++    return false;
++  }
++  NS_ConvertUTF16toUTF8 fingerprintUTF8(fingerprint);
++  bool listed = false;
++  {
++    auto certificates =
++        StaticPrefs::zen_russian_sites_trusted_certificates();
++    for (const nsACString& entry : certificates->Split(' ')) {
++      if (entry.Equals(fingerprintUTF8)) {
++        listed = true;
++        break;
++      }
++    }
++  }
++  if (!listed) {
++    return false;
++  }
++
++  nsCOMPtr<nsIX509CertValidity> validity;
++  PRTime notBefore;
++  PRTime notAfter;
++  if (NS_FAILED(aCert->GetValidity(getter_AddRefs(validity))) ||
++      NS_FAILED(validity->GetNotBefore(&notBefore)) ||
++      NS_FAILED(validity->GetNotAfter(&notAfter))) {
++    return false;
++  }
++  PRTime now = PR_Now();
++  if (now < notBefore || now > notAfter) {
++    return false;
++  }
++
++  nsTArray<uint8_t> certBytes;
++  if (NS_FAILED(aCert->GetRawDER(certBytes))) {
++    return false;
++  }
++  Input certInput;
++  Input hostInput;
++  if (certInput.Init(certBytes.Elements(), certBytes.Length()) != Success ||
++      hostInput.Init(BitwiseCast<const uint8_t*, const char*>(host.get()),
++                     host.Length()) != Success) {
++    return false;
++  }
++  return CheckCertHostname(certInput, hostInput) == Success;
++}
++
+ PRErrorCode AuthCertificateParseResults(
+     uint64_t aPtrForLog, const nsACString& aHostName, int32_t aPort,
+     const OriginAttributes& aOriginAttributes,
+@@ -664,6 +722,11 @@ PRErrorCode AuthCertificateParseResults(
+   uint32_t probeValue = MapCertErrorToProbeValue(aCertVerificationError);
+   glean::ssl::cert_verification_errors.AccumulateSingleSample(probeValue);
+ 
++  if (aCertVerificationError == SEC_ERROR_UNKNOWN_ISSUER &&
++      IsTrustedRussianSiteCertificate(aHostName, aCert)) {
++    return 0;
++  }
++
+   Maybe<nsITransportSecurityInfo::OverridableErrorCategory>
+       maybeOverridableErrorCategory =
+           CategorizeCertificateError(aCertVerificationError);

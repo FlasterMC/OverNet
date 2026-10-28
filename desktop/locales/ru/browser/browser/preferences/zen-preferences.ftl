@@ -325,3 +325,14 @@ zen-close-all-unpinned-tabs-shortcut = Закрыть все не закрепл
 zen-new-unsynced-window-shortcut = Новое пустое окно
 zen-duplicate-tab-shortcut = Дублировать вкладку
 zen-key-find-selection = Найти выбранное
+
+zen-russian-sites-header = Российские сайты
+zen-russian-sites-description = { -brand-short-name } открывает эти сайты без предупреждения о сертификате. Он доверяет только конкретным сертификатам каждого сайта, проверенным из-за пределов России, а не центру, который их выдал. Отключите сайты, которым не хотите доверять, или добавьте свои: { -brand-short-name } запомнит сертификат, который сайт показывает сейчас.
+zen-russian-sites-address =
+    .placeholder = Адрес сайта, например bank.ru
+zen-russian-sites-add =
+    .label = Добавить
+zen-russian-sites-remove =
+    .label = Удалить
+zen-russian-sites-error-address = Можно добавить только сайты в зонах .ru, .su и .рф
+zen-russian-sites-error-certificate = Не удалось получить сертификат сайта. Проверьте адрес и подключение

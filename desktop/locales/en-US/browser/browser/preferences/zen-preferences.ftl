@@ -227,3 +227,14 @@ zen-split-view-shortcut-unsplit = Close Split View
 zen-new-empty-split-view-shortcut = New Empty Split View
 zen-close-all-unpinned-tabs-shortcut = Close All Unpinned Tabs
 zen-duplicate-tab-shortcut = Duplicate Tab
+
+zen-russian-sites-header = Russian sites
+zen-russian-sites-description = { -brand-short-name } opens these sites without a certificate warning. It trusts only the exact certificates of each site, checked from outside Russia, not the authority that issued them. Turn off any site you don’t want to trust, or add your own: { -brand-short-name } will remember the certificate the site shows right now.
+zen-russian-sites-address =
+    .placeholder = Site address, for example bank.ru
+zen-russian-sites-add =
+    .label = Add
+zen-russian-sites-remove =
+    .label = Remove
+zen-russian-sites-error-address = Only sites in the .ru, .su and .рф zones can be added
+zen-russian-sites-error-certificate = Couldn’t get the site’s certificate. Check the address and your connection

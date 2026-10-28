@@ -1,0 +1,32 @@
+name: Russian sites
+
+on:
+  schedule:
+    - cron: "23 */4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: russian-sites
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Collect certificates
+        run: |
+          site="$RUNNER_TEMP/updates"
+          git fetch origin updates
+          git worktree add "$site" origin/updates
+          python3 scripts/russian_sites.py scripts/russian-sites.json "$site/russian-sites.json"
+          git -C "$site" add russian-sites.json
+          if git -C "$site" diff --cached --quiet; then
+            exit 0
+          fi
+          git -C "$site" -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "Russian sites"
+          git -C "$site" push origin HEAD:updates

@@ -875,3 +875,101 @@ Preferences.addSetting({
   id: "zenWorkspaceContinueWhereLeftOff",
   pref: "zen.workspaces.continue-where-left-off",
 });
+
+var gZenRussianSitesSettings = {
+  init() {
+    if (this._initialized || !document.getElementById("zenRussianSitesGroup")) {
+      return;
+    }
+    this._initialized = true;
+    const { gZenRussianSites } = ChromeUtils.importESModule(
+      "resource:///modules/ZenRussianSites.sys.mjs"
+    );
+    this.sites = gZenRussianSites;
+    const prefs = [
+      "zen.russian-sites.list",
+      "zen.russian-sites.disabled",
+      "zen.russian-sites.custom",
+    ];
+    for (const pref of prefs) {
+      Services.prefs.addObserver(pref, this);
+    }
+    window.addEventListener("unload", () => {
+      for (const pref of prefs) {
+        Services.prefs.removeObserver(pref, this);
+      }
+    });
+    document
+      .getElementById("zenRussianSitesAdd")
+      .addEventListener("command", () => this.addSite());
+    document.getElementById("zenRussianSitesAddress").addEventListener("keydown", event => {
+      if (event.key == "Enter") {
+        this.addSite();
+      }
+    });
+    this.render();
+  },
+
+  observe() {
+    this.render();
+  },
+
+  render() {
+    const list = document.getElementById("zenRussianSitesList");
+    const disabled = this.sites.disabledSites;
+    const rows = this.sites.sites.map(site => {
+      const checkbox = document.createXULElement("checkbox");
+      checkbox.setAttribute("label", site.id);
+      checkbox.checked = !disabled.has(site.id);
+      checkbox.addEventListener("command", () =>
+        this.sites.setSiteEnabled(site.id, checkbox.checked)
+      );
+      return checkbox;
+    });
+    for (const site of this.sites.customSites) {
+      const row = document.createXULElement("hbox");
+      row.setAttribute("align", "center");
+      const label = document.createXULElement("label");
+      label.setAttribute("value", site.host);
+      label.setAttribute("flex", "1");
+      const remove = document.createXULElement("button");
+      document.l10n.setAttributes(remove, "zen-russian-sites-remove");
+      remove.addEventListener("command", () => this.sites.removeCustomSite(site.host));
+      row.append(label, remove);
+      rows.push(row);
+    }
+    list.replaceChildren(...rows);
+  },
+
+  async addSite() {
+    const input = document.getElementById("zenRussianSitesAddress");
+    const button = document.getElementById("zenRussianSitesAdd");
+    const error = document.getElementById("zenRussianSitesError");
+    const address = input.value.trim();
+    if (!address) {
+      return;
+    }
+    error.hidden = true;
+    button.disabled = true;
+    try {
+      await this.sites.addCustomSite(address);
+      input.value = "";
+    } catch (e) {
+      document.l10n.setAttributes(
+        error,
+        e.message == "no-certificate"
+          ? "zen-russian-sites-error-certificate"
+          : "zen-russian-sites-error-address"
+      );
+      error.hidden = false;
+    } finally {
+      button.disabled = false;
+    }
+  },
+};
+
+document.addEventListener("paneshown", event => {
+  if (event.detail.category == "panePrivacy") {
+    gZenRussianSitesSettings.init();
+  }
+});
