@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<updates>
+  <update type="minor" displayVersion="0.1.8" appVersion="0.1.8" platformVersion="159.0" buildID="20261028181934">
+    <patch type="complete" URL="https://github.com/FlasterMC/OverNet/releases/download/0.1.8/windows.mar" hashFunction="sha512" hashValue="fa1b5806a1cfb92141f01d38189145ee6bdbfec90a35362eebe86c85bf7a7c96fd15942a31a47865282f615c7803879e73a76061e62cb81c868fab1af68be6c3" size="125147738"/>
+  </update>
+</updates>
