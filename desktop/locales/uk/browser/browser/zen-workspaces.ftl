@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Наступний простір
 zen-panel-ui-workspaces-change-back = 
     .label = Попередній простір
+
+zen-workspaces-panel-context-manage =
+    .label = Керування просторами…
+zen-workspaces-remote-delete-title = Видалити синхронізований простір?
+zen-workspaces-remote-delete-body = Простір «{ $name }» видалено на іншому пристрої. Видалити й тут? Якщо залишити, він відновиться на інших пристроях.

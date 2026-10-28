@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Mesin Pencari Default Anda
 zen-welcome-default-search-description = Pilih mesin pencari default Anda. Anda selalu dapat mengubahnya nanti!
 zen-welcome-skip-button = Lewati
 zen-welcome-finished = Anda berhasil mengatur { -brand-short-name } milik anda!
+
+zen-welcome-back = Kembali
+zen-welcome-skip = Lewati untuk sekarang
+zen-welcome-import-description = Pilih peramban untuk mengimpor markah, riwayat, dan kata sandi, lalu lanjutkan dari tempat terakhir Anda.
+zen-welcome-import-no = <strong>TIDAK</strong>, mulai dari awal.
+zen-welcome-default-browser-title = Jadikan { -brand-short-name } sebagai bawaan?
+zen-welcome-default-browser-description = Tautan dari aplikasi lain akan dibuka di { -brand-short-name }. Anda dapat mengubahnya nanti.
+zen-welcome-essentials-title = Pilih aplikasi yang paling sering Anda gunakan.
+zen-welcome-essentials-description = Pilih aplikasi favorit agar selalu siap di bilah sisi.
+zen-welcome-block-ads-title = Blokir iklan dan pelacak?
+zen-welcome-block-ads-description = { -brand-short-name } dapat memasang uBlock Origin untuk Anda, sehingga halaman dimuat lebih bersih dan cepat. Anda dapat menghapusnya kapan saja.
+zen-welcome-block-ads-yes = <strong>YA</strong>, blokir iklan untuk saya.
+zen-welcome-block-ads-no = <strong>TIDAK</strong>, tampilkan semuanya.

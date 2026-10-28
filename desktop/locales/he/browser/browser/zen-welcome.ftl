@@ -24,3 +24,16 @@ zen-welcome-default-search-title = מנוע חיפוש ברירת מחדל
 zen-welcome-default-search-description = נא לבחור מנוע החיפוש ברירת מחדל. תמיד ניתן לשנות הגדרה זו!
 zen-welcome-skip-button = דילוג
 zen-welcome-finished = דפדפן { -brand-short-name } שלך הוגדר בהצלחה!
+
+zen-welcome-back = חזרה
+zen-welcome-skip = דילוג לעת עתה
+zen-welcome-import-description = בחירת דפדפן לייבוא סימניות, היסטוריה וססמאות, והמשך בדיוק מהמקום שבו עצרת.
+zen-welcome-import-no = <strong>לא</strong>, להתחיל מחדש.
+zen-welcome-default-browser-title = להגדיר את { -brand-short-name } כדפדפן ברירת המחדל?
+zen-welcome-default-browser-description = קישורים מיישומים אחרים ייפתחו ב־{ -brand-short-name }. ניתן לשנות זאת בהמשך.
+zen-welcome-essentials-title = בחירת היישומים שבהם משתמשים הכי הרבה.
+zen-welcome-essentials-description = בחירת היישומים המועדפים כדי שיהיו זמינים בסרגל הצד.
+zen-welcome-block-ads-title = לחסום פרסומות ורכיבי מעקב?
+zen-welcome-block-ads-description = { -brand-short-name } יכול להתקין עבורך את uBlock Origin, כך שהדפים ייטענו נקיים ומהירים יותר. ניתן להסיר אותו בכל עת.
+zen-welcome-block-ads-yes = <strong>כן</strong>, לחסום פרסומות.
+zen-welcome-block-ads-no = <strong>לא</strong>, להציג הכול.

@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Következő környezet
 zen-panel-ui-workspaces-change-back = 
     .label = Előző környezet
+
+zen-workspaces-panel-context-manage =
+    .label = Terek kezelése…
+zen-workspaces-remote-delete-title = Törlöd a szinkronizált teret?
+zen-workspaces-remote-delete-body = { $name } törölve lett egy másik eszközön. Itt is törlöd? Ha megtartod, visszaáll a többi eszközödön.

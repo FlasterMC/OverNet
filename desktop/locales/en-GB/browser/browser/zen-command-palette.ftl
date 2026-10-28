@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = Open Library
+zen-action-unsplit-view = Expand current view
+zen-action-new-space = New Space
+zen-action-collapse-all-folders = Collapse All Folders
+zen-action-expand-all-folders = Expand All Folders
+zen-action-reopen-closed-tab = Reopen Closed Tab
+zen-action-duplicate-tab = Duplicate Current Tab
+zen-action-reset-pinned-tab = Reset Pinned Tab
+zen-action-open = Open

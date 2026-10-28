@@ -138,3 +138,7 @@ zen-window-sync-migration-dialog-learn-more = 了解更多
 zen-window-sync-migration-dialog-accept = 明白了
 zen-appmenu-new-blank-window = 
     .label = 開新簡白視窗
+
+zen-sidebar-drag-collapsed-toast = 側邊欄已隱藏！按 <span>{ $shortcut }</span> 即可重新顯示。
+zen-site-data-header-boost =
+    .tooltiptext = 建立 Boost

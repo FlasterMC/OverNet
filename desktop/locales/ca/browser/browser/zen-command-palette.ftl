@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = Obre la biblioteca
+zen-action-unsplit-view = Amplia la vista actual
+zen-action-new-space = Espai nou
+zen-action-collapse-all-folders = Plega totes les carpetes
+zen-action-expand-all-folders = Desplega totes les carpetes
+zen-action-reopen-closed-tab = Torna a obrir la pestanya tancada
+zen-action-duplicate-tab = Duplica la pestanya actual
+zen-action-reset-pinned-tab = Restableix la pestanya fixada
+zen-action-open = Obre

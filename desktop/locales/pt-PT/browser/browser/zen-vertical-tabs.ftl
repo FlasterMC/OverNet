@@ -45,3 +45,6 @@ zen-tab-sublabel =
         [zen-default-pinned-cmd] Separar do separador fixado
        *[other] { $tabSubtitle }
     }
+
+zen-tabs-newtab-paste-and-search =
+    .label = Colar e pesquisar

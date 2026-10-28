@@ -24,3 +24,16 @@ zen-welcome-default-search-title = 既定の検索エンジン
 zen-welcome-default-search-description = デフォルトの検索エンジンを選択してください。後でいつでも変更できます！
 zen-welcome-skip-button = スキップ
 zen-welcome-finished = Zenの設定が完了しました！
+
+zen-welcome-back = 戻る
+zen-welcome-skip = 今はスキップ
+zen-welcome-import-description = ブックマーク、履歴、パスワードをインポートするブラウザーを選んで、前回の続きから始めましょう。
+zen-welcome-import-no = <strong>いいえ</strong>、最初から始めます。
+zen-welcome-default-browser-title = { -brand-short-name } を既定のブラウザーにしますか？
+zen-welcome-default-browser-description = 他のアプリのリンクが { -brand-short-name } で開きます。後でいつでも変更できます。
+zen-welcome-essentials-title = よく使うアプリを選んでください。
+zen-welcome-essentials-description = お気に入りのアプリを選んで、サイドバーからすぐに使えるようにしましょう。
+zen-welcome-block-ads-title = 広告とトラッカーをブロックしますか？
+zen-welcome-block-ads-description = { -brand-short-name } が uBlock Origin をインストールして、ページをすっきり速く読み込めるようにします。いつでも削除できます。
+zen-welcome-block-ads-yes = <strong>はい</strong>、広告をブロックします。
+zen-welcome-block-ads-no = <strong>いいえ</strong>、すべて表示します。

@@ -45,3 +45,6 @@ zen-tab-sublabel =
         [zen-default-pinned-cmd] Vom angehefteten Tab lösen
        *[other] { $tabSubtitle }
     }
+
+zen-tabs-newtab-paste-and-search =
+    .label = Einfügen und suchen

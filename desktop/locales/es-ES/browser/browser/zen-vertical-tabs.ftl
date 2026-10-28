@@ -45,3 +45,6 @@ zen-tab-sublabel =
         [zen-default-pinned-cmd] Separar de la pestaña fijada
        *[other] { $tabSubtitle }
     }
+
+zen-tabs-newtab-paste-and-search =
+    .label = Pegar y buscar

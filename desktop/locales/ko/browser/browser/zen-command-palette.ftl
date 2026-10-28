@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = 어두운 모드로 변경
 zen-action-print = 인쇄
 zen-action-focus-on = 집중
 zen-action-extension = 확장 프로그램
+
+zen-action-open-library = 라이브러리 열기
+zen-action-unsplit-view = 현재 보기 펼치기
+zen-action-new-space = 새 공간
+zen-action-collapse-all-folders = 모든 폴더 접기
+zen-action-expand-all-folders = 모든 폴더 펼치기
+zen-action-reopen-closed-tab = 닫은 탭 다시 열기
+zen-action-duplicate-tab = 현재 탭 복제
+zen-action-reset-pinned-tab = 고정 탭 초기화
+zen-action-open = 열기

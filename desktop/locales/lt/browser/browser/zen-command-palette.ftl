@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = Atverti biblioteką
+zen-action-unsplit-view = Išskleisti dabartinį rodinį
+zen-action-new-space = Nauja erdvė
+zen-action-collapse-all-folders = Suskleisti visus aplankus
+zen-action-expand-all-folders = Išskleisti visus aplankus
+zen-action-reopen-closed-tab = Atverti užvertą kortelę
+zen-action-duplicate-tab = Dubliuoti dabartinę kortelę
+zen-action-reset-pinned-tab = Atkurti prisegtą kortelę
+zen-action-open = Atverti

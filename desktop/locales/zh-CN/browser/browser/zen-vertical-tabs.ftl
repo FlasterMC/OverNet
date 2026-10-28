@@ -45,3 +45,6 @@ zen-tab-sublabel =
         [zen-default-pinned-cmd] 从标签页分离
        *[other] { $tabSubtitle }
     }
+
+zen-tabs-newtab-paste-and-search =
+    .label = 粘贴并搜索

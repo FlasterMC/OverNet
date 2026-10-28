@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Stampa
 zen-action-focus-on = Focus on
 zen-action-extension = Estensione
+
+zen-action-open-library = Apri libreria
+zen-action-unsplit-view = Espandi la vista corrente
+zen-action-new-space = Nuovo spazio
+zen-action-collapse-all-folders = Comprimi tutte le cartelle
+zen-action-expand-all-folders = Espandi tutte le cartelle
+zen-action-reopen-closed-tab = Riapri scheda chiusa
+zen-action-duplicate-tab = Duplica scheda corrente
+zen-action-reset-pinned-tab = Ripristina scheda fissata
+zen-action-open = Apri

@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Tolesnė erdvė
 zen-panel-ui-workspaces-change-back = 
     .label = Ankstesnė erdvė
+
+zen-workspaces-panel-context-manage =
+    .label = Tvarkyti erdves…
+zen-workspaces-remote-delete-title = Ištrinti sinchronizuotą erdvę?
+zen-workspaces-remote-delete-body = { $name } ištrinta kitame įrenginyje. Ištrinti ir čia? Jei paliksite, ji bus atkurta kituose įrenginiuose.

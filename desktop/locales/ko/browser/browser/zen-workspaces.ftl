@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = 다음 스페이스
 zen-panel-ui-workspaces-change-back = 
     .label = 이전 스페이스
+
+zen-workspaces-panel-context-manage =
+    .label = 공간 관리…
+zen-workspaces-remote-delete-title = 동기화된 공간을 삭제할까요?
+zen-workspaces-remote-delete-body = { $name } 공간이 다른 기기에서 삭제되었습니다. 여기에서도 삭제할까요? 유지하면 다른 기기에서 복원됩니다.

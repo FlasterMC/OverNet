@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Váš výchozí vyhledávač
 zen-welcome-default-search-description = Vyberte si svůj výchozí vyhledávač. Později jej můžete změnit!
 zen-welcome-skip-button = Přeskočit
 zen-welcome-finished = Váš { -brand-short-name } byl úspěšně nastaven!
+
+zen-welcome-back = Zpět
+zen-welcome-skip = Zatím přeskočit
+zen-welcome-import-description = Vyberte prohlížeč, ze kterého importujete záložky, historii a hesla, a pokračujte tam, kde jste skončili.
+zen-welcome-import-no = <strong>NE</strong>, začít znovu.
+zen-welcome-default-browser-title = Nastavit { -brand-short-name } jako výchozí prohlížeč?
+zen-welcome-default-browser-description = Odkazy z jiných aplikací se budou otevírat v { -brand-short-name }. Později to můžete změnit.
+zen-welcome-essentials-title = Vyberte aplikace, které používáte nejčastěji.
+zen-welcome-essentials-description = Vyberte oblíbené aplikace, ať je máte po ruce v postranním panelu.
+zen-welcome-block-ads-title = Blokovat reklamy a sledovací prvky?
+zen-welcome-block-ads-description = { -brand-short-name } může nainstalovat uBlock Origin, aby se stránky načítaly čistěji a rychleji. Kdykoli ho můžete odebrat.
+zen-welcome-block-ads-yes = <strong>ANO</strong>, blokovat reklamy.
+zen-welcome-block-ads-no = <strong>NE</strong>, zobrazit vše.

@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = Agor y Llyfrgell
+zen-action-unsplit-view = Ehangu'r olwg gyfredol
+zen-action-new-space = Gofod Newydd
+zen-action-collapse-all-folders = Cau Pob Ffolder
+zen-action-expand-all-folders = Ehangu Pob Ffolder
+zen-action-reopen-closed-tab = Ailagor Tab a Gaewyd
+zen-action-duplicate-tab = Dyblygu'r Tab Cyfredol
+zen-action-reset-pinned-tab = Ailosod Tab wedi'i Binio
+zen-action-open = Agor

@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = 切换到深色模式
 zen-action-print = 打印
 zen-action-focus-on = 切换到
 zen-action-extension = 扩展
+
+zen-action-open-library = 打开资料库
+zen-action-unsplit-view = 展开当前视图
+zen-action-new-space = 新建空间
+zen-action-collapse-all-folders = 折叠所有文件夹
+zen-action-expand-all-folders = 展开所有文件夹
+zen-action-reopen-closed-tab = 重新打开已关闭的标签页
+zen-action-duplicate-tab = 复制当前标签页
+zen-action-reset-pinned-tab = 重置固定标签页
+zen-action-open = 打开

@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Następna przestrzeń
 zen-panel-ui-workspaces-change-back = 
     .label = Poprzednia przestrzeń
+
+zen-workspaces-panel-context-manage =
+    .label = Zarządzaj przestrzeniami…
+zen-workspaces-remote-delete-title = Usunąć zsynchronizowaną przestrzeń?
+zen-workspaces-remote-delete-body = { $name } usunięto na innym urządzeniu. Usunąć też tutaj? Jeśli ją zachowasz, zostanie przywrócona na innych urządzeniach.

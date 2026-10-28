@@ -45,3 +45,6 @@ zen-tab-sublabel =
         [zen-default-pinned-cmd] Aðskilja frá festum flipa
        *[other] { $tabSubtitle }
     }
+
+zen-tabs-newtab-paste-and-search =
+    .label = Líma og leita

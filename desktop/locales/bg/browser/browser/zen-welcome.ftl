@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Your Default Search Engine
 zen-welcome-default-search-description = Choose your default search engine. You can always change it later!
 zen-welcome-skip-button = Skip
 zen-welcome-finished = Your { -brand-short-name } has been set up correctly!
+
+zen-welcome-back = Назад
+zen-welcome-skip = Пропускане засега
+zen-welcome-import-description = Изберете браузър, от който да импортирате отметки, история и пароли, и продължете оттам, където сте спрели.
+zen-welcome-import-no = <strong>НЕ</strong>, започни отначало.
+zen-welcome-default-browser-title = { -brand-short-name } да бъде ли браузър по подразбиране?
+zen-welcome-default-browser-description = Връзките от други приложения ще се отварят в { -brand-short-name }. Можете да промените това по-късно.
+zen-welcome-essentials-title = Изберете приложенията, които използвате най-често.
+zen-welcome-essentials-description = Изберете любимите си приложения, за да са ви под ръка в страничната лента.
+zen-welcome-block-ads-title = Блокиране на рекламите и проследяващите елементи?
+zen-welcome-block-ads-description = { -brand-short-name } може да инсталира uBlock Origin вместо вас, за да се зареждат страниците по-чисто и по-бързо. Можете да го премахнете по всяко време.
+zen-welcome-block-ads-yes = <strong>ДА</strong>, блокирай рекламите.
+zen-welcome-block-ads-no = <strong>НЕ</strong>, покажи всичко.

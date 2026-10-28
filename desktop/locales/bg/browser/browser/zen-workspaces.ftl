@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Next Space
 zen-panel-ui-workspaces-change-back = 
     .label = Previous Space
+
+zen-workspaces-panel-context-manage =
+    .label = Управление на пространствата…
+zen-workspaces-remote-delete-title = Изтриване на синхронизираното пространство?
+zen-workspaces-remote-delete-body = { $name } е изтрито на друго устройство. Да се изтрие ли и тук? Ако го запазите, то ще бъде възстановено на другите ви устройства.

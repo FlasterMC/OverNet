@@ -138,3 +138,7 @@ zen-window-sync-migration-dialog-learn-more = Learn More
 zen-window-sync-migration-dialog-accept = Got It
 zen-appmenu-new-blank-window = 
     .label = New blank window
+
+zen-sidebar-drag-collapsed-toast = Sidebar hidden! Use <span>{ $shortcut }</span> to bring the sidebar back.
+zen-site-data-header-boost =
+    .tooltiptext = Create a Boost

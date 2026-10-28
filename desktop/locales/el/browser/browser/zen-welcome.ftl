@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Η Προεπιλεγμένη Μηχανή Α
 zen-welcome-default-search-description = Επιλέξτε την προεπιλεγμένη μηχανή αναζήτησης. Μπορείτε πάντα να την αλλάξετε αργότερα!
 zen-welcome-skip-button = Παράλειψη
 zen-welcome-finished = Το { -brand-short-name } σας έχει ρυθμιστεί σωστά!
+
+zen-welcome-back = Πίσω
+zen-welcome-skip = Παράλειψη προς το παρόν
+zen-welcome-import-description = Επιλέξτε ένα πρόγραμμα περιήγησης για εισαγωγή σελιδοδεικτών, ιστορικού και κωδικών πρόσβασης και συνεχίστε από εκεί που σταματήσατε.
+zen-welcome-import-no = <strong>ΟΧΙ</strong>, νέα αρχή.
+zen-welcome-default-browser-title = Ορισμός του { -brand-short-name } ως προεπιλογής;
+zen-welcome-default-browser-description = Οι σύνδεσμοι από άλλες εφαρμογές θα ανοίγουν στο { -brand-short-name }. Μπορείτε να το αλλάξετε αργότερα.
+zen-welcome-essentials-title = Επιλέξτε τις εφαρμογές που χρησιμοποιείτε περισσότερο.
+zen-welcome-essentials-description = Επιλέξτε τις αγαπημένες σας εφαρμογές για να τις έχετε πρόχειρες στην πλαϊνή γραμμή.
+zen-welcome-block-ads-title = Αποκλεισμός διαφημίσεων και ιχνηλατών;
+zen-welcome-block-ads-description = Το { -brand-short-name } μπορεί να εγκαταστήσει το uBlock Origin για εσάς, ώστε οι σελίδες να φορτώνουν πιο καθαρά και γρήγορα. Μπορείτε να το αφαιρέσετε οποτεδήποτε.
+zen-welcome-block-ads-yes = <strong>ΝΑΙ</strong>, αποκλεισμός διαφημίσεων.
+zen-welcome-block-ads-no = <strong>ΟΧΙ</strong>, εμφάνιση όλων.

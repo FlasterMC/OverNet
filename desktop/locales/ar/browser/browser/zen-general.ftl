@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = تعرف على المزيد
 zen-window-sync-migration-dialog-accept = فهمت
 zen-appmenu-new-blank-window = 
     .label = نافذة فارغة جديدة
+
+zen-sidebar-drag-collapsed-toast = أُخفي الشريط الجانبي! استخدم <span>{ $shortcut }</span> لإظهاره مجددًا.
+zen-site-data-header-boost =
+    .tooltiptext = أنشئ Boost

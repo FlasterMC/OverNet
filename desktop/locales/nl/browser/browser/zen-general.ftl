@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Meer info
 zen-window-sync-migration-dialog-accept = Begrepen
 zen-appmenu-new-blank-window = 
     .label = Nieuw blanco venster
+
+zen-sidebar-drag-collapsed-toast = Zijbalk verborgen! Gebruik <span>{ $shortcut }</span> om hem terug te halen.
+zen-site-data-header-boost =
+    .tooltiptext = Een Boost maken

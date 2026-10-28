@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = Bibliotheek openen
+zen-action-unsplit-view = Huidige weergave uitvouwen
+zen-action-new-space = Nieuwe ruimte
+zen-action-collapse-all-folders = Alle mappen samenvouwen
+zen-action-expand-all-folders = Alle mappen uitvouwen
+zen-action-reopen-closed-tab = Gesloten tabblad heropenen
+zen-action-duplicate-tab = Huidig tabblad dupliceren
+zen-action-reset-pinned-tab = Vastgezet tabblad herstellen
+zen-action-open = Openen

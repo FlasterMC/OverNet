@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Jūsų numatytasis paieškos variklis
 zen-welcome-default-search-description = Pasirinkite numatytąjį paieškos variklį. Vėliau visada galite ją pakeisti!
 zen-welcome-skip-button = Praleisti
 zen-welcome-finished = Jūsų „{ -brand-short-name }“ nustatytas teisingai!
+
+zen-welcome-back = Atgal
+zen-welcome-skip = Kol kas praleisti
+zen-welcome-import-description = Pasirinkite naršyklę, iš kurios importuosite adresyną, žurnalą ir slaptažodžius, ir tęskite ten, kur baigėte.
+zen-welcome-import-no = <strong>NE</strong>, pradėti iš naujo.
+zen-welcome-default-browser-title = Padaryti { -brand-short-name } numatytąja naršykle?
+zen-welcome-default-browser-description = Saitai iš kitų programų bus atveriami { -brand-short-name }. Tai galėsite pakeisti vėliau.
+zen-welcome-essentials-title = Pasirinkite dažniausiai naudojamas programas.
+zen-welcome-essentials-description = Pasirinkite mėgstamas programas, kad jos būtų po ranka šoninėje juostoje.
+zen-welcome-block-ads-title = Blokuoti reklamas ir sekiklius?
+zen-welcome-block-ads-description = { -brand-short-name } gali įdiegti „uBlock Origin“, kad puslapiai būtų švaresni ir įkeltų greičiau. Galite jį pašalinti bet kada.
+zen-welcome-block-ads-yes = <strong>TAIP</strong>, blokuoti reklamas.
+zen-welcome-block-ads-no = <strong>NE</strong>, rodyti viską.

@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Next Space
 zen-panel-ui-workspaces-change-back = 
     .label = Previous Space
+
+zen-workspaces-panel-context-manage =
+    .label = จัดการพื้นที่…
+zen-workspaces-remote-delete-title = ลบพื้นที่ที่ซิงค์หรือไม่?
+zen-workspaces-remote-delete-body = { $name } ถูกลบในอุปกรณ์อื่นแล้ว ลบที่นี่ด้วยหรือไม่? หากเก็บไว้ จะถูกกู้คืนในอุปกรณ์อื่นของคุณ

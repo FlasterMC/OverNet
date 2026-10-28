@@ -45,3 +45,6 @@ zen-tab-sublabel =
         [zen-default-pinned-cmd] Afsplitsen van vastgezette tabblad
        *[other] { $tabSubtitle }
     }
+
+zen-tabs-newtab-paste-and-search =
+    .label = Plakken en zoeken

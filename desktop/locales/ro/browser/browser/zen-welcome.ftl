@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Motorul Tău de Căutare Principal
 zen-welcome-default-search-description = Alege-ți motorul tău de căutare principal. Îl poți schimba oricând mai târziu!
 zen-welcome-skip-button = Treci peste
 zen-welcome-finished = Zen-ul tău a fost configurat corect!
+
+zen-welcome-back = Înapoi
+zen-welcome-skip = Omite deocamdată
+zen-welcome-import-description = Alege un browser din care să imporți marcajele, istoricul și parolele și continuă de unde ai rămas.
+zen-welcome-import-no = <strong>NU</strong>, încep de la zero.
+zen-welcome-default-browser-title = Setezi { -brand-short-name } ca browser implicit?
+zen-welcome-default-browser-description = Linkurile din alte aplicații se vor deschide în { -brand-short-name }. Poți schimba asta mai târziu.
+zen-welcome-essentials-title = Alege aplicațiile pe care le folosești cel mai des.
+zen-welcome-essentials-description = Selectează aplicațiile preferate ca să le ai la îndemână în bara laterală.
+zen-welcome-block-ads-title = Blochezi reclamele și elementele de urmărire?
+zen-welcome-block-ads-description = { -brand-short-name } poate instala uBlock Origin pentru tine, ca paginile să se încarce mai curat și mai repede. Îl poți elimina oricând.
+zen-welcome-block-ads-yes = <strong>DA</strong>, blochează reclamele.
+zen-welcome-block-ads-no = <strong>NU</strong>, arată-mi tot.

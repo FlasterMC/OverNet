@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = เปิดคลัง
+zen-action-unsplit-view = ขยายมุมมองปัจจุบัน
+zen-action-new-space = พื้นที่ใหม่
+zen-action-collapse-all-folders = ยุบโฟลเดอร์ทั้งหมด
+zen-action-expand-all-folders = ขยายโฟลเดอร์ทั้งหมด
+zen-action-reopen-closed-tab = เปิดแท็บที่ปิดไปอีกครั้ง
+zen-action-duplicate-tab = ทำสำเนาแท็บปัจจุบัน
+zen-action-reset-pinned-tab = รีเซ็ตแท็บที่ปักหมุด
+zen-action-open = เปิด

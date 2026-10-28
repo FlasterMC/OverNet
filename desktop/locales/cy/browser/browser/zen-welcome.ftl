@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Eich Peiriant Chwilio Arferol
 zen-welcome-default-search-description = Dewiswch eich peiriant chwilio arferol. Gallwch chi ei newid yn nes ymlaen!
 zen-welcome-skip-button = Hepgor
 zen-welcome-finished = Mae eich { -brand-short-name } wedi'i osog yn gywir!
+
+zen-welcome-back = Nôl
+zen-welcome-skip = Hepgor am nawr
+zen-welcome-import-description = Dewiswch borwr i fewnforio eich nodau tudalen, hanes a chyfrineiriau ohono a pharhau o'r lle y gwnaethoch adael.
+zen-welcome-import-no = <strong>NA</strong>, dechrau o'r newydd.
+zen-welcome-default-browser-title = Gwneud { -brand-short-name } yn borwr rhagosodedig?
+zen-welcome-default-browser-description = Bydd dolenni o apiau eraill yn agor yn { -brand-short-name }. Gallwch newid hyn yn nes ymlaen.
+zen-welcome-essentials-title = Dewiswch yr apiau rydych yn eu defnyddio fwyaf.
+zen-welcome-essentials-description = Dewiswch eich hoff apiau i'w cadw wrth law yn eich bar ochr.
+zen-welcome-block-ads-title = Rhwystro hysbysebion a thracwyr?
+zen-welcome-block-ads-description = Gall { -brand-short-name } osod uBlock Origin i chi, fel bod tudalennau'n llwytho'n lanach ac yn gyflymach. Gallwch ei dynnu unrhyw bryd.
+zen-welcome-block-ads-yes = <strong>IE</strong>, rhwystro hysbysebion.
+zen-welcome-block-ads-no = <strong>NA</strong>, dangos popeth.

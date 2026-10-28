@@ -45,3 +45,6 @@ zen-tab-sublabel =
         [zen-default-pinned-cmd] 고정된 탭에서 분리
        *[other] { $tabSubtitle }
     }
+
+zen-tabs-newtab-paste-and-search =
+    .label = 붙여넣고 검색

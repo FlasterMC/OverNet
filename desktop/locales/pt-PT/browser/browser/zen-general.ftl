@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Saber Mais
 zen-window-sync-migration-dialog-accept = Entendido
 zen-appmenu-new-blank-window = 
     .label = Nova janela sem sincronização
+
+zen-sidebar-drag-collapsed-toast = Barra lateral oculta! Utilize <span>{ $shortcut }</span> para trazê-la de volta.
+zen-site-data-header-boost =
+    .tooltiptext = Criar um Boost

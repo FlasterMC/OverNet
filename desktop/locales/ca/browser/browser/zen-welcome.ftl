@@ -24,3 +24,16 @@ zen-welcome-default-search-title = El vostre motor de cerca per defecte
 zen-welcome-default-search-description = Trieu el vostre motor de cerca per defecte. Sempre el podeu canviar més tard
 zen-welcome-skip-button = Omet
 zen-welcome-finished = El { -brand-short-name } s'ha configurat correctament
+
+zen-welcome-back = Enrere
+zen-welcome-skip = Omet de moment
+zen-welcome-import-description = Trieu un navegador des del qual importar les adreces d’interès, l’historial i les contrasenyes i continueu on ho havíeu deixat.
+zen-welcome-import-no = <strong>NO</strong>, comença de zero.
+zen-welcome-default-browser-title = Voleu fer del { -brand-short-name } el navegador per defecte?
+zen-welcome-default-browser-description = Els enllaços d’altres aplicacions s’obriran al { -brand-short-name }. Ho podeu canviar més endavant.
+zen-welcome-essentials-title = Trieu les aplicacions que feu servir més.
+zen-welcome-essentials-description = Seleccioneu les vostres aplicacions preferides per tenir-les a mà a la barra lateral.
+zen-welcome-block-ads-title = Voleu blocar la publicitat i els elements de seguiment?
+zen-welcome-block-ads-description = El { -brand-short-name } pot instal·lar l’uBlock Origin per vós, perquè les pàgines carreguin més netes i ràpides. El podeu eliminar en qualsevol moment.
+zen-welcome-block-ads-yes = <strong>SÍ</strong>, bloca la publicitat.
+zen-welcome-block-ads-no = <strong>NO</strong>, mostra-ho tot.

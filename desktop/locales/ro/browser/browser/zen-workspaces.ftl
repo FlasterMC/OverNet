@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Spațiul Următor
 zen-panel-ui-workspaces-change-back = 
     .label = Spațiul Anterior
+
+zen-workspaces-panel-context-manage =
+    .label = Gestionează spațiile…
+zen-workspaces-remote-delete-title = Ștergi spațiul sincronizat?
+zen-workspaces-remote-delete-body = { $name } a fost șters pe alt dispozitiv. Îl ștergi și aici? Dacă îl păstrezi, va fi restaurat pe celelalte dispozitive.

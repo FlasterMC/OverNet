@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Nästa arbetsyta
 zen-panel-ui-workspaces-change-back = 
     .label = Föregående arbetsyta
+
+zen-workspaces-panel-context-manage =
+    .label = Hantera utrymmen…
+zen-workspaces-remote-delete-title = Ta bort synkroniserat utrymme?
+zen-workspaces-remote-delete-body = { $name } togs bort på en annan enhet. Ta bort det här också? Om du behåller det återställs det på dina andra enheter.

@@ -45,3 +45,6 @@ zen-tab-sublabel =
         [zen-default-pinned-cmd] 劃分為另一分頁
        *[other] { $tabSubtitle }
     }
+
+zen-tabs-newtab-paste-and-search =
+    .label = 貼上並搜尋

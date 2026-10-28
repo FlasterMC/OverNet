@@ -49,3 +49,6 @@ zen-tab-sublabel =
         [zen-default-pinned-cmd] Atskirti nuo prisegtos kortelės
        *[other] { $tabSubtitle }
     }
+
+zen-tabs-newtab-paste-and-search =
+    .label = Įdėti ir ieškoti

@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Ruang Selanjutnya
 zen-panel-ui-workspaces-change-back = 
     .label = Ruang Sebelumnya
+
+zen-workspaces-panel-context-manage =
+    .label = Kelola Ruang…
+zen-workspaces-remote-delete-title = Hapus Ruang yang Disinkronkan?
+zen-workspaces-remote-delete-body = { $name } telah dihapus di perangkat lain. Hapus juga di sini? Jika disimpan, ruang ini akan dipulihkan di perangkat Anda yang lain.

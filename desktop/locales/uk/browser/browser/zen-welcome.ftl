@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Ваша типова пошукова сис
 zen-welcome-default-search-description = Оберіть вашу типову пошукову систему. Ви завжди зможете змінити її пізніше!
 zen-welcome-skip-button = Пропустити
 zen-welcome-finished = { -brand-short-name } налаштовано правильно!
+
+zen-welcome-back = Назад
+zen-welcome-skip = Пропустити
+zen-welcome-import-description = Виберіть браузер, з якого перенести закладки, історію та паролі, і продовжуйте з того ж місця.
+zen-welcome-import-no = <strong>НІ</strong>, почати з чистого аркуша.
+zen-welcome-default-browser-title = Зробити { -brand-short-name } браузером за замовчуванням?
+zen-welcome-default-browser-description = Посилання з інших програм відкриватимуться в { -brand-short-name }. Це можна змінити пізніше.
+zen-welcome-essentials-title = Виберіть програми, якими користуєтеся найчастіше.
+zen-welcome-essentials-description = Позначте улюблені програми, щоб вони завжди були під рукою на бічній панелі.
+zen-welcome-block-ads-title = Блокувати рекламу й трекери?
+zen-welcome-block-ads-description = { -brand-short-name } може встановити uBlock Origin, щоб сторінки були чистішими й завантажувалися швидше. Видалити його можна будь-коли.
+zen-welcome-block-ads-yes = <strong>ТАК</strong>, блокувати рекламу.
+zen-welcome-block-ads-no = <strong>НІ</strong>, показувати все.

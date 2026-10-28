@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Sonraki alan
 zen-panel-ui-workspaces-change-back = 
     .label = Önceki alan
+
+zen-workspaces-panel-context-manage =
+    .label = Alanları yönet…
+zen-workspaces-remote-delete-title = Eşitlenmiş alan silinsin mi?
+zen-workspaces-remote-delete-body = { $name } başka bir cihazda silindi. Burada da silinsin mi? Saklarsanız diğer cihazlarınızda geri yüklenir.

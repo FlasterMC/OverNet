@@ -45,3 +45,6 @@ zen-tab-sublabel =
         [zen-default-pinned-cmd] فصل عن علامة التبويب المثبتة
        *[other] { $tabSubtitle }
     }
+
+zen-tabs-newtab-paste-and-search =
+    .label = الصق وابحث

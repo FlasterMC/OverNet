@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Més informació
 zen-window-sync-migration-dialog-accept = D'acord
 zen-appmenu-new-blank-window = 
     .label = Nova finestra en blanc
+
+zen-sidebar-drag-collapsed-toast = S’ha amagat la barra lateral! Feu servir <span>{ $shortcut }</span> per recuperar-la.
+zen-site-data-header-boost =
+    .tooltiptext = Crea un Boost

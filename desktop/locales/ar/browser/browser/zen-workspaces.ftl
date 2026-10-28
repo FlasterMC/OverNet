@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = المساحة التالية
 zen-panel-ui-workspaces-change-back = 
     .label = المساحة السابقة
+
+zen-workspaces-panel-context-manage =
+    .label = أدِر المساحات…
+zen-workspaces-remote-delete-title = أتريد حذف المساحة المتزامنة؟
+zen-workspaces-remote-delete-body = حُذفت { $name } على جهاز آخر. أتريد حذفها هنا أيضًا؟ إن أبقيتها، فستُستعاد على أجهزتك الأخرى.

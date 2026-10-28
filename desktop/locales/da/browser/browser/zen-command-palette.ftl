@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = Åbn bibliotek
+zen-action-unsplit-view = Udvid den aktuelle visning
+zen-action-new-space = Nyt område
+zen-action-collapse-all-folders = Fold alle mapper sammen
+zen-action-expand-all-folders = Fold alle mapper ud
+zen-action-reopen-closed-tab = Genåbn lukket faneblad
+zen-action-duplicate-tab = Dupliker aktuelt faneblad
+zen-action-reset-pinned-tab = Nulstil fastgjort faneblad
+zen-action-open = Åbn

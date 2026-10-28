@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Sužinoti daugiau
 zen-window-sync-migration-dialog-accept = Supratau
 zen-appmenu-new-blank-window = 
     .label = Naujas tuščias langas
+
+zen-sidebar-drag-collapsed-toast = Šoninė juosta paslėpta! Paspauskite <span>{ $shortcut }</span>, kad ją grąžintumėte.
+zen-site-data-header-boost =
+    .tooltiptext = Sukurti „Boost“

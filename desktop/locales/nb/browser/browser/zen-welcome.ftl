@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Din standard søkemotor
 zen-welcome-default-search-description = Velg din standard søkemotor. Du kan alltids endre den senere!
 zen-welcome-skip-button = Hopp over
 zen-welcome-finished = Din { -brand-short-name } har blitt satt opp riktig!
+
+zen-welcome-back = Tilbake
+zen-welcome-skip = Hopp over for nå
+zen-welcome-import-description = Velg en nettleser du vil importere bokmerker, historikk og passord fra, og fortsett der du slapp.
+zen-welcome-import-no = <strong>NEI</strong>, start på nytt.
+zen-welcome-default-browser-title = Gjøre { -brand-short-name } til standardnettleser?
+zen-welcome-default-browser-description = Lenker fra andre apper åpnes i { -brand-short-name }. Du kan endre dette senere.
+zen-welcome-essentials-title = Velg appene du bruker mest.
+zen-welcome-essentials-description = Velg favorittappene dine for å ha dem lett tilgjengelig i sidepanelet.
+zen-welcome-block-ads-title = Blokkere reklame og sporere?
+zen-welcome-block-ads-description = { -brand-short-name } kan installere uBlock Origin for deg, slik at sider lastes renere og raskere. Du kan fjerne det når som helst.
+zen-welcome-block-ads-yes = <strong>JA</strong>, blokker reklame for meg.
+zen-welcome-block-ads-no = <strong>NEI</strong>, vis meg alt.

@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Foghlaim Tuilleadh
 zen-window-sync-migration-dialog-accept = Tuigim é
 zen-appmenu-new-blank-window = 
     .label = Fuinneog bán nua
+
+zen-sidebar-drag-collapsed-toast = Tá an barra taoibh i bhfolach! Úsáid <span>{ $shortcut }</span> chun é a thabhairt ar ais.
+zen-site-data-header-boost =
+    .tooltiptext = Cruthaigh Boost

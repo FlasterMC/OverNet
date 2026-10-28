@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = 次のスペースに移動
 zen-panel-ui-workspaces-change-back = 
     .label = 前のスペースに移動
+
+zen-workspaces-panel-context-manage =
+    .label = スペースを管理…
+zen-workspaces-remote-delete-title = 同期されたスペースを削除しますか？
+zen-workspaces-remote-delete-body = { $name } は別のデバイスで削除されました。ここでも削除しますか？残すと、他のデバイスで復元されます。

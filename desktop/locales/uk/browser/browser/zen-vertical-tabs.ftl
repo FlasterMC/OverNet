@@ -47,3 +47,6 @@ zen-tab-sublabel =
         [zen-default-pinned-cmd] Відокремити від закріпленої вкладки
        *[other] { $tabSubtitle }
     }
+
+zen-tabs-newtab-paste-and-search =
+    .label = Вставити й шукати

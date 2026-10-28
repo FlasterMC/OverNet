@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = An Chéad Spás Eile
 zen-panel-ui-workspaces-change-back = 
     .label = Spás Roimhe Seo
+
+zen-workspaces-panel-context-manage =
+    .label = Bainistigh Spásanna…
+zen-workspaces-remote-delete-title = Scrios an Spás Sioncronaithe?
+zen-workspaces-remote-delete-body = Scriosadh { $name } ar ghléas eile. É a scriosadh anseo freisin? Má choinníonn tú é, cuirfear ar ais é ar do ghléasanna eile.

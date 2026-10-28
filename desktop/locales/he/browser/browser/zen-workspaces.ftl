@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = מרחב הבא
 zen-panel-ui-workspaces-change-back = 
     .label = מרחב קודם
+
+zen-workspaces-panel-context-manage =
+    .label = ניהול מרחבים…
+zen-workspaces-remote-delete-title = למחוק מרחב מסונכרן?
+zen-workspaces-remote-delete-body = { $name } נמחק במכשיר אחר. למחוק גם כאן? אם יישמר, הוא ישוחזר במכשירים האחרים שלך.

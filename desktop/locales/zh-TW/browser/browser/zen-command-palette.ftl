@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = 切換為暗色模式
 zen-action-print = 列印
 zen-action-focus-on = 將焦點移至
 zen-action-extension = 擴充套件
+
+zen-action-open-library = 開啟資料庫
+zen-action-unsplit-view = 展開目前檢視
+zen-action-new-space = 新增空間
+zen-action-collapse-all-folders = 摺疊所有資料夾
+zen-action-expand-all-folders = 展開所有資料夾
+zen-action-reopen-closed-tab = 重新開啟已關閉的分頁
+zen-action-duplicate-tab = 複製目前分頁
+zen-action-reset-pinned-tab = 重設釘選分頁
+zen-action-open = 開啟

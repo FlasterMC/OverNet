@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = Ava kogu
+zen-action-unsplit-view = Laienda praegune vaade
+zen-action-new-space = Uus ruum
+zen-action-collapse-all-folders = Ahenda kõik kaustad
+zen-action-expand-all-folders = Laienda kõik kaustad
+zen-action-reopen-closed-tab = Ava suletud kaart uuesti
+zen-action-duplicate-tab = Klooni praegune kaart
+zen-action-reset-pinned-tab = Lähtesta kinnitatud kaart
+zen-action-open = Ava

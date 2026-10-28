@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = Відкрити бібліотеку
+zen-action-unsplit-view = Розгорнути поточну вкладку
+zen-action-new-space = Новий простір
+zen-action-collapse-all-folders = Згорнути всі теки
+zen-action-expand-all-folders = Розгорнути всі теки
+zen-action-reopen-closed-tab = Відновити закриту вкладку
+zen-action-duplicate-tab = Дублювати поточну вкладку
+zen-action-reset-pinned-tab = Скинути закріплену вкладку
+zen-action-open = Відкрити

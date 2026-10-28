@@ -24,3 +24,16 @@ zen-welcome-default-search-title = D'Inneall Cuardaigh Réamhshocraithe
 zen-welcome-default-search-description = Roghnaigh d'inneall cuardaigh réamhshocraithe. Is féidir leat é a athrú níos déanaí!
 zen-welcome-skip-button = Scipeáil
 zen-welcome-finished = Tá do { -brand-short-name } socraithe i gceart!
+
+zen-welcome-back = Siar
+zen-welcome-skip = Scipeáil anois
+zen-welcome-import-description = Roghnaigh brabhsálaí as a n-iompórtálfar do leabharmharcanna, do stair agus do phasfhocail agus lean ar aghaidh ón áit ar stop tú.
+zen-welcome-import-no = <strong>NÍL</strong>, tosaigh as an nua.
+zen-welcome-default-browser-title = An mbeidh { -brand-short-name } mar do bhrabhsálaí réamhshocraithe?
+zen-welcome-default-browser-description = Osclófar naisc ó aipeanna eile in { -brand-short-name }. Is féidir leat é seo a athrú ar ball.
+zen-welcome-essentials-title = Roghnaigh na haipeanna is mó a úsáideann tú.
+zen-welcome-essentials-description = Roghnaigh na haipeanna is fearr leat chun iad a choinneáil faoi láimh sa bharra taoibh.
+zen-welcome-block-ads-title = Fógraí agus lorgairí a bhac?
+zen-welcome-block-ads-description = Is féidir le { -brand-short-name } uBlock Origin a shuiteáil duit, ionas go lódálfar leathanaigh níos glaine agus níos tapúla. Is féidir leat é a bhaint am ar bith.
+zen-welcome-block-ads-yes = <strong>TÁ</strong>, bac fógraí dom.
+zen-welcome-block-ads-no = <strong>NÍL</strong>, taispeáin gach rud.

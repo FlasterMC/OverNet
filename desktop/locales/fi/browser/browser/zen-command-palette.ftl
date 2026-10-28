@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = Avaa kirjasto
+zen-action-unsplit-view = Laajenna nykyinen näkymä
+zen-action-new-space = Uusi tila
+zen-action-collapse-all-folders = Kutista kaikki kansiot
+zen-action-expand-all-folders = Laajenna kaikki kansiot
+zen-action-reopen-closed-tab = Avaa suljettu välilehti uudelleen
+zen-action-duplicate-tab = Monista nykyinen välilehti
+zen-action-reset-pinned-tab = Palauta kiinnitetty välilehti
+zen-action-open = Avaa

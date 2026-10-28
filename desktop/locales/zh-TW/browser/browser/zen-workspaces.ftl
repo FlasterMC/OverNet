@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = 下一工作區
 zen-panel-ui-workspaces-change-back = 
     .label = 上一工作區
+
+zen-workspaces-panel-context-manage =
+    .label = 管理空間…
+zen-workspaces-remote-delete-title = 要刪除已同步的空間嗎？
+zen-workspaces-remote-delete-body = { $name } 已在另一台裝置上刪除。也要在這裡刪除嗎？若保留，它會在你的其他裝置上還原。

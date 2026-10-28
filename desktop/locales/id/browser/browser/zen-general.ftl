@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Pelajari Lebih Lanjut
 zen-window-sync-migration-dialog-accept = Oke!
 zen-appmenu-new-blank-window = 
     .label = Jendela Kosong Baru
+
+zen-sidebar-drag-collapsed-toast = Bilah sisi disembunyikan! Gunakan <span>{ $shortcut }</span> untuk menampilkannya kembali.
+zen-site-data-header-boost =
+    .tooltiptext = Buat Boost

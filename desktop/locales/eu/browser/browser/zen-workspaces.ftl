@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Next Space
 zen-panel-ui-workspaces-change-back = 
     .label = Previous Space
+
+zen-workspaces-panel-context-manage =
+    .label = Kudeatu guneak…
+zen-workspaces-remote-delete-title = Sinkronizatutako gunea ezabatu?
+zen-workspaces-remote-delete-body = { $name } beste gailu batean ezabatu da. Hemen ere ezabatu? Mantentzen baduzu, beste gailuetan berreskuratuko da.

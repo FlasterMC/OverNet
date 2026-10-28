@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = Mở thư viện
+zen-action-unsplit-view = Mở rộng chế độ xem hiện tại
+zen-action-new-space = Không gian mới
+zen-action-collapse-all-folders = Thu gọn tất cả thư mục
+zen-action-expand-all-folders = Mở rộng tất cả thư mục
+zen-action-reopen-closed-tab = Mở lại thẻ đã đóng
+zen-action-duplicate-tab = Nhân bản thẻ hiện tại
+zen-action-reset-pinned-tab = Đặt lại thẻ đã ghim
+zen-action-open = Mở

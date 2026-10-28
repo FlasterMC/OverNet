@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Научи повече
 zen-window-sync-migration-dialog-accept = Добре
 zen-appmenu-new-blank-window = 
     .label = New blank window
+
+zen-sidebar-drag-collapsed-toast = Страничната лента е скрита! Използвайте <span>{ $shortcut }</span>, за да я върнете.
+zen-site-data-header-boost =
+    .tooltiptext = Създаване на буст

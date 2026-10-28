@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Koyu moda geç
 zen-action-print = Yazdır
 zen-action-focus-on = Odaklan
 zen-action-extension = Uzantı
+
+zen-action-open-library = Kitaplığı aç
+zen-action-unsplit-view = Geçerli görünümü genişlet
+zen-action-new-space = Yeni alan
+zen-action-collapse-all-folders = Tüm klasörleri daralt
+zen-action-expand-all-folders = Tüm klasörleri genişlet
+zen-action-reopen-closed-tab = Kapatılan sekmeyi yeniden aç
+zen-action-duplicate-tab = Geçerli sekmeyi çoğalt
+zen-action-reset-pinned-tab = Sabitlenmiş sekmeyi sıfırla
+zen-action-open = Aç

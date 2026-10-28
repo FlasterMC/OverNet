@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Công cụ tìm kiếm mặc định của b�
 zen-welcome-default-search-description = Hãy chọn công cụ tìm kiếm mặc đinh. Bạn luôn có thể đổi nó sau này!
 zen-welcome-skip-button = Bỏ qua
 zen-welcome-finished = Trình duyệt của bạn đã được thiết lập thành công!
+
+zen-welcome-back = Quay lại
+zen-welcome-skip = Bỏ qua lúc này
+zen-welcome-import-description = Chọn một trình duyệt để nhập dấu trang, lịch sử và mật khẩu, rồi tiếp tục từ chỗ bạn dừng lại.
+zen-welcome-import-no = <strong>KHÔNG</strong>, bắt đầu lại từ đầu.
+zen-welcome-default-browser-title = Đặt { -brand-short-name } làm trình duyệt mặc định?
+zen-welcome-default-browser-description = Liên kết từ ứng dụng khác sẽ mở trong { -brand-short-name }. Bạn có thể thay đổi sau.
+zen-welcome-essentials-title = Chọn những ứng dụng bạn dùng nhiều nhất.
+zen-welcome-essentials-description = Chọn các ứng dụng yêu thích để luôn có sẵn trên thanh bên.
+zen-welcome-block-ads-title = Chặn quảng cáo và trình theo dõi?
+zen-welcome-block-ads-description = { -brand-short-name } có thể cài uBlock Origin cho bạn để trang tải gọn gàng và nhanh hơn. Bạn có thể gỡ bất cứ lúc nào.
+zen-welcome-block-ads-yes = <strong>CÓ</strong>, chặn quảng cáo giúp tôi.
+zen-welcome-block-ads-no = <strong>KHÔNG</strong>, hiện tất cả.

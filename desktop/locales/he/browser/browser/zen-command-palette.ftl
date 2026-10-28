@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = פתיחת הספרייה
+zen-action-unsplit-view = הרחבת התצוגה הנוכחית
+zen-action-new-space = מרחב חדש
+zen-action-collapse-all-folders = כיווץ כל התיקיות
+zen-action-expand-all-folders = הרחבת כל התיקיות
+zen-action-reopen-closed-tab = פתיחה מחדש של לשונית שנסגרה
+zen-action-duplicate-tab = שכפול הלשונית הנוכחית
+zen-action-reset-pinned-tab = איפוס לשונית מוצמדת
+zen-action-open = פתיחה

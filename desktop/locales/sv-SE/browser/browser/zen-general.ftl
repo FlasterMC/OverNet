@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Läs mer
 zen-window-sync-migration-dialog-accept = Jag förstår
 zen-appmenu-new-blank-window = 
     .label = Nytt blankt fönster
+
+zen-sidebar-drag-collapsed-toast = Sidofältet dolt! Använd <span>{ $shortcut }</span> för att visa det igen.
+zen-site-data-header-boost =
+    .tooltiptext = Skapa en Boost

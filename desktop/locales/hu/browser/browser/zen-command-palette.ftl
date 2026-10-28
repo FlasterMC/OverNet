@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = Könyvtár megnyitása
+zen-action-unsplit-view = Jelenlegi nézet kibontása
+zen-action-new-space = Új tér
+zen-action-collapse-all-folders = Összes mappa összecsukása
+zen-action-expand-all-folders = Összes mappa kibontása
+zen-action-reopen-closed-tab = Bezárt lap újranyitása
+zen-action-duplicate-tab = Jelenlegi lap kettőzése
+zen-action-reset-pinned-tab = Rögzített lap visszaállítása
+zen-action-open = Megnyitás

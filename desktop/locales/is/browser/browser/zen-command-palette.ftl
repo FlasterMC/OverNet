@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Skipta yfir í dökkan ham
 zen-action-print = Prenta
 zen-action-focus-on = Skerpa
 zen-action-extension = Viðbót
+
+zen-action-open-library = Opna safn
+zen-action-unsplit-view = Stækka núverandi sýn
+zen-action-new-space = Nýtt svæði
+zen-action-collapse-all-folders = Fella saman allar möppur
+zen-action-expand-all-folders = Fletta út öllum möppum
+zen-action-reopen-closed-tab = Opna aftur lokaðan flipa
+zen-action-duplicate-tab = Tvöfalda núverandi flipa
+zen-action-reset-pinned-tab = Endurstilla festan flipa
+zen-action-open = Opna

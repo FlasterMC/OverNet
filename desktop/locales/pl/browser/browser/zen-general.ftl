@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Dowiedz się więcej
 zen-window-sync-migration-dialog-accept = Rozumiem
 zen-appmenu-new-blank-window = 
     .label = Nowe puste okno
+
+zen-sidebar-drag-collapsed-toast = Panel boczny ukryty! Użyj <span>{ $shortcut }</span>, aby go przywrócić.
+zen-site-data-header-boost =
+    .tooltiptext = Utwórz Boost

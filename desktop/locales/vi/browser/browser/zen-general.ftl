@@ -138,3 +138,7 @@ zen-window-sync-migration-dialog-learn-more = Tìm hiểu thêm
 zen-window-sync-migration-dialog-accept = Đã hiểu
 zen-appmenu-new-blank-window = 
     .label = Cửa sổ trống mới
+
+zen-sidebar-drag-collapsed-toast = Đã ẩn thanh bên! Dùng <span>{ $shortcut }</span> để hiện lại.
+zen-site-data-header-boost =
+    .tooltiptext = Tạo Boost

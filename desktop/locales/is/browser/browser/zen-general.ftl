@@ -138,3 +138,7 @@ zen-window-sync-migration-dialog-learn-more = Frekari upplýsingar
 zen-window-sync-migration-dialog-accept = Skilið
 zen-appmenu-new-blank-window = 
     .label = Nýr auður gluggi
+
+zen-sidebar-drag-collapsed-toast = Hliðarstika falin! Notaðu <span>{ $shortcut }</span> til að fá hana aftur.
+zen-site-data-header-boost =
+    .tooltiptext = Búa til Boost

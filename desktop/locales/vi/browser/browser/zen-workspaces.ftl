@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Không gian tiếp theo
 zen-panel-ui-workspaces-change-back = 
     .label = Không gian trước đó
+
+zen-workspaces-panel-context-manage =
+    .label = Quản lý không gian…
+zen-workspaces-remote-delete-title = Xóa không gian đã đồng bộ?
+zen-workspaces-remote-delete-body = { $name } đã bị xóa trên thiết bị khác. Xóa cả ở đây? Nếu giữ lại, nó sẽ được khôi phục trên các thiết bị khác của bạn.

@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = Отваряне на библиотеката
+zen-action-unsplit-view = Разгъване на текущия изглед
+zen-action-new-space = Ново пространство
+zen-action-collapse-all-folders = Свиване на всички папки
+zen-action-expand-all-folders = Разгъване на всички папки
+zen-action-reopen-closed-tab = Отваряне на затворения раздел
+zen-action-duplicate-tab = Дублиране на текущия раздел
+zen-action-reset-pinned-tab = Нулиране на закачения раздел
+zen-action-open = Отваряне

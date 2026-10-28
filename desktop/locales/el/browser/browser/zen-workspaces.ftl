@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Επόμενος Χώρος Εργασίας
 zen-panel-ui-workspaces-change-back = 
     .label = Προηγούμενος Χώρος Εργασίας
+
+zen-workspaces-panel-context-manage =
+    .label = Διαχείριση χώρων…
+zen-workspaces-remote-delete-title = Διαγραφή συγχρονισμένου χώρου;
+zen-workspaces-remote-delete-body = Ο χώρος { $name } διαγράφηκε σε άλλη συσκευή. Να διαγραφεί και εδώ; Αν τον κρατήσετε, θα επανέλθει στις άλλες συσκευές σας.

@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Mehr erfahren
 zen-window-sync-migration-dialog-accept = Verstanden
 zen-appmenu-new-blank-window = 
     .label = Neues leeres Fenster
+
+zen-sidebar-drag-collapsed-toast = Seitenleiste ausgeblendet! Mit <span>{ $shortcut }</span> holst du sie zurück.
+zen-site-data-header-boost =
+    .tooltiptext = Boost erstellen

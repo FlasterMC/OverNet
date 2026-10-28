@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Află mai multe
 zen-window-sync-migration-dialog-accept = Am înțeles
 zen-appmenu-new-blank-window = 
     .label = Fereastră Nouă Goală
+
+zen-sidebar-drag-collapsed-toast = Bara laterală a fost ascunsă! Folosește <span>{ $shortcut }</span> pentru a o readuce.
+zen-site-data-header-boost =
+    .tooltiptext = Creează un Boost

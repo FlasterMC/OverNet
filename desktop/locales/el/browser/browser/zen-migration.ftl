@@ -1,0 +1,12 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+migration-zen-spaces-option-label = Χώροι και καρφιτσωμένες καρτέλες
+migration-list-zen-spaces-label = χώροι και καρφιτσωμένες καρτέλες
+migration-wizard-progress-success-zen-spaces = { $quantity ->
+        [one] { $quantity } χώρος
+        *[other] { $quantity } χώροι
+    }
+migration-wizard-migrator-display-name-arc = Arc
+migration-wizard-migrator-display-name-dia = Dia

@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Næsta svæði
 zen-panel-ui-workspaces-change-back = 
     .label = Fyrra svæði
+
+zen-workspaces-panel-context-manage =
+    .label = Sýsla með svæði…
+zen-workspaces-remote-delete-title = Eyða samstilltu svæði?
+zen-workspaces-remote-delete-body = { $name } var eytt í öðru tæki. Eyða því líka hér? Ef þú heldur því verður það endurheimt í hinum tækjunum þínum.

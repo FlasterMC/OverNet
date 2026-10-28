@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Περισσότερα
 zen-window-sync-migration-dialog-accept = Κατάλαβα
 zen-appmenu-new-blank-window = 
     .label = Νέο κενό παράθυρο
+
+zen-sidebar-drag-collapsed-toast = Η πλαϊνή γραμμή αποκρύφθηκε! Χρησιμοποιήστε το <span>{ $shortcut }</span> για να την επαναφέρετε.
+zen-site-data-header-boost =
+    .tooltiptext = Δημιουργία Boost

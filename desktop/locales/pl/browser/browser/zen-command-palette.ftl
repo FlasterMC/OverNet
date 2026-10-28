@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Przełącz na tryb ciemny
 zen-action-print = Drukuj
 zen-action-focus-on = Przejdź do
 zen-action-extension = Rozszerzenie
+
+zen-action-open-library = Otwórz bibliotekę
+zen-action-unsplit-view = Rozwiń bieżący widok
+zen-action-new-space = Nowa przestrzeń
+zen-action-collapse-all-folders = Zwiń wszystkie foldery
+zen-action-expand-all-folders = Rozwiń wszystkie foldery
+zen-action-reopen-closed-tab = Przywróć zamkniętą kartę
+zen-action-duplicate-tab = Duplikuj bieżącą kartę
+zen-action-reset-pinned-tab = Resetuj przypiętą kartę
+zen-action-open = Otwórz

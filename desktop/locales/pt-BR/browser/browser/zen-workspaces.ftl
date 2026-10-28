@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Próximo Espaço
 zen-panel-ui-workspaces-change-back = 
     .label = Espaço Anterior
+
+zen-workspaces-panel-context-manage =
+    .label = Gerenciar espaços…
+zen-workspaces-remote-delete-title = Excluir espaço sincronizado?
+zen-workspaces-remote-delete-body = { $name } foi excluído em outro dispositivo. Excluir aqui também? Se mantiver, ele será restaurado nos outros dispositivos.

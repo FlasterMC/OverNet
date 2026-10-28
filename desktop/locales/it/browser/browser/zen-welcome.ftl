@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Il tuo Motore di Ricerca Predefinito
 zen-welcome-default-search-description = Scegli il tuo motore di ricerca predefinito. Puoi sempre cambiarlo più tardi!
 zen-welcome-skip-button = Salta
 zen-welcome-finished = Il tuo { -brand-short-name } è stato configurato correttamente!
+
+zen-welcome-back = Indietro
+zen-welcome-skip = Salta per ora
+zen-welcome-import-description = Scegli un browser da cui importare segnalibri, cronologia e password e riprendi da dove avevi lasciato.
+zen-welcome-import-no = <strong>NO</strong>, ricomincia da zero.
+zen-welcome-default-browser-title = Impostare { -brand-short-name } come browser predefinito?
+zen-welcome-default-browser-description = I link delle altre app si apriranno in { -brand-short-name }. Puoi cambiarlo in seguito.
+zen-welcome-essentials-title = Scegli le app che usi di più.
+zen-welcome-essentials-description = Seleziona le tue app preferite per tenerle a portata di mano nella barra laterale.
+zen-welcome-block-ads-title = Bloccare pubblicità e tracker?
+zen-welcome-block-ads-description = { -brand-short-name } può installare uBlock Origin per te, così le pagine si caricano più pulite e veloci. Puoi rimuoverlo in qualsiasi momento.
+zen-welcome-block-ads-yes = <strong>SÌ</strong>, blocca la pubblicità.
+zen-welcome-block-ads-no = <strong>NO</strong>, mostra tutto.

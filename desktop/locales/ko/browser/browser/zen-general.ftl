@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = 더 알아보기
 zen-window-sync-migration-dialog-accept = 알겠습니다
 zen-appmenu-new-blank-window = 
     .label = 새 빈 창
+
+zen-sidebar-drag-collapsed-toast = 사이드바가 숨겨졌습니다! <span>{ $shortcut }</span>을 눌러 다시 표시하세요.
+zen-site-data-header-boost =
+    .tooltiptext = Boost 만들기

@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Next Space
 zen-panel-ui-workspaces-change-back = 
     .label = Previous Space
+
+zen-workspaces-panel-context-manage =
+    .label = Halda ruume…
+zen-workspaces-remote-delete-title = Kas kustutada sünkroonitud ruum?
+zen-workspaces-remote-delete-body = { $name } kustutati teises seadmes. Kas kustutada ka siin? Kui jätad alles, taastatakse see teistes seadmetes.

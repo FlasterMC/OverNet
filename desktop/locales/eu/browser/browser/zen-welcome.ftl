@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Your Default Search Engine
 zen-welcome-default-search-description = Choose your default search engine. You can always change it later!
 zen-welcome-skip-button = Skip
 zen-welcome-finished = Your { -brand-short-name } has been set up correctly!
+
+zen-welcome-back = Atzera
+zen-welcome-skip = Saltatu oraingoz
+zen-welcome-import-description = Aukeratu laster-markak, historia eta pasahitzak inportatzeko nabigatzailea eta jarraitu utzi zenuen tokitik.
+zen-welcome-import-no = <strong>EZ</strong>, hasi hutsetik.
+zen-welcome-default-browser-title = { -brand-short-name } nabigatzaile lehenetsia egin?
+zen-welcome-default-browser-description = Beste aplikazioetako estekak { -brand-short-name }-n irekiko dira. Geroago alda dezakezu.
+zen-welcome-essentials-title = Aukeratu gehien erabiltzen dituzun aplikazioak.
+zen-welcome-essentials-description = Hautatu zure aplikazio gogokoenak alboko barran eskura izateko.
+zen-welcome-block-ads-title = Iragarkiak eta jarraipen-elementuak blokeatu?
+zen-welcome-block-ads-description = { -brand-short-name }-k uBlock Origin instala dezake zuretzat, orriak garbiago eta azkarrago karga daitezen. Edozein unetan ken dezakezu.
+zen-welcome-block-ads-yes = <strong>BAI</strong>, blokeatu iragarkiak.
+zen-welcome-block-ads-no = <strong>EZ</strong>, erakutsi dena.

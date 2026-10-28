@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Дізнатися більше
 zen-window-sync-migration-dialog-accept = Зрозуміло
 zen-appmenu-new-blank-window = 
     .label = Нове несинхронізоване вікно
+
+zen-sidebar-drag-collapsed-toast = Бічну панель сховано! Натисніть <span>{ $shortcut }</span>, щоб повернути її.
+zen-site-data-header-boost =
+    .tooltiptext = Створити буст

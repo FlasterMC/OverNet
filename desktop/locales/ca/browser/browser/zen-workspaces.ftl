@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Espai següent
 zen-panel-ui-workspaces-change-back = 
     .label = Espai anterior
+
+zen-workspaces-panel-context-manage =
+    .label = Gestiona els espais…
+zen-workspaces-remote-delete-title = Voleu suprimir l’espai sincronitzat?
+zen-workspaces-remote-delete-body = { $name } s’ha suprimit en un altre dispositiu. Voleu suprimir-lo també aquí? Si el conserveu, es restaurarà als altres dispositius.

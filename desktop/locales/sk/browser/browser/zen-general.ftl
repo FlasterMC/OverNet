@@ -138,3 +138,7 @@ zen-window-sync-migration-dialog-learn-more = Dozvedieť sa Viac
 zen-window-sync-migration-dialog-accept = Rozumiem
 zen-appmenu-new-blank-window = 
     .label = New blank window
+
+zen-sidebar-drag-collapsed-toast = Bočný panel skrytý! Znova ho zobrazíte skratkou <span>{ $shortcut }</span>.
+zen-site-data-header-boost =
+    .tooltiptext = Vytvoriť Boost

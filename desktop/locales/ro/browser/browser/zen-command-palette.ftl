@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Schimbă în modul întunecat
 zen-action-print = Tipărește
 zen-action-focus-on = Focalizare pe
 zen-action-extension = Extensie
+
+zen-action-open-library = Deschide biblioteca
+zen-action-unsplit-view = Extinde vizualizarea curentă
+zen-action-new-space = Spațiu nou
+zen-action-collapse-all-folders = Restrânge toate dosarele
+zen-action-expand-all-folders = Extinde toate dosarele
+zen-action-reopen-closed-tab = Redeschide fila închisă
+zen-action-duplicate-tab = Duplică fila curentă
+zen-action-reset-pinned-tab = Resetează fila fixată
+zen-action-open = Deschide

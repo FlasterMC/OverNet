@@ -24,3 +24,16 @@ zen-welcome-default-search-title = 您的默认搜索引擎
 zen-welcome-default-search-description = 选择您的默认搜索引擎。您可以随时更改它！
 zen-welcome-skip-button = 跳过
 zen-welcome-finished = 您的 { -brand-short-name } 已设置妥当！
+
+zen-welcome-back = 返回
+zen-welcome-skip = 暂时跳过
+zen-welcome-import-description = 选择要从中导入书签、历史记录和密码的浏览器，从上次停下的地方继续。
+zen-welcome-import-no = <strong>不</strong>，重新开始。
+zen-welcome-default-browser-title = 将 { -brand-short-name } 设为默认浏览器？
+zen-welcome-default-browser-description = 其他应用中的链接将在 { -brand-short-name } 中打开。你之后可以随时更改。
+zen-welcome-essentials-title = 选择你最常用的应用。
+zen-welcome-essentials-description = 选择喜欢的应用，让它们随时待在侧边栏中。
+zen-welcome-block-ads-title = 拦截广告和跟踪器？
+zen-welcome-block-ads-description = { -brand-short-name } 可以为你安装 uBlock Origin，让页面更干净、加载更快。你可以随时移除它。
+zen-welcome-block-ads-yes = <strong>是</strong>，帮我拦截广告。
+zen-welcome-block-ads-no = <strong>不</strong>，全部显示。

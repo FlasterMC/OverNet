@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = باز کردن کتابخانه
+zen-action-unsplit-view = گسترش نمای کنونی
+zen-action-new-space = فضای جدید
+zen-action-collapse-all-folders = بستن همه پوشه‌ها
+zen-action-expand-all-folders = گسترش همه پوشه‌ها
+zen-action-reopen-closed-tab = باز کردن دوباره زبانه بسته‌شده
+zen-action-duplicate-tab = تکثیر زبانه کنونی
+zen-action-reset-pinned-tab = بازنشانی زبانه سنجاق‌شده
+zen-action-open = باز کردن

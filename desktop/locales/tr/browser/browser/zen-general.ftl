@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Daha fazla bilgi
 zen-window-sync-migration-dialog-accept = Anladım
 zen-appmenu-new-blank-window = 
     .label = Yeni boş pencere
+
+zen-sidebar-drag-collapsed-toast = Kenar çubuğu gizlendi! Geri getirmek için <span>{ $shortcut }</span> kısayolunu kullanın.
+zen-site-data-header-boost =
+    .tooltiptext = Boost oluştur

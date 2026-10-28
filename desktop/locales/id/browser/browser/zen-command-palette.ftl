@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = Buka Pustaka
+zen-action-unsplit-view = Perluas tampilan saat ini
+zen-action-new-space = Ruang Baru
+zen-action-collapse-all-folders = Ciutkan Semua Folder
+zen-action-expand-all-folders = Bentangkan Semua Folder
+zen-action-reopen-closed-tab = Buka Kembali Tab yang Ditutup
+zen-action-duplicate-tab = Gandakan Tab Saat Ini
+zen-action-reset-pinned-tab = Atur Ulang Tab yang Disematkan
+zen-action-open = Buka

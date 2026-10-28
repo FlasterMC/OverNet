@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = Ireki liburutegia
+zen-action-unsplit-view = Zabaldu uneko ikuspegia
+zen-action-new-space = Gune berria
+zen-action-collapse-all-folders = Tolestu karpeta guztiak
+zen-action-expand-all-folders = Zabaldu karpeta guztiak
+zen-action-reopen-closed-tab = Ireki berriro itxitako fitxa
+zen-action-duplicate-tab = Bikoiztu uneko fitxa
+zen-action-reset-pinned-tab = Berrezarri ainguratutako fitxa
+zen-action-open = Ireki

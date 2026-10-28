@@ -24,3 +24,16 @@ zen-welcome-default-search-title = เครื่องมือค้นหา
 zen-welcome-default-search-description = เลือกเครื่องมือค้นหาเริ่มต้นของคุณ คุณสามารถเปลี่ยนมันในภายหลังได้เสมอ!
 zen-welcome-skip-button = ข้าม
 zen-welcome-finished = { -brand-short-name } ของคุณได้ถูกตั้งค่าอย่างถูกต้องแล้ว
+
+zen-welcome-back = ย้อนกลับ
+zen-welcome-skip = ข้ามไปก่อน
+zen-welcome-import-description = เลือกเบราว์เซอร์ที่จะนำเข้าที่คั่นหน้า ประวัติ และรหัสผ่าน แล้วทำต่อจากที่ค้างไว้ได้เลย
+zen-welcome-import-no = <strong>ไม่</strong> เริ่มใหม่ทั้งหมด
+zen-welcome-default-browser-title = ตั้ง { -brand-short-name } เป็นเบราว์เซอร์เริ่มต้นหรือไม่?
+zen-welcome-default-browser-description = ลิงก์จากแอปอื่นจะเปิดใน { -brand-short-name } คุณสามารถเปลี่ยนได้ในภายหลัง
+zen-welcome-essentials-title = เลือกแอปที่คุณใช้บ่อยที่สุด
+zen-welcome-essentials-description = เลือกแอปโปรดเพื่อให้อยู่ใกล้มือในแถบด้านข้าง
+zen-welcome-block-ads-title = ปิดกั้นโฆษณาและตัวติดตามหรือไม่?
+zen-welcome-block-ads-description = { -brand-short-name } สามารถติดตั้ง uBlock Origin ให้คุณ เพื่อให้หน้าเว็บโหลดสะอาดและเร็วขึ้น คุณสามารถลบออกได้ทุกเมื่อ
+zen-welcome-block-ads-yes = <strong>ใช่</strong> ปิดกั้นโฆษณาให้ฉัน
+zen-welcome-block-ads-no = <strong>ไม่</strong> แสดงทุกอย่าง

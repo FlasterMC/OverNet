@@ -138,3 +138,7 @@ zen-window-sync-migration-dialog-learn-more = מידע נוסף
 zen-window-sync-migration-dialog-accept = הבנתי
 zen-appmenu-new-blank-window = 
     .label = חלון ריק חדש
+
+zen-sidebar-drag-collapsed-toast = סרגל הצד הוסתר! ניתן להשתמש ב־<span>{ $shortcut }</span> כדי להחזיר אותו.
+zen-site-data-header-boost =
+    .tooltiptext = יצירת Boost

@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Tudj meg többet
 zen-window-sync-migration-dialog-accept = Értettem
 zen-appmenu-new-blank-window = 
     .label = Új üres ablak
+
+zen-sidebar-drag-collapsed-toast = Oldalsáv elrejtve! A(z) <span>{ $shortcut }</span> billentyűkkel hozhatod vissza.
+zen-site-data-header-boost =
+    .tooltiptext = Boost létrehozása

@@ -24,3 +24,16 @@ zen-welcome-default-search-title = 기본 검색 엔진
 zen-welcome-default-search-description = 기본 검색 엔진을 선택하세요. 나중에 언제든지 바꿀 수 있습니다!
 zen-welcome-skip-button = 건너뛰기
 zen-welcome-finished = Zen이 정상적으로 설정되었습니다!
+
+zen-welcome-back = 뒤로
+zen-welcome-skip = 지금은 건너뛰기
+zen-welcome-import-description = 북마크, 기록, 비밀번호를 가져올 브라우저를 선택하고 하던 곳에서 바로 이어가세요.
+zen-welcome-import-no = <strong>아니요</strong>, 새로 시작합니다.
+zen-welcome-default-browser-title = { -brand-short-name }를 기본 브라우저로 설정할까요?
+zen-welcome-default-browser-description = 다른 앱의 링크가 { -brand-short-name }에서 열립니다. 나중에 언제든지 바꿀 수 있습니다.
+zen-welcome-essentials-title = 가장 많이 쓰는 앱을 선택하세요.
+zen-welcome-essentials-description = 즐겨 쓰는 앱을 선택해 사이드바에 두고 바로 쓰세요.
+zen-welcome-block-ads-title = 광고와 추적기를 차단할까요?
+zen-welcome-block-ads-description = { -brand-short-name }가 uBlock Origin을 설치해 페이지를 더 깔끔하고 빠르게 불러옵니다. 언제든지 삭제할 수 있습니다.
+zen-welcome-block-ads-yes = <strong>예</strong>, 광고를 차단합니다.
+zen-welcome-block-ads-no = <strong>아니요</strong>, 모두 표시합니다.

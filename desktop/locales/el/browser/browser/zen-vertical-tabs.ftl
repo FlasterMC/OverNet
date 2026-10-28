@@ -45,3 +45,6 @@ zen-tab-sublabel =
         [zen-default-pinned-cmd] Διαχωρισμός από την καρφιτσωμένη καρτέλα
        *[other] { $tabSubtitle }
     }
+
+zen-tabs-newtab-paste-and-search =
+    .label = Επικόλληση και αναζήτηση

@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = ダークモードに切り替える
 zen-action-print = 印刷
 zen-action-focus-on = フォーカスする
 zen-action-extension = 拡張機能
+
+zen-action-open-library = ライブラリーを開く
+zen-action-unsplit-view = 現在のビューを展開
+zen-action-new-space = 新しいスペース
+zen-action-collapse-all-folders = すべてのフォルダーを折りたたむ
+zen-action-expand-all-folders = すべてのフォルダーを展開
+zen-action-reopen-closed-tab = 閉じたタブを開き直す
+zen-action-duplicate-tab = 現在のタブを複製
+zen-action-reset-pinned-tab = 固定タブをリセット
+zen-action-open = 開く

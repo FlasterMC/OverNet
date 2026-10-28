@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Gofod Nesaf
 zen-panel-ui-workspaces-change-back = 
     .label = Gofod Blaenorol
+
+zen-workspaces-panel-context-manage =
+    .label = Rheoli Gofodau…
+zen-workspaces-remote-delete-title = Dileu Gofod wedi'i Gydweddu?
+zen-workspaces-remote-delete-body = Cafodd { $name } ei ddileu ar ddyfais arall. Ei ddileu yma hefyd? Os byddwch yn ei gadw, bydd yn cael ei adfer ar eich dyfeisiau eraill.

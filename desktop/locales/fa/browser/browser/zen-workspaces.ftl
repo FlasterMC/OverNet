@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Next Space
 zen-panel-ui-workspaces-change-back = 
     .label = Previous Space
+
+zen-workspaces-panel-context-manage =
+    .label = مدیریت فضاها…
+zen-workspaces-remote-delete-title = فضای همگام‌شده حذف شود؟
+zen-workspaces-remote-delete-body = { $name } در دستگاه دیگری حذف شد. اینجا هم حذف شود؟ اگر نگهش دارید، در دستگاه‌های دیگرتان بازیابی می‌شود.

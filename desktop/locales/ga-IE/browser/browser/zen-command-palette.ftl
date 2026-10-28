@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Athraigh go Mód Dorcha
 zen-action-print = Priontáil
 zen-action-focus-on = Dírigh ar
 zen-action-extension = Síneadh
+
+zen-action-open-library = Oscail an Leabharlann
+zen-action-unsplit-view = Leathnaigh an t-amharc reatha
+zen-action-new-space = Spás Nua
+zen-action-collapse-all-folders = Laghdaigh Gach Fillteán
+zen-action-expand-all-folders = Leathnaigh Gach Fillteán
+zen-action-reopen-closed-tab = Athoscail Cluaisín Dúnta
+zen-action-duplicate-tab = Dúblaigh an Cluaisín Reatha
+zen-action-reset-pinned-tab = Athshocraigh Cluaisín Greamaithe
+zen-action-open = Oscail

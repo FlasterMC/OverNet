@@ -47,3 +47,6 @@ zen-tab-sublabel =
         [zen-default-pinned-cmd] Oddziel od przypiętej karty
        *[other] { $tabSubtitle }
     }
+
+zen-tabs-newtab-paste-and-search =
+    .label = Wklej i szukaj

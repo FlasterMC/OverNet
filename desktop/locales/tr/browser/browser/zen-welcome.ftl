@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Varsayılan Arama Motorun
 zen-welcome-default-search-description = Varsayılan arama motorunu seç. Bu seçimi istediğin zaman değiştirebilirsin!
 zen-welcome-skip-button = Atla
 zen-welcome-finished = { -brand-short-name } başarıyla kuruldu ve ayarlandı!
+
+zen-welcome-back = Geri
+zen-welcome-skip = Şimdilik atla
+zen-welcome-import-description = Yer imlerinizi, geçmişinizi ve parolalarınızı içe aktaracağınız tarayıcıyı seçin ve kaldığınız yerden devam edin.
+zen-welcome-import-no = <strong>HAYIR</strong>, sıfırdan başla.
+zen-welcome-default-browser-title = { -brand-short-name } varsayılan tarayıcınız olsun mu?
+zen-welcome-default-browser-description = Diğer uygulamalardaki bağlantılar { -brand-short-name } ile açılır. Bunu daha sonra değiştirebilirsiniz.
+zen-welcome-essentials-title = En çok kullandığınız uygulamaları seçin.
+zen-welcome-essentials-description = Kenar çubuğunda el altında olmaları için favori uygulamalarınızı seçin.
+zen-welcome-block-ads-title = Reklamlar ve izleyiciler engellensin mi?
+zen-welcome-block-ads-description = { -brand-short-name } sizin için uBlock Origin kurabilir; böylece sayfalar daha temiz ve hızlı yüklenir. İstediğiniz zaman kaldırabilirsiniz.
+zen-welcome-block-ads-yes = <strong>EVET</strong>, reklamları engelle.
+zen-welcome-block-ads-no = <strong>HAYIR</strong>, her şeyi göster.

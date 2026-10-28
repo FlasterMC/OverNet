@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Je standaard zoekmachine
 zen-welcome-default-search-description = Kies je standaard zoekmachine. Je kunt het altijd later wijzigen!
 zen-welcome-skip-button = Overslaan
 zen-welcome-finished = Je { -brand-short-name } is correct ingesteld!
+
+zen-welcome-back = Terug
+zen-welcome-skip = Nu overslaan
+zen-welcome-import-description = Kies een browser om je bladwijzers, geschiedenis en wachtwoorden uit te importeren en ga verder waar je gebleven was.
+zen-welcome-import-no = <strong>NEE</strong>, opnieuw beginnen.
+zen-welcome-default-browser-title = { -brand-short-name } als standaardbrowser instellen?
+zen-welcome-default-browser-description = Links uit andere apps worden geopend in { -brand-short-name }. Je kunt dit later altijd wijzigen.
+zen-welcome-essentials-title = Kies de apps die je het meest gebruikt.
+zen-welcome-essentials-description = Selecteer je favoriete apps om ze bij de hand te hebben in je zijbalk.
+zen-welcome-block-ads-title = Advertenties en trackers blokkeren?
+zen-welcome-block-ads-description = { -brand-short-name } kan uBlock Origin voor je installeren, zodat pagina’s schoner en sneller laden. Je kunt het altijd verwijderen.
+zen-welcome-block-ads-yes = <strong>JA</strong>, advertenties voor me blokkeren.
+zen-welcome-block-ads-no = <strong>NEE</strong>, alles tonen.

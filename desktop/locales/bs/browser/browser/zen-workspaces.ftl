@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Next Space
 zen-panel-ui-workspaces-change-back = 
     .label = Previous Space
+
+zen-workspaces-panel-context-manage =
+    .label = Upravljaj prostorima…
+zen-workspaces-remote-delete-title = Izbrisati sinhronizovani prostor?
+zen-workspaces-remote-delete-body = { $name } je izbrisan na drugom uređaju. Izbrisati i ovdje? Ako ga zadržite, bit će vraćen na vašim drugim uređajima.

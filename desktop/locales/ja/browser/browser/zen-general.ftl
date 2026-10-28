@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = もっと詳しく
 zen-window-sync-migration-dialog-accept = わかりました
 zen-appmenu-new-blank-window = 
     .label = 新しい空のウィンドウ
+
+zen-sidebar-drag-collapsed-toast = サイドバーを非表示にしました！<span>{ $shortcut }</span> で再表示できます。
+zen-site-data-header-boost =
+    .tooltiptext = Boost を作成

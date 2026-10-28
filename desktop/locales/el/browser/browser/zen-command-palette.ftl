@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Switch to Dark Mode
 zen-action-print = Print
 zen-action-focus-on = Focus on
 zen-action-extension = Extension
+
+zen-action-open-library = Άνοιγμα βιβλιοθήκης
+zen-action-unsplit-view = Ανάπτυξη τρέχουσας προβολής
+zen-action-new-space = Νέος χώρος
+zen-action-collapse-all-folders = Σύμπτυξη όλων των φακέλων
+zen-action-expand-all-folders = Ανάπτυξη όλων των φακέλων
+zen-action-reopen-closed-tab = Επαναφορά κλειστής καρτέλας
+zen-action-duplicate-tab = Αντιγραφή τρέχουσας καρτέλας
+zen-action-reset-pinned-tab = Επαναφορά καρφιτσωμένης καρτέλας
+zen-action-open = Άνοιγμα

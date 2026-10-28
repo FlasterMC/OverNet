@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Passer au mode sombre
 zen-action-print = Imprimer
 zen-action-focus-on = Focus sur
 zen-action-extension = Extension
+
+zen-action-open-library = Ouvrir la bibliothèque
+zen-action-unsplit-view = Agrandir la vue actuelle
+zen-action-new-space = Nouvel espace
+zen-action-collapse-all-folders = Replier tous les dossiers
+zen-action-expand-all-folders = Déplier tous les dossiers
+zen-action-reopen-closed-tab = Rouvrir l’onglet fermé
+zen-action-duplicate-tab = Dupliquer l’onglet actuel
+zen-action-reset-pinned-tab = Réinitialiser l’onglet épinglé
+zen-action-open = Ouvrir

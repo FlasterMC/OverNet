@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Dysgu Rhagor
 zen-window-sync-migration-dialog-accept = Iawn
 zen-appmenu-new-blank-window = 
     .label = Ffenestr wag newydd
+
+zen-sidebar-drag-collapsed-toast = Bar ochr wedi'i guddio! Defnyddiwch <span>{ $shortcut }</span> i'w gael yn ôl.
+zen-site-data-header-boost =
+    .tooltiptext = Creu Boost

@@ -45,3 +45,6 @@ zen-tab-sublabel =
         [zen-default-pinned-cmd] ピン留めされたタブから切り離す
        *[other] { $tabSubtitle }
     }
+
+zen-tabs-newtab-paste-and-search =
+    .label = 貼り付けて検索

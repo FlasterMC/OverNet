@@ -140,3 +140,7 @@ zen-window-sync-migration-dialog-learn-more = Learn More
 zen-window-sync-migration-dialog-accept = Got It
 zen-appmenu-new-blank-window = 
     .label = New blank window
+
+zen-sidebar-drag-collapsed-toast = Alboko barra ezkutatuta! Erabili <span>{ $shortcut }</span> berriro erakusteko.
+zen-site-data-header-boost =
+    .tooltiptext = Sortu Boost-a

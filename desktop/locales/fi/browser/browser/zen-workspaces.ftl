@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Next Space
 zen-panel-ui-workspaces-change-back = 
     .label = Previous Space
+
+zen-workspaces-panel-context-manage =
+    .label = Hallitse tiloja…
+zen-workspaces-remote-delete-title = Poistetaanko synkronoitu tila?
+zen-workspaces-remote-delete-body = { $name } poistettiin toisella laitteella. Poistetaanko se myös täältä? Jos säilytät sen, se palautetaan muille laitteillesi.

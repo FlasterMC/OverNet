@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Volgende ruimte
 zen-panel-ui-workspaces-change-back = 
     .label = Vorige ruimte
+
+zen-workspaces-panel-context-manage =
+    .label = Ruimtes beheren…
+zen-workspaces-remote-delete-title = Gesynchroniseerde ruimte verwijderen?
+zen-workspaces-remote-delete-body = { $name } is op een ander apparaat verwijderd. Ook hier verwijderen? Als je hem bewaart, wordt hij op je andere apparaten hersteld.

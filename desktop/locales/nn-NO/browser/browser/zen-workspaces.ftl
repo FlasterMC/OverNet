@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Next Space
 zen-panel-ui-workspaces-change-back = 
     .label = Previous Space
+
+zen-workspaces-panel-context-manage =
+    .label = Handsam område…
+zen-workspaces-remote-delete-title = Slette synkronisert område?
+zen-workspaces-remote-delete-body = { $name } vart sletta på ei anna eining. Slette det her òg? Viss du beheld det, vert det gjenoppretta på dei andre einingane dine.

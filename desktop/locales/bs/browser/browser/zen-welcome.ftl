@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Your Default Search Engine
 zen-welcome-default-search-description = Choose your default search engine. You can always change it later!
 zen-welcome-skip-button = Skip
 zen-welcome-finished = Your { -brand-short-name } has been set up correctly!
+
+zen-welcome-back = Nazad
+zen-welcome-skip = Preskoči za sada
+zen-welcome-import-description = Odaberite preglednik iz kojeg ćete uvesti zabilješke, historiju i lozinke i nastavite tamo gdje ste stali.
+zen-welcome-import-no = <strong>NE</strong>, počni ispočetka.
+zen-welcome-default-browser-title = Postaviti { -brand-short-name } kao zadani preglednik?
+zen-welcome-default-browser-description = Linkovi iz drugih aplikacija otvarat će se u { -brand-short-name }. Ovo možete promijeniti kasnije.
+zen-welcome-essentials-title = Odaberite aplikacije koje najčešće koristite.
+zen-welcome-essentials-description = Odaberite omiljene aplikacije da vam budu pri ruci na bočnoj traci.
+zen-welcome-block-ads-title = Blokirati reklame i elemente za praćenje?
+zen-welcome-block-ads-description = { -brand-short-name } može instalirati uBlock Origin umjesto vas, kako bi se stranice učitavale čišće i brže. Možete ga ukloniti bilo kada.
+zen-welcome-block-ads-yes = <strong>DA</strong>, blokiraj reklame.
+zen-welcome-block-ads-no = <strong>NE</strong>, prikaži sve.

@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Neste område
 zen-panel-ui-workspaces-change-back = 
     .label = Forrige område
+
+zen-workspaces-panel-context-manage =
+    .label = Behandle områder…
+zen-workspaces-remote-delete-title = Slette synkronisert område?
+zen-workspaces-remote-delete-body = { $name } ble slettet på en annen enhet. Slette det her også? Hvis du beholder det, gjenopprettes det på de andre enhetene dine.

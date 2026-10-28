@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Další prostor
 zen-panel-ui-workspaces-change-back = 
     .label = Předchozí prostor
+
+zen-workspaces-panel-context-manage =
+    .label = Spravovat prostory…
+zen-workspaces-remote-delete-title = Smazat synchronizovaný prostor?
+zen-workspaces-remote-delete-body = { $name } byl smazán na jiném zařízení. Smazat i zde? Pokud ho ponecháte, obnoví se na ostatních zařízeních.

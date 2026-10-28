@@ -34,3 +34,13 @@ zen-action-switch-to-dark-mode = Växla till mörkt läge
 zen-action-print = Skriv ut
 zen-action-focus-on = Fokus på
 zen-action-extension = Tillägg
+
+zen-action-open-library = Öppna biblioteket
+zen-action-unsplit-view = Expandera aktuell vy
+zen-action-new-space = Nytt utrymme
+zen-action-collapse-all-folders = Fäll ihop alla mappar
+zen-action-expand-all-folders = Fäll ut alla mappar
+zen-action-reopen-closed-tab = Öppna stängd flik igen
+zen-action-duplicate-tab = Duplicera aktuell flik
+zen-action-reset-pinned-tab = Återställ fäst flik
+zen-action-open = Öppna

@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Twój domyślny silnik wyszukiwania
 zen-welcome-default-search-description = Wybierz swój domyślny silnik wyszukiwania. Możesz to zmienić w przyszłości!
 zen-welcome-skip-button = Pomiń
 zen-welcome-finished = Twoja przeglądarka { -brand-short-name } została prawidłowo przygotowana!
+
+zen-welcome-back = Wstecz
+zen-welcome-skip = Na razie pomiń
+zen-welcome-import-description = Wybierz przeglądarkę, z której zaimportujesz zakładki, historię i hasła, i kontynuuj tam, gdzie skończyłeś.
+zen-welcome-import-no = <strong>NIE</strong>, zacznij od nowa.
+zen-welcome-default-browser-title = Ustawić { -brand-short-name } jako domyślną przeglądarkę?
+zen-welcome-default-browser-description = Odnośniki z innych aplikacji będą otwierane w { -brand-short-name }. Możesz to później zmienić.
+zen-welcome-essentials-title = Wybierz aplikacje, z których korzystasz najczęściej.
+zen-welcome-essentials-description = Wybierz ulubione aplikacje, aby mieć je pod ręką w panelu bocznym.
+zen-welcome-block-ads-title = Blokować reklamy i elementy śledzące?
+zen-welcome-block-ads-description = { -brand-short-name } może zainstalować uBlock Origin, aby strony były czystsze i ładowały się szybciej. Możesz go usunąć w każdej chwili.
+zen-welcome-block-ads-yes = <strong>TAK</strong>, blokuj reklamy.
+zen-welcome-block-ads-no = <strong>NIE</strong>, pokazuj wszystko.

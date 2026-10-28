@@ -74,3 +74,8 @@ zen-panel-ui-workspaces-change-forward =
     .label = Nächster Arbeitsbereich
 zen-panel-ui-workspaces-change-back = 
     .label = Vorheriger Arbeitsbereich
+
+zen-workspaces-panel-context-manage =
+    .label = Bereiche verwalten…
+zen-workspaces-remote-delete-title = Synchronisierten Bereich löschen?
+zen-workspaces-remote-delete-body = { $name } wurde auf einem anderen Gerät gelöscht. Auch hier löschen? Wenn du ihn behältst, wird er auf deinen anderen Geräten wiederhergestellt.

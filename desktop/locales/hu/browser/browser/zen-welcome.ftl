@@ -24,3 +24,16 @@ zen-welcome-default-search-title = Az Ön alapértelmezett keresőmotorja
 zen-welcome-default-search-description = Válassza ki az alapértelmezett keresőmotort. Később bármikor megváltoztathatja!
 zen-welcome-skip-button = Kihagyás
 zen-welcome-finished = A { -brand-short-name } helyesen lett beállítva!
+
+zen-welcome-back = Vissza
+zen-welcome-skip = Most kihagyom
+zen-welcome-import-description = Válassz egy böngészőt, ahonnan importálod a könyvjelzőket, előzményeket és jelszavakat, és folytasd ott, ahol abbahagytad.
+zen-welcome-import-no = <strong>NEM</strong>, tiszta lappal kezdek.
+zen-welcome-default-browser-title = Legyen a { -brand-short-name } az alapértelmezett böngésző?
+zen-welcome-default-browser-description = A más alkalmazásokból érkező hivatkozások a { -brand-short-name } böngészőben nyílnak meg. Később bármikor módosíthatod.
+zen-welcome-essentials-title = Válaszd ki a leggyakrabban használt alkalmazásaidat.
+zen-welcome-essentials-description = Válaszd ki kedvenc alkalmazásaidat, hogy kéznél legyenek az oldalsávon.
+zen-welcome-block-ads-title = Letiltod a hirdetéseket és a nyomkövetőket?
+zen-welcome-block-ads-description = A { -brand-short-name } telepítheti neked az uBlock Origint, így az oldalak tisztábban és gyorsabban töltődnek be. Bármikor eltávolíthatod.
+zen-welcome-block-ads-yes = <strong>IGEN</strong>, tiltsa le a hirdetéseket.
+zen-welcome-block-ads-no = <strong>NEM</strong>, mutass mindent.
