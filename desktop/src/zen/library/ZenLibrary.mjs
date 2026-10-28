@@ -1029,6 +1029,15 @@ export class ZenLibrary extends MozLitElement {
         command: () => ZenLibrary.animateProgress(0),
       },
       {
+        image: "chrome://browser/skin/zen-icons/settings.svg",
+        l10nId: "library-footer-settings-button",
+        id: "zen-library-settings-button",
+        command: () => {
+          ZenLibrary.animateProgress(0);
+          window.openPreferences();
+        },
+      },
+      {
         image: "chrome://browser/skin/zen-icons/paintbrush-fill.svg",
         l10nId: "library-footer-customize-button",
         id: "zen-library-customize-button",
@@ -1043,11 +1052,18 @@ export class ZenLibrary extends MozLitElement {
       button.setAttribute("data-l10n-id", l10nId);
       if (id) {
         button.id = id;
+      }
+      if (id === "zen-library-customize-button") {
         this.#customizeButton = button;
       }
       button.addEventListener("command", command);
       footer.appendChild(button);
     }
+
+    const version = document.createXULElement("label");
+    version.id = "zen-library-version";
+    version.setAttribute("value", Services.appinfo.version);
+    footer.firstElementChild.after(version);
   }
 
   #customizeButton = null;

@@ -135,6 +135,17 @@ zen-library:is([transitioning], [sizing])
 #zen-library-footer {
   justify-content: space-between;
 
+  & #zen-library-version {
+    flex: 1;
+    margin: 0;
+    text-align: center;
+    align-self: center;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    opacity: 0.5;
+    user-select: text;
+  }
+
   & .toolbarbutton-1 {
     appearance: none;
 

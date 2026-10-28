@@ -130,12 +130,15 @@ jobs:
           FAST: ${{ steps.mode.outputs.fast }}
         run: |
           ulimit -n 4096
+          export MOZ_BUILD_DATE="$(date -u +%Y%m%d%H%M%S)"
           if [ "$FAST" != true ]; then
             npm run build
+            obj="$PWD/$(ls -d engine/obj-*)"
+            grep -q "BuildID=$MOZ_BUILD_DATE" "$obj/dist/bin/platform.ini"
+            grep -q "BuildID=$MOZ_BUILD_DATE" "$obj/dist/bin/application.ini"
             exit 0
           fi
           obj="$PWD/$(ls -d engine/obj-*)"
-          export MOZ_BUILD_DATE="$(date -u +%Y%m%d%H%M%S)"
           touch "$obj/CLOBBER"
           printf '#define MOZ_BUILDID %s\n' "$MOZ_BUILD_DATE" > "$obj/buildid.h"
           rm -f "$obj/config.status" "$obj"/build/application.ini*

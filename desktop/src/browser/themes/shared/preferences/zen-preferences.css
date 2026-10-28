@@ -30,6 +30,45 @@ html|dialog {
   animation: dialogPopin 0.2s ease-out;
 }
 
+:root {
+  --zen-settings-card-background: light-dark(
+    color-mix(in srgb, var(--zen-primary-color) 4%, white),
+    color-mix(in srgb, var(--zen-primary-color) 6%, rgba(255, 255, 255, 0.05))
+  );
+  --zen-settings-card-radius: 14px;
+  --zen-settings-card-padding: 16px 20px;
+  --zen-settings-control-background: color-mix(in srgb, currentColor 8%, transparent);
+  --zen-settings-control-background-hover: color-mix(in srgb, currentColor 12%, transparent);
+  --zen-settings-row-hover: color-mix(in srgb, currentColor 7%, transparent);
+  --zen-settings-row-selected: color-mix(in srgb, currentColor 12%, transparent);
+}
+
+html|moz-card {
+  --card-background-color: var(--zen-settings-card-background) !important;
+  --card-border: none !important;
+  --card-box-shadow: none !important;
+  --card-border-radius: var(--zen-settings-card-radius) !important;
+  --card-border-radius-compact: var(--zen-settings-card-radius) !important;
+}
+
+html|*:is(moz-box-group, moz-box-item, moz-box-button, moz-box-link) {
+  --box-border-color: color-mix(in srgb, currentColor 10%, transparent) !important;
+  --box-border-radius: var(--border-radius-medium) !important;
+}
+
+html|*:is(moz-page-nav, moz-page-nav-button) {
+  --page-nav-button-border-radius: var(--border-radius-medium) !important;
+  --page-nav-button-border-radius-focused: var(--border-radius-medium) !important;
+  --page-nav-button-indicator-width: 0 !important;
+  --page-nav-button-indicator-background-color: transparent !important;
+  --page-nav-button-background-color-hover: var(--zen-settings-row-hover) !important;
+  --page-nav-button-background-color-active: var(--zen-settings-row-selected) !important;
+  --page-nav-button-background-color-selected: var(--zen-settings-row-selected) !important;
+  --page-nav-button-text-color-hover: inherit !important;
+  --page-nav-button-text-color-active: inherit !important;
+  --page-nav-button-text-color-selected: inherit !important;
+}
+
 .subcategory {
   border-top: none !important;
 }
@@ -39,26 +78,35 @@ html|dialog {
   background: var(--zen-colors-tertiary);
 }
 
-groupbox button {
-  border-radius: calc(5px * var(--zen-squircle-value)) !important;
+groupbox[data-category] {
+  background: var(--zen-settings-card-background);
+  border-radius: var(--zen-settings-card-radius);
+  padding: var(--zen-settings-card-padding);
 }
 
 groupbox button,
 groupbox menulist {
-  background-color: light-dark(#f1f1f1, #363636);
-  color: light-dark(black, white);
+  border-radius: var(--border-radius-small) !important;
+  background-color: var(--zen-settings-control-background);
+  color: inherit;
+  transition: background-color 0.15s ease-out, scale 0.1s ease-out;
+
+  &:hover {
+    background-color: var(--zen-settings-control-background-hover);
+  }
+
+  &:active {
+    scale: 0.98;
+  }
 }
 
 groupbox h2 {
-  opacity: 0.7;
   font-size: 15px;
+  font-weight: 600;
 }
 
-#categories > .category {
-  margin-left: 0 !important;
-  min-height: 40px !important;
-  position: relative;
-  padding-inline: 20px !important;
+#searchInput {
+  border-radius: var(--border-radius-medium);
 }
 
 .textbox-search-sign {

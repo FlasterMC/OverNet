@@ -10,6 +10,15 @@ const ZEN_UPDATE_SHOW = "zen.updates.show-update-notification";
 const ZEN_UPDATE_NOTIFICATION_TIMEOUT_MS = 15000;
 
 export default function checkForZenUpdates() {
+  if (
+    !gZenUIManager.testingEnabled &&
+    "@mozilla.org/updates/update-service;1" in Cc &&
+    [...Services.wm.getEnumerator("navigator:browser")].length === 1
+  ) {
+    Cc["@mozilla.org/updates/update-service;1"]
+      .getService(Ci.nsIApplicationUpdateService)
+      .checkForBackgroundUpdates();
+  }
   const version = Services.appinfo.version;
   const lastVersion = Services.prefs.getStringPref(ZEN_UPDATE_PREF, "");
   Services.prefs.setStringPref(ZEN_UPDATE_PREF, version);

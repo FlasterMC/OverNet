@@ -4,15 +4,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-@keyframes zen-text-gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
 :host {
   background: var(--zen-sidebar-notification-bg);
   display: flex;
@@ -30,11 +21,9 @@
   position: relative;
   flex: 1;
   padding: 16px;
-  border-bottom: 1px solid color-mix(in srgb, currentColor 10%, transparent);
 }
 
 .zen-sidebar-notification-heading {
-  text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -45,7 +34,7 @@
   left: 0;
   transform: translateY(-50%);
   width: calc(100% - 40px);
-  padding: 0 16px;
+  padding: 0 10px;
 }
 
 .zen-sidebar-notification-close-button {
@@ -78,13 +67,15 @@
 }
 
 .zen-sidebar-notification-progress {
-  height: 1px;
+  height: 2px;
+  margin: 0 10px;
+  border-radius: 2px;
   overflow: hidden;
-  transform: translateY(-1px);
+  background: color-mix(in srgb, currentColor 10%, transparent);
 
   & .zen-sidebar-notification-progress-bar {
     height: 100%;
-    background: light-dark(color-mix(in srgb, var(--zen-primary-color) 50%, black), color-mix(in srgb, var(--zen-colors-primary) 15%, transparent 10%, #6b6b6b));
+    background: color-mix(in srgb, currentColor 45%, transparent);
     transform-origin: left center;
   }
 }
@@ -97,11 +88,12 @@
 
   & .zen-sidebar-notification-link-container {
     cursor: pointer;
-    padding: 4px;
+    padding: 6px;
+    border-radius: var(--border-radius-small);
     display: flex;
-    gap: 6px;
+    gap: 8px;
     align-items: center;
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.15s ease-out, background-color 0.15s ease-out, scale 0.1s ease-out;
     opacity: 0.7;
 
     & .zen-sidebar-notification-link-text {
@@ -110,19 +102,16 @@
 
     &[special] {
       opacity: 1;
-      --special-color: color-mix(in srgb, var(--zen-primary-color), currentColor 50%);
-      --specia-color-2: color-mix(in srgb, var(--zen-primary-color), currentColor 90%);
-      background: linear-gradient(135deg, var(--specia-color-2), var(--special-color), var(--specia-color-2), var(--special-color));
-      background-size: 400%;
-      filter: saturate(3);
-      background-clip: text;
-      /* Still works on firefox */
-      -webkit-text-fill-color: transparent;
-      animation: zen-text-gradient 2s linear infinite;
+      font-weight: 500;
     }
 
     &:hover {
       opacity: 1;
+      background: var(--zen-toolbar-element-bg-hover);
+    }
+
+    &:active {
+      scale: 0.98;
     }
 
     & .zen-sidebar-notification-link-icon {
@@ -130,7 +119,7 @@
       width: var(--size-item-small);
       height: var(--size-item-small);
       -moz-context-properties: fill, fill-opacity;
-      fill: var(--special-color, currentColor);
+      fill: currentColor;
     }
   }
 }

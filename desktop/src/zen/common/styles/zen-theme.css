@@ -269,13 +269,9 @@
   --tab-background-color-hover: var(--toolbarbutton-background-color-hover);
 
   /* Sidebar Notifications */
-  --zen-sidebar-notification-bg: color-mix(
-    in srgb,
-    var(--zen-primary-color) 5%,
-    light-dark(white, black)
-  );
-  --zen-sidebar-notification-shadow: 0 0 6px light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
-  --zen-sidebar-notification-outline: 1px solid light-dark(transparent, rgba(255, 255, 255, 0.1));
+  --zen-sidebar-notification-bg: var(--zen-toolbar-element-bg);
+  --zen-sidebar-notification-shadow: none;
+  --zen-sidebar-notification-outline: none;
 
   --zen-sidebar-themed-icon-fill: light-dark(color-mix(in srgb, var(--zen-primary-color) 50%, black), color-mix(in srgb, var(--zen-colors-primary) 15%, #ebebeb));
 
