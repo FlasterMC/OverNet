@@ -33,6 +33,7 @@
   const kAdBlockerId = "uBlock0@raymondhill.net";
 
   const kImportOnly = !!window.gZenWelcomeImportOnly;
+  const kImportPasswordsOnly = window.gZenWelcomeImportOnly === "passwords";
   delete window.gZenWelcomeImportOnly;
 
   const gChoices = {
@@ -1433,6 +1434,7 @@ void main() {
             isStartupMigration: !kImportOnly,
             migratorKey: source.key,
             profileId: profile?.id,
+            resourceTypes: kImportPasswordsOnly ? ["PASSWORDS"] : undefined,
           };
           if (kImportOnly) {
             Services.ww.openWindow(

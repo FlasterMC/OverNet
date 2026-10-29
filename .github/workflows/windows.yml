@@ -129,7 +129,10 @@ jobs:
 
       - name: Package
         run: |
+          sfx=engine/other-licenses/7zstub/firefox/7zSD.Win32.sfx
+          cp --remove-destination "$(readlink -f "$sfx")" "$sfx"
           npm run package
+          test -f dist/zen.installer.exe
           ls dist
 
       - name: Sign update

@@ -60,7 +60,7 @@ async function readProfilesIni(dataDir) {
   if (!(await IOUtils.exists(iniPath))) {
     return [];
   }
-  const iniFile = IOUtils.getFile(iniPath);
+  const iniFile = await IOUtils.getFile(iniPath);
   const parser = Cc["@mozilla.org/xpcom/ini-parser-factory;1"]
     .getService(Ci.nsIINIParserFactory)
     .createINIParser(iniFile);

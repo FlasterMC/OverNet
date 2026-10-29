@@ -193,11 +193,11 @@ class ZenStartup {
     }
   }
 
-  openBrowserImport() {
+  openBrowserImport({ passwordsOnly = false } = {}) {
     if (document.documentElement.hasAttribute("zen-welcome-stage")) {
       return;
     }
-    window.gZenWelcomeImportOnly = true;
+    window.gZenWelcomeImportOnly = passwordsOnly ? "passwords" : "all";
     Services.scriptloader.loadSubScript(
       "chrome://browser/content/zen-components/ZenWelcome.mjs",
       window

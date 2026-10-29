@@ -1,8 +1,16 @@
 diff --git a/browser/components/migration/content/migration-wizard.mjs b/browser/components/migration/content/migration-wizard.mjs
-index f6ada525e6f4fdb0a5ab311d0d47f8bb87d00ccc..b88780ceef6c6df9959f0a7ae95969ed9d12d8ed 100644
+index f6ada525e6f4fdb0a5ab311d0d47f8bb87d00ccc..654cc7c23b114cf73e17dd081c205925ebaa4c38 100644
 --- a/browser/components/migration/content/migration-wizard.mjs
 +++ b/browser/components/migration/content/migration-wizard.mjs
-@@ -108,6 +108,9 @@ export class MigrationWizard extends HTMLElement {
+@@ -16,6 +16,7 @@ export class MigrationWizard extends HTMLElement {
+   static #template = null;
+ 
+   #deck = null;
++  #onlyResourceTypes = null;
+   #browserProfileSelector = null;
+   #browserProfileSelectorList = null;
+   #resourceTypeList = null;
+@@ -108,6 +109,9 @@ export class MigrationWizard extends HTMLElement {
                  <label id="payment-methods" class="resource-type-label" data-resource-type="PAYMENT_METHODS">
                    <input type="checkbox"/><span data-l10n-id="migration-payment-methods-option-label"></span>
                  </label>
@@ -12,7 +20,7 @@ index f6ada525e6f4fdb0a5ab311d0d47f8bb87d00ccc..b88780ceef6c6df9959f0a7ae95969ed
                </fieldset>
              </details>
  
-@@ -170,6 +173,13 @@ export class MigrationWizard extends HTMLElement {
+@@ -170,6 +174,13 @@ export class MigrationWizard extends HTMLElement {
                  <a class="support-text text-deemphasized"></a>
                </div>
  
@@ -26,7 +34,7 @@ index f6ada525e6f4fdb0a5ab311d0d47f8bb87d00ccc..b88780ceef6c6df9959f0a7ae95969ed
                <div data-resource-type="COOKIES" class="resource-progress-group">
                  <span class="progress-icon-parent"><span class="progress-icon" role="img"></span></span>
                  <span data-l10n-id="migration-cookies-option-label"></span>
-@@ -330,6 +340,7 @@ export class MigrationWizard extends HTMLElement {
+@@ -330,6 +341,7 @@ export class MigrationWizard extends HTMLElement {
      if (window.MozXULElement) {
        window.MozXULElement.insertFTLIfNeeded("branding/brand.ftl");
        window.MozXULElement.insertFTLIfNeeded("browser/migrationWizard.ftl");
@@ -34,12 +42,13 @@ index f6ada525e6f4fdb0a5ab311d0d47f8bb87d00ccc..b88780ceef6c6df9959f0a7ae95969ed
      }
      document.l10n.connectRoot(shadow);
  
-@@ -416,9 +427,12 @@ export class MigrationWizard extends HTMLElement {
+@@ -416,9 +428,13 @@ export class MigrationWizard extends HTMLElement {
      }
    }
  
 -  requestState() {
 +  requestState(detail) {
++    this.#onlyResourceTypes = detail?.resourceTypes ?? null;
      this.dispatchEvent(
 -      new CustomEvent("MigrationWizard:RequestState", { bubbles: true })
 +      new CustomEvent("MigrationWizard:RequestState", {
@@ -49,7 +58,27 @@ index f6ada525e6f4fdb0a5ab311d0d47f8bb87d00ccc..b88780ceef6c6df9959f0a7ae95969ed
      );
    }
  
-@@ -720,10 +734,17 @@ export class MigrationWizard extends HTMLElement {
+@@ -548,7 +564,9 @@ export class MigrationWizard extends HTMLElement {
+       );
+       if (resourceLabel) {
+         resourceLabel.hidden = false;
+-        resourceLabel.control.checked = true;
++        resourceLabel.control.checked =
++          !this.#onlyResourceTypes ||
++          this.#onlyResourceTypes.includes(resourceType);
+ 
+         let labelSpan = resourceLabel.querySelector(
+           "span[default-data-l10n-id]"
+@@ -569,7 +587,7 @@ export class MigrationWizard extends HTMLElement {
+       }
+     }
+     let selectAll = this.#shadowRoot.querySelector("#select-all").control;
+-    selectAll.checked = true;
++    selectAll.checked = !this.#onlyResourceTypes;
+ 
+     this.#displaySelectedResources();
+     this.#browserProfileSelector.selectedPanelItem = panelItem;
+@@ -720,10 +738,17 @@ export class MigrationWizard extends HTMLElement {
      }
  
      if (state.migratorKey) {
@@ -71,7 +100,7 @@ index f6ada525e6f4fdb0a5ab311d0d47f8bb87d00ccc..b88780ceef6c6df9959f0a7ae95969ed
      }
  
      let fileImportErrorMessageEl = selectionPage.querySelector(
-@@ -1287,6 +1308,8 @@ export class MigrationWizard extends HTMLElement {
+@@ -1287,6 +1312,8 @@ export class MigrationWizard extends HTMLElement {
          "migration-list-autofill-label",
        [MigrationWizardConstants.DISPLAYED_RESOURCE_TYPES.PAYMENT_METHODS]:
          "migration-list-payment-methods-label",

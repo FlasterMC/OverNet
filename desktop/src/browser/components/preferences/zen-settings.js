@@ -1006,6 +1006,13 @@ var gZenBrowserImportSettings = {
     button.addEventListener("command", () =>
       gMainPane.showMigrationWizardDialog()
     );
+    document
+      .getElementById("zenBrowserImportPasswordsButton")
+      .addEventListener("command", () =>
+        window.browsingContext.topChromeWindow.gZenStartup.openBrowserImport({
+          passwordsOnly: true,
+        })
+      );
   },
 };
 
