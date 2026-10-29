@@ -16,6 +16,7 @@
   const kZenElementsToIgnore = [
     "zen-browser-background",
     "zen-toast-container",
+    "zen-welcome-background",
   ];
 
   const kEssentialApps = [
