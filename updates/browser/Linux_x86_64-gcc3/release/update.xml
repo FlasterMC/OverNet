@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<updates>
+  <update type="minor" displayVersion="0.3.0" appVersion="0.3.0" platformVersion="159.0" buildID="20261029071852">
+    <patch type="complete" URL="https://github.com/FlasterMC/Overwisp/releases/download/0.3.0/linux.mar" hashFunction="sha512" hashValue="6b3e46b6edf58e463e9457dbf116d2ac5e354a09b923b15f99395e3dcee3f4c58518ca9e32a7279e35f344e0f3b47d198a50b196a2c570a5e812fbb15b657172" size="97065358"/>
+  </update>
+</updates>
