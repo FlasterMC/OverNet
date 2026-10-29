@@ -38,7 +38,7 @@ Answer the user in Russian; write code and identifiers in English.
 ## Build and Release
 
 - Releases are built in GitHub Actions, never on the owner's Mac unless asked: run the workflow `macOS` with the version (`gh workflow run macos.yml -f version=0.1.1`). It cross-compiles Apple Silicon on Linux, takes several hours, and publishes the GitHub release `<version>` with `Overwisp-<version>.dmg` and `macos.mar`, then pushes the update manifest to the branch `updates`.
-- Auto-updates: the built-in Firefox updater reads `https://raw.githubusercontent.com/FlasterMC/Overwisp/updates/updates/browser/<target>/<channel>/update.xml` and installs `macos.mar` only if it is signed with the Overwisp MAR key. The public certificate is `desktop/build/signing/public_key.der`; the private key is the secret `OVERWISP_MAR_KEY` and is never committed.
+- Auto-updates: the built-in Firefox updater reads `https://raw.githubusercontent.com/FlasterMC/Overwisp/updates/updates/browser/<target>/<channel>/update.xml` and installs `macos.mar` only if it is signed with the Overwisp MAR key. The public certificate is `desktop/build/signing/public_key.der`; the private key is the secret `OVERNET_MAR_KEY` and is never committed.
 - A local build runs on the owner's working Mac: `nice -n 19` and 4 jobs by default (`OVERWISP_JOBS`), always `run_in_background`; never raise the job count without asking. Tools: Command Line Tools with the macOS 26.5 SDK, Rust, Node 22 (`/opt/homebrew/opt/node@22/bin`), Python 3.13 (`/opt/homebrew/opt/python@3.13/libexec/bin`); newer Node and Python break the build.
 - The app is not signed with an Apple Developer ID: on first launch macOS asks to allow it in Privacy & Security.
 - Never commit build output (`engine/`, `obj-*`, `dist/`).
