@@ -182,6 +182,46 @@ const brandInstallerStub = async (stub) => {
   return pe;
 };
 
+const dmgBackground = () => {
+  const width = 1440;
+  const height = 880;
+  const cell = 26;
+  const characters = " =+xX0S8#@";
+  const mix = (from, to, amount) => from.map((value, index) => Math.round(value + (to[index] - value) * amount));
+  const glyphs = [];
+  for (let row = 0; row * cell < height; row++) {
+    for (let column = 0; column * cell < width; column++) {
+      const x = (column + 0.5) / (width / cell);
+      const y = (row + 0.5) / (height / cell);
+      const wave = 0.06 * Math.sin(x * 9 + y * 4) * Math.cos(y * 7 - x * 3);
+      const distance = Math.hypot((x - 0.5) * 1.3, y + 0.05);
+      if (distance >= 0.95) {
+        continue;
+      }
+      const brightness = Math.min(1, Math.max(0, (1 - distance / 0.95) ** 1.6 + wave));
+      const glyph = characters[Math.round(brightness * (characters.length - 1))];
+      if (glyph === " ") {
+        continue;
+      }
+      const [red, green, blue] = mix([0xa1, 0x66, 0xee], [0xfa, 0xf5, 0xff], brightness);
+      glyphs.push(
+        `<text x="${column * cell + cell / 2}" y="${row * cell + cell * 0.72}" fill="rgb(${red},${green},${blue})" fill-opacity="${(0.15 + 0.7 * brightness).toFixed(2)}">${glyph === "&" ? "&amp;" : glyph}</text>`
+      );
+    }
+  }
+  const arrowX = 720;
+  const arrowY = 340;
+  const labelX = 380;
+  const labelY = arrowY + 166;
+  return sharp(
+    Buffer.from(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}"><defs><radialGradient id="sky" cx="0.5" cy="-0.05" r="0.95"><stop offset="0" stop-color="#e2ccff"/><stop offset="0.22" stop-color="#a166ee"/><stop offset="0.5" stop-color="#5b21b6"/><stop offset="0.8" stop-color="#1d0d38"/><stop offset="1" stop-color="#0b0614"/></radialGradient><linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.28"/><stop offset="0.55" stop-color="#fff" stop-opacity="0.05"/><stop offset="1" stop-color="#a166ee" stop-opacity="0.3"/></linearGradient><filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter></defs><rect width="${width}" height="${height}" fill="#0b0614"/><rect width="${width}" height="${height}" fill="url(#sky)"/><g font-family="Menlo, monospace" font-size="${cell * 0.78}" text-anchor="middle">${glyphs.join("")}</g><rect x="${arrowX - 92}" y="${arrowY - 30}" width="184" height="104" rx="52" fill="#a166ee" opacity="0.55" filter="url(#shadow)"/><rect x="${arrowX - 92}" y="${arrowY - 52}" width="184" height="104" rx="52" fill="#140934" fill-opacity="0.45"/><rect x="${arrowX - 92}" y="${arrowY - 52}" width="184" height="104" rx="52" fill="url(#glass)" stroke="#fff" stroke-opacity="0.3" stroke-width="2"/><path d="M${arrowX - 38} ${arrowY}H${arrowX + 34}M${arrowX + 10} ${arrowY - 24}L${arrowX + 36} ${arrowY}L${arrowX + 10} ${arrowY + 24}" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><rect x="${labelX - 124}" y="${labelY - 26}" width="248" height="52" rx="26" fill="#f3ebff" fill-opacity="0.92" stroke="#fff" stroke-opacity="0.6" stroke-width="2"/></svg>`
+    )
+  )
+    .png()
+    .withMetadata({ density: 144 });
+};
+
 const wordmark = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56"><text x="0" y="44" font-family="-apple-system, system-ui, sans-serif" font-size="48" font-weight="700" fill="#fff">Overwisp</text></svg>`;
 
 for (const brand of ["release", "twilight"]) {
@@ -208,6 +248,8 @@ for (const brand of ["release", "twilight"]) {
   writeFileSync(join(dir, "wizWatermark.bmp"), await bmp(await installerWatermark()));
   writeFileSync(join(dir, "wizHeader.bmp"), await bmp(await installerHeader()));
   writeFileSync(join(dir, "wizHeaderRTL.bmp"), await bmp(await installerHeader(), true));
+  await dmgBackground().toFile(join(dir, "background.png"));
+  writeFileSync(join(dir, "disk.icns"), readFileSync(join(dir, "firefox.icns")));
   await (await padded(270, 160)).toFile(join(dir, "PrivateBrowsing_150.png"));
   await (await padded(126, 76)).toFile(join(dir, "PrivateBrowsing_70.png"));
   await (await padded(1042, 400)).toFile(join(dir, "VisualElements_150.png"));
