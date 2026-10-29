@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <updates>
-  <update type="minor" displayVersion="0.2.0" appVersion="0.2.0" platformVersion="159.0" buildID="20261028214326">
-    <patch type="complete" URL="https://github.com/FlasterMC/OverNet/releases/download/0.2.0/windows.mar" hashFunction="sha512" hashValue="2b55e1b083c24a68ffa91961a2fb0c92791a221353a54523cf3a1485dbdab8a43241cc344cdb1388cb711a5d7f5d31107012acaac2e267ccb045a68e24792552" size="109678910"/>
+  <update type="minor" displayVersion="0.3.1" appVersion="0.3.1" platformVersion="159.0" buildID="20261029103431">
+    <patch type="complete" URL="https://github.com/FlasterMC/Overwisp/releases/download/0.3.1/windows.mar" hashFunction="sha512" hashValue="c5e289cba4322f6c849a1ad2553e7e78c121929a19de85f0a408a4868f0926f78f109f625e3a0c588e08bd5efb08cc97a110b2ecad3426e7065e1dd4724a45d9" size="111143450"/>
   </update>
 </updates>
