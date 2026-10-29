@@ -3,6 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 zen-panel-ui-workspaces-text = Spaces
+zen-workspace-default-name = Space
 
 zen-panel-ui-spaces-label =
     .label = Spaces

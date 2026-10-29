@@ -1,8 +1,8 @@
 diff --git a/browser/installer/windows/nsis/installer.nsi b/browser/installer/windows/nsis/installer.nsi
-index 785e5ccfba55a98390652a61be9dbdef1e4815eb..cba2c3bb3b2e5bcbe8ba58a40bc9bc145df81fdd 100755
+index bdae08d33338d9ac65e626b3c5d393e205348fba..855320bbfd2700f1ce16b619049e0689f8672a03 100755
 --- a/browser/installer/windows/nsis/installer.nsi
 +++ b/browser/installer/windows/nsis/installer.nsi
-@@ -845,7 +845,7 @@ Section "-InstallEndCleanup"
+@@ -859,7 +859,7 @@ Section "-InstallEndCleanup"
    ; When we're using the GUI, .onGUIEnd sends the ping, but of course that isn't
    ; invoked when we're running silently.
    ${If} ${Silent}
@@ -11,7 +11,34 @@ index 785e5ccfba55a98390652a61be9dbdef1e4815eb..cba2c3bb3b2e5bcbe8ba58a40bc9bc14
    ${EndIf}
  SectionEnd
  
-@@ -1800,5 +1800,5 @@ FunctionEnd
+@@ -1153,6 +1153,12 @@ FunctionEnd
+ !ifdef MOZ_OPTIONAL_EXTENSIONS
+ !include "extensionsLocale.nsh"
+ !endif
++!insertmacro MOZ_MUI_LANGUAGE 'ruLocale'
++!include "overrideLocale-ru.nsh"
++!include "customLocale-ru.nsh"
++!ifdef MOZ_OPTIONAL_EXTENSIONS
++!include "extensionsLocale.nsh"
++!endif
+ !verbose pop
+ 
+ ; Set this after the locale files to override it if it is in the locale
+@@ -1579,6 +1585,13 @@ Function .onInit
+ 
+   StrCpy $PageName ""
+   StrCpy $LANGUAGE 0
++  Push $0
++  System::Call "kernel32::GetUserDefaultUILanguage() i .r0"
++  IntOp $0 $0 & 0x3FF
++  ${If} $0 == 25
++    StrCpy $LANGUAGE ${LANG_ruLocale}
++  ${EndIf}
++  Pop $0
+   ${SetBrandNameVars} "$EXEDIR\core\distribution\setup.ini"
+ 
+   ; Don't install on systems that don't support SSE2. The parameter value of
+@@ -1813,5 +1826,5 @@ FunctionEnd
  
  Function .onGUIEnd
    ${OnEndCommon}

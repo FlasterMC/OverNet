@@ -1,0 +1,76 @@
+diff --git a/toolkit/mozapps/installer/windows/nsis/preprocess-locale.py b/toolkit/mozapps/installer/windows/nsis/preprocess-locale.py
+index 280ab3d0855d26cd588d1fa4f3c229c438badb47..30cf8cd8e859a343d53beff76d30b1812aba380f 100644
+--- a/toolkit/mozapps/installer/windows/nsis/preprocess-locale.py
++++ b/toolkit/mozapps/installer/windows/nsis/preprocess-locale.py
+@@ -118,6 +118,63 @@ def preprocess_locale_files(config_dir, l10ndirs):
+     fp.close()
+ 
+ 
++def merged_locale_strings(name, base_dirs, locale_dir, prefix, middle, add_cr):
++    base_path = lookup(name, base_dirs)
++    locale_path = join(locale_dir, name)
++    if not isfile(locale_path):
++        return get_locale_strings(base_path, prefix, middle, add_cr)
++    base_lines = get_locale_strings(base_path, prefix, middle, add_cr).splitlines()
++    locale_lines = get_locale_strings(locale_path, prefix, middle, add_cr).splitlines()
++    translated = {line.split(" ", 2)[1]: line for line in locale_lines}
++    return "".join(
++        translated.get(line.split(" ", 2)[1], line) + "\n" for line in base_lines
++    )
++
++
++def preprocess_extra_locale(moz_dir, config_dir, l10ndirs, ab_cd, language_id):
++    name = ab_cd + "Locale"
++    locale_dir = join(moz_dir, "browser", "locales", ab_cd, "browser", "installer")
++
++    fp = open_utf16le_file(join(config_dir, name + ".nlf"))
++    fp.write(
++        (
++            "# Header, don't edit\nNLF v6\n# Start editing here\n# Language ID\n%d\n"
++            "# Font and size - dash (-) means default\n-\n-\n"
++            "# Codepage - dash (-) means ANSI code page\n-\n"
++            "# RTL - anything else than RTL means LTR\n-\n" % language_id
++        ).encode("utf-16-le")
++    )
++    fp.close()
++
++    fp = open_utf16le_file(join(config_dir, name + ".nsh"))
++    fp.write(
++        (
++            "!insertmacro MOZ_MUI_LANGUAGEFILE_BEGIN \"%s\"\n"
++            "!ifdef MUI_LANGNAME\n!undef MUI_LANGNAME\n!endif\n"
++            "!define MUI_LANGNAME \"%s\"\n" % (name, name)
++        ).encode("utf-16-le")
++    )
++    fp.write(
++        merged_locale_strings(
++            "mui.properties", l10ndirs, locale_dir, "!define ", " ", True
++        ).encode("utf-16-le")
++    )
++    fp.write("!insertmacro MOZ_MUI_LANGUAGEFILE_END\n".encode("utf-16-le"))
++    fp.close()
++
++    for properties, output, prefix, add_cr in (
++        ("override.properties", "overrideLocale", "LangString ^", False),
++        ("custom.properties", "customLocale", "LangString ", True),
++    ):
++        fp = open_utf16le_file(join(config_dir, "%s-%s.nsh" % (output, ab_cd)))
++        fp.write(
++            merged_locale_strings(
++                properties, l10ndirs, locale_dir, prefix, " 0 ", add_cr
++            ).encode("utf-16-le")
++        )
++        fp.close()
++
++
+ def create_nlf_file(moz_dir, ab_cd, config_dir):
+     """
+     Create a basic NSIS nlf file.
+@@ -341,6 +398,7 @@ Arguments to --create-nlf-file should be:
+         # Create the output files
+         create_nlf_file(moz_dir, ab_cd, config_dir)
+         preprocess_locale_files(config_dir, l10n_dirs)
++        preprocess_extra_locale(moz_dir, config_dir, l10n_dirs, "ru", 1049)
+     elif options.preprocessSingle:
+         if len(args) not in (4, 5):
+             p.error(preprocess_single_file_args_help_string)

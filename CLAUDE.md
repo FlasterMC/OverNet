@@ -32,6 +32,9 @@ Answer the user in Russian; write code and identifiers in English.
 
 - `desktop/` - `git subtree` of `zen-browser/desktop` (branch `dev`); upstream updates: `git subtree pull --prefix desktop https://github.com/zen-browser/desktop.git dev --squash`. Our changes there stay minimal: branding in `surfer.json`, `configs/common/mozconfig`, `configs/branding/*`, `build/signing/public_key.der` and small `.patch` files in `src/`.
 - Icon source: `desktop/configs/branding/overwisp.svg`; `node scripts/overwisp_branding.mjs` (inside `desktop/`) regenerates every branding image.
+- The script also writes the Windows installer branding: `wizWatermark.bmp`, `wizHeader*.bmp`, `src/toolkit/mozapps/installer/windows/nsis/setup.ico` and `src/other-licenses/7zstub/firefox/7zSD.Win32.sfx` (the installer stub with our icons and version info instead of Firefox's).
+- The Windows installer is bilingual: `preprocess-locale-py.patch` generates `ruLocale` from the Firefox l10n `ru` installer strings, `installer-nsi.patch` and `uninstaller-nsi.patch` load it and pick Russian when the Windows UI language is Russian.
+- `-moz-window-dragging: drag` swallows clicks on Windows: every clickable element inside a drag area needs `-moz-window-dragging: no-drag`.
 - `.github/workflows/macos.yml` - the release build.
 - `scripts/release_mac.sh <version>` - the same build on a local Mac, output in `dist/<version>/`.
 

@@ -866,7 +866,7 @@ class nsZenWorkspaces {
     }
     this._workspaceCache = spacesFromStore.length
       ? [...spacesFromStore]
-      : [this.#createWorkspaceData("Space", undefined)];
+      : [this.#createWorkspaceData(lazy.l10n.formatValueSync("zen-workspace-default-name"), undefined)];
     for (const workspace of this._workspaceCache) {
       // Spaces created while containers were disabled were saved without one
       workspace.containerTabId ??= 0;
@@ -1646,7 +1646,7 @@ class nsZenWorkspaces {
     let createForm;
     const previousWorkspace = this.getActiveWorkspace();
     document.documentElement.setAttribute("zen-creating-workspace", "true");
-    await this.createAndSaveWorkspace("Space", undefined, false, 0, {
+    await this.createAndSaveWorkspace(lazy.l10n.formatValueSync("zen-workspace-default-name"), undefined, false, 0, {
       insertAfterId: previousWorkspace?.uuid,
       beforeChangeCallback: async workspace => {
         createForm = document.createXULElement("zen-workspace-creation");
@@ -2863,7 +2863,7 @@ class nsZenWorkspaces {
   }
 
   async createAndSaveWorkspace(
-    name = "Space",
+    name = lazy.l10n.formatValueSync("zen-workspace-default-name"),
     icon = undefined,
     dontChange = false,
     containerTabId = 0,

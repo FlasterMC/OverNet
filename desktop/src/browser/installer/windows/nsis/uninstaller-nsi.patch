@@ -1,7 +1,7 @@
 diff --git a/browser/installer/windows/nsis/uninstaller.nsi b/browser/installer/windows/nsis/uninstaller.nsi
 old mode 100755
 new mode 100644
-index becbb0f70c84eb7f2d9bff5a3aedcbb7a78a61cf..a23a8a1b160932368377fc841b501df9355918db
+index 7a39e2f8134c90b2e9736b226e01004363f8b59f..789bb36bfa975ae939bf833da22f7f391622760d
 --- a/browser/installer/windows/nsis/uninstaller.nsi
 +++ b/browser/installer/windows/nsis/uninstaller.nsi
 @@ -150,7 +150,7 @@ OutFile "helper.exe"
@@ -13,7 +13,7 @@ index becbb0f70c84eb7f2d9bff5a3aedcbb7a78a61cf..a23a8a1b160932368377fc841b501df9
  
  ; Support for the profile refresh feature
  !define URLProfileRefreshHelp "https://support.mozilla.org/kb/refresh-firefox-reset-add-ons-and-settings"
-@@ -516,6 +516,7 @@ Section "Uninstall"
+@@ -522,6 +522,7 @@ Section "Uninstall"
    ${un.RegCleanFileHandler}  ".svg"   "FirefoxHTML-$AppUserModelID"
    ${un.RegCleanFileHandler}  ".webp"  "FirefoxHTML-$AppUserModelID"
    ${un.RegCleanFileHandler}  ".avif"  "FirefoxHTML-$AppUserModelID"
@@ -21,3 +21,27 @@ index becbb0f70c84eb7f2d9bff5a3aedcbb7a78a61cf..a23a8a1b160932368377fc841b501df9
  
    ${un.RegCleanFileHandler}  ".pdf"   "FirefoxPDF-$AppUserModelID"
  
+@@ -783,6 +784,9 @@ SectionEnd
+ !verbose 3
+ !include "overrideLocale.nsh"
+ !include "customLocale.nsh"
++!insertmacro MOZ_MUI_LANGUAGE 'ruLocale'
++!include "overrideLocale-ru.nsh"
++!include "customLocale-ru.nsh"
+ !verbose pop
+ 
+ ; Set this after the locale files to override it if it is in the locale. Using
+@@ -1066,6 +1070,13 @@ Function un.onInit
+   System::Call 'kernel32::SetDllDirectoryW(w "")'
+ 
+   StrCpy $LANGUAGE 0
++  Push $0
++  System::Call "kernel32::GetUserDefaultUILanguage() i .r0"
++  IntOp $0 $0 & 0x3FF
++  ${If} $0 == 25
++    StrCpy $LANGUAGE ${LANG_ruLocale}
++  ${EndIf}
++  Pop $0
+   StrCpy $ShouldOpenSurvey "0"
+ 
+   ${un.UninstallUnOnInitCommon}
