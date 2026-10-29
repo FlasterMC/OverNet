@@ -21,21 +21,35 @@ permissions:
   contents: write
   actions: write
 
-concurrency:
-  group: macos-release
-  cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-24.04
     timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: aarch64
+            rust-target: aarch64-apple-darwin
+            dmg-suffix: ""
+            mar-name: macos.mar
+          - arch: x86_64
+            rust-target: x86_64-apple-darwin
+            dmg-suffix: "-Intel"
+            mar-name: macos-x64.mar
+    concurrency:
+      group: macos-release-${{ matrix.arch }}
+      cancel-in-progress: false
     defaults:
       run:
         working-directory: desktop
     env:
       VERSION: ${{ inputs.version }}
       SURFER_PLATFORM: darwin
-      SURFER_COMPAT: aarch64
+      SURFER_COMPAT: ${{ matrix.arch }}
+      ARCH: ${{ matrix.arch }}
+      DMG_NAME: Overwisp-${{ inputs.version }}${{ matrix.dmg-suffix }}.dmg
+      MAR_NAME: ${{ matrix.mar-name }}
       SURFER_FORCE_CANDIDATE: 1
       ZEN_CROSS_COMPILING: 1
       ZEN_RELEASE: 1
@@ -59,8 +73,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           FULL: ${{ inputs.full }}
         run: |
-          key="$(gh cache list -R "$GITHUB_REPOSITORY" --key obj- --sort created_at --order desc --limit 1 --json key --jq '.[0].key // empty')"
-          base="${key#obj-}"
+          key="$(gh cache list -R "$GITHUB_REPOSITORY" --key "obj-$ARCH-" --sort created_at --order desc --limit 1 --json key --jq '.[0].key // empty')"
+          base="${key#obj-$ARCH-}"
           fast=false
           if [ "$FULL" != true ] && [ -n "$base" ] && git merge-base --is-ancestor "$base" HEAD 2>/dev/null; then
             if ! git diff --name-only "$base" HEAD | grep -vE '^(\.github/|[^/]+\.md$|\.gitignore$|desktop/locales/|desktop/src/.*\.(mjs|js|css|ftl|html|xhtml|svg|png|jpg|webp|json)$)' | grep -q .; then
@@ -95,7 +109,7 @@ jobs:
       - name: Rust
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain "$(sed -n 's/^channel *= *"\(.*\)"/\1/p' rust-toolchain.toml)"
-          "$HOME/.cargo/bin/rustup" target add aarch64-apple-darwin
+          "$HOME/.cargo/bin/rustup" target add ${{ matrix.rust-target }}
           echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
 
       - name: Firefox
@@ -164,7 +178,7 @@ jobs:
           stage="$obj/dist/zen"
           rcodesign sign "$stage/Overwisp.app"
           rm -f dist/*.dmg dist/output.mar
-          (cd engine && ./mach python -m mozbuild.action.make_dmg --dsstore "$branding/dsstore" --background "$branding/background.png" --icon "$branding/disk.icns" --volume-name Overwisp "$stage" "$GITHUB_WORKSPACE/desktop/dist/Overwisp-$VERSION.dmg")
+          (cd engine && ./mach python -m mozbuild.action.make_dmg --dsstore "$branding/dsstore" --background "$branding/background.png" --icon "$branding/disk.icns" --volume-name Overwisp "$stage" "$GITHUB_WORKSPACE/desktop/dist/$DMG_NAME")
           rm -rf "$obj/dist/Overwisp.app"
           mv "$stage/Overwisp.app" "$obj/dist/Overwisp.app"
           JUST_MAR=1 npm run package
@@ -188,37 +202,27 @@ jobs:
           mar -v dist/output.mar -k "$RUNNER_TEMP/mar_pub.pem"
           rm -f "$key"
           npm run surfer -- updates-browser
+          if [ "$ARCH" = x86_64 ]; then
+            rm -rf dist/update/browser/Darwin_aarch64-gcc3
+          else
+            rm -rf dist/update/browser/Darwin_x86*
+          fi
+          find dist/update -name update.xml -exec sed -i "s#/macos\.mar\"#/$MAR_NAME\"#" {} +
+          grep -rh "URL=" dist/update
 
       - name: Release
         env:
           GH_TOKEN: ${{ github.token }}
           NOTES: ${{ inputs.notes }}
         run: |
-          mkdir -p "$RUNNER_TEMP/release"
-          cp "$(ls -t dist/*.dmg | head -1)" "$RUNNER_TEMP/release/Overwisp-$VERSION.dmg"
-          cp dist/output.mar "$RUNNER_TEMP/release/macos.mar"
-          if [ -z "$NOTES" ]; then
-            previous="$(git describe --tags --abbrev=0 2>/dev/null || true)"
-            NOTES="$(git log --no-merges --format='- %s' ${previous:+$previous..}HEAD | grep -v '^- Squashed ' | head -50)"
-          fi
-          gh release create "$VERSION" "$RUNNER_TEMP/release/Overwisp-$VERSION.dmg" "$RUNNER_TEMP/release/macos.mar" --title "Overwisp $VERSION" --notes "${NOTES:-Overwisp $VERSION}" --target "$GITHUB_SHA"
+          out="$RUNNER_TEMP/release"
+          mkdir -p "$out"
+          cp "dist/$DMG_NAME" "$out/$DMG_NAME"
+          cp dist/output.mar "$out/$MAR_NAME"
+          bash ../scripts/publish_release.sh "$VERSION" "$out"/*
 
       - name: Update manifest
-        run: |
-          site="$RUNNER_TEMP/updates"
-          if git ls-remote --exit-code origin updates > /dev/null; then
-            git fetch origin updates
-            git worktree add "$site" origin/updates
-          else
-            git worktree add --detach "$site"
-            git -C "$site" checkout --orphan updates
-            git -C "$site" rm -rfq .
-          fi
-          mkdir -p "$site/updates"
-          cp -R dist/update/. "$site/updates/"
-          git -C "$site" add -A
-          git -C "$site" commit -qm "Overwisp $VERSION"
-          git -C "$site" push origin HEAD:updates
+        run: bash ../scripts/publish_updates.sh "Overwisp $VERSION macOS $ARCH"
 
       - name: Prune build
         if: steps.mode.outputs.fast != 'true'
@@ -234,11 +238,11 @@ jobs:
         continue-on-error: true
         with:
           path: desktop/engine/obj-*
-          key: obj-${{ github.sha }}
+          key: obj-${{ matrix.arch }}-${{ github.sha }}
 
       - name: Drop old builds
         if: steps.mode.outputs.fast != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh cache list -R "$GITHUB_REPOSITORY" --key obj- --json key --jq '.[].key' | grep -vx "obj-$GITHUB_SHA" | xargs -r -n1 gh cache delete -R "$GITHUB_REPOSITORY" || true
+          gh cache list -R "$GITHUB_REPOSITORY" --key obj- --limit 100 --json key --jq '.[].key' | grep -E "^obj-($ARCH-)?[0-9a-f]{40}$" | grep -vx "obj-$ARCH-$GITHUB_SHA" | xargs -r -n1 gh cache delete -R "$GITHUB_REPOSITORY" || true

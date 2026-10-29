@@ -1,18 +1,19 @@
 diff --git a/browser/components/BrowserGlue.sys.mjs b/browser/components/BrowserGlue.sys.mjs
-index 4a292baaec..30d7f8aad5 100644
+index 4a292baaec92880c7a17709b207117edec1920c4..8fbdc5a7fd0a6ab0d15a02a3776398803f0dfec9 100644
 --- a/browser/components/BrowserGlue.sys.mjs
 +++ b/browser/components/BrowserGlue.sys.mjs
-@@ -8,6 +8,9 @@ import { XPCOMUtils } from "resource://gre/modules/XPCOMUtils.sys.mjs";
+@@ -8,6 +8,10 @@ import { XPCOMUtils } from "resource://gre/modules/XPCOMUtils.sys.mjs";
  const lazy = {};
  
  ChromeUtils.defineESModuleGetters(lazy, {
 +  gZenUIMigration: "resource:///modules/ZenUIMigration.sys.mjs",
 +  gZenRussianSites: "resource:///modules/ZenRussianSites.sys.mjs",
 +  gZenVideoTranslation: "resource:///modules/ZenVideoTranslation.sys.mjs",
++  gZenTabSleep: "resource:///modules/ZenTabSleep.sys.mjs",
    AboutHomeStartupCache: "resource:///modules/AboutHomeStartupCache.sys.mjs",
    AWToolbarButton: "resource:///modules/aboutwelcome/AWToolbarUtils.sys.mjs",
    ASRouter: "resource:///modules/asrouter/ASRouter.sys.mjs",
-@@ -1357,7 +1360,7 @@ BrowserGlue.prototype = {
+@@ -1357,7 +1361,7 @@ BrowserGlue.prototype = {
        windowcount++;
        let tabbrowser = win.gBrowser;
        if (tabbrowser) {
@@ -21,7 +22,7 @@ index 4a292baaec..30d7f8aad5 100644
        }
      }
  
-@@ -1522,6 +1525,10 @@ BrowserGlue.prototype = {
+@@ -1522,6 +1526,11 @@ BrowserGlue.prototype = {
      } else if (profileDataVersion < APP_DATA_VERSION) {
        lazy.ProfileDataUpgrader.upgrade(profileDataVersion, APP_DATA_VERSION);
      }
@@ -29,6 +30,7 @@ index 4a292baaec..30d7f8aad5 100644
 +    lazy.gZenUIMigration.init(this._isNewProfile);
 +    lazy.gZenRussianSites.init();
 +    lazy.gZenVideoTranslation.init();
++    lazy.gZenTabSleep.init();
    },
  
    async _showUpgradeDialog() {

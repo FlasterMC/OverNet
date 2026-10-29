@@ -350,3 +350,20 @@ zen-browsing-video-resume =
     .label = Продолжать видео на YouTube с места, где вы остановились
 zen-browsing-video-resume-paused =
     .label = Ставить на паузу продолженное или восстановленное видео на YouTube, пока вы сами не запустите его
+
+zen-tab-sleep-header = Засыпание вкладок
+zen-tab-sleep-description = Вкладки, которые вы давно не открывали, засыпают, чтобы беречь память и батарею. Их иконки становятся серыми, а при открытии вкладка просыпается. Вкладки со звуком, демонстрацией экрана или несохранённым вводом не засыпают.
+zen-tab-sleep-timeout-label = Усыплять вкладки через
+zen-tab-sleep-timeout-never = Никогда
+zen-tab-sleep-timeout-minutes =
+    { $minutes ->
+        [one] { $minutes } минуту
+        [few] { $minutes } минуты
+       *[many] { $minutes } минут
+    }
+zen-tab-sleep-timeout-hours =
+    { $hours ->
+        [one] { $hours } час
+        [few] { $hours } часа
+       *[many] { $hours } часов
+    }

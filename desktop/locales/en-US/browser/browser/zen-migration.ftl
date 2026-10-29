@@ -4,6 +4,8 @@
 
 migration-wizard-migrator-display-name-arc = Arc
 migration-wizard-migrator-display-name-dia = Dia
+migration-wizard-migrator-display-name-yandex = Yandex Browser
+migration-wizard-migrator-display-name-comet = Comet
 
 migration-zen-spaces-option-label = Spaces and pinned tabs
 

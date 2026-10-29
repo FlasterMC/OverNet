@@ -6,7 +6,7 @@ Answer the user in Russian; write code and identifiers in English.
 
 - **Overwisp** is a test version of a web browser of the OverClouds family, based on Zen Browser (Firefox/Gecko). Style of Arc and Vivaldi: a vertical sidebar with tabs, pinned tabs, workspaces and groups that fold like folders.
 - The repository is public. Never add personal data: no emails, private hostnames, server addresses, keys or details of other projects of the owner.
-- Platform: macOS. Windows and Android are not started.
+- Platforms: macOS (Apple Silicon and Intel), Windows x64, Linux x64. Android is not started.
 - Sync is not part of this version.
 
 ## Code Rules
@@ -41,8 +41,9 @@ Answer the user in Russian; write code and identifiers in English.
 
 ## Build and Release
 
-- Releases are built in GitHub Actions, never on the owner's Mac unless asked: run the workflow `macOS` with the version (`gh workflow run macos.yml -f version=0.1.1`). It cross-compiles Apple Silicon on Linux, takes several hours, and publishes the GitHub release `<version>` with `Overwisp-<version>.dmg` and `macos.mar`, then pushes the update manifest to the branch `updates`.
-- Auto-updates: the built-in Firefox updater reads `https://raw.githubusercontent.com/FlasterMC/Overwisp/updates/updates/browser/<target>/<channel>/update.xml` and installs `macos.mar` only if it is signed with the Overwisp MAR key. The public certificate is `desktop/build/signing/public_key.der`; the private key is the secret `OVERNET_MAR_KEY` and is never committed.
+- Releases are built in GitHub Actions, never on the owner's Mac unless asked: run `macos.yml`, `windows.yml` and `linux.yml` with the same version (`gh workflow run macos.yml -f version=0.3.0`). They take several hours and add their files to the one GitHub release `<version>` (`scripts/publish_release.sh`), then push their update manifests to the branch `updates` (`scripts/publish_updates.sh`).
+- `macos.yml` cross-compiles on Linux for both `aarch64` (`Overwisp-<version>.dmg`, `macos.mar`) and `x86_64` (`Overwisp-<version>-Intel.dmg`, `macos-x64.mar`). Surfer writes every `Darwin_*` manifest for a universal `macos.mar`, so each job keeps only its own targets and points them at its own MAR. `windows.yml` gives `Overwisp-Setup-<version>.exe`, a zip and `windows.mar`; `linux.yml` gives `Overwisp-<version>-linux-x86_64.tar.xz` and `linux.mar`.
+- Auto-updates: the built-in Firefox updater reads `https://raw.githubusercontent.com/FlasterMC/Overwisp/updates/updates/browser/<target>/<channel>/update.xml` and installs the platform MAR only if it is signed with the Overwisp MAR key. The public certificate is `desktop/build/signing/public_key.der`; the private key is the secret `OVERNET_MAR_KEY` and is never committed.
 - A local build runs on the owner's working Mac: `nice -n 19` and 4 jobs by default (`OVERWISP_JOBS`), always `run_in_background`; never raise the job count without asking. Tools: Command Line Tools with the macOS 26.5 SDK, Rust, Node 22 (`/opt/homebrew/opt/node@22/bin`), Python 3.13 (`/opt/homebrew/opt/python@3.13/libexec/bin`); newer Node and Python break the build.
 - The app is not signed with an Apple Developer ID: on first launch macOS asks to allow it in Privacy & Security.
 - Never commit build output (`engine/`, `obj-*`, `dist/`).

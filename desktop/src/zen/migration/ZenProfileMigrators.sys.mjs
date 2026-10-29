@@ -141,3 +141,39 @@ export class DiaProfileMigrator extends ChromeProfileMigrator {
   _keychainServiceName = "Dia Safe Storage";
   _keychainAccountName = "Dia";
 }
+
+export class YandexProfileMigrator extends ChromeProfileMigrator {
+  static get key() {
+    return "yandex";
+  }
+
+  static get displayNameL10nID() {
+    return "migration-wizard-migrator-display-name-yandex";
+  }
+
+  static get brandImage() {
+    return "chrome://browser/content/zen-images/migration/yandex.png";
+  }
+
+  _chromeUserDataPathSuffix = "Yandex";
+  _keychainServiceName = "Yandex Safe Storage";
+  _keychainAccountName = "Yandex";
+}
+
+export class CometProfileMigrator extends ChromeProfileMigrator {
+  static get key() {
+    return "comet";
+  }
+
+  static get displayNameL10nID() {
+    return "migration-wizard-migrator-display-name-comet";
+  }
+
+  static get brandImage() {
+    return "chrome://browser/content/zen-images/migration/comet.png";
+  }
+
+  _chromeUserDataPathSuffix = "Comet";
+  _keychainServiceName = "Comet Safe Storage";
+  _keychainAccountName = "Comet";
+}

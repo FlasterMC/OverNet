@@ -1,0 +1,32 @@
+diff --git a/toolkit/components/search/SearchEngineSelector.sys.mjs b/toolkit/components/search/SearchEngineSelector.sys.mjs
+index 3a42b383af1984fa3a818a040618a21f1b8f1d5c..e726f1ea1f95f299f58743972910edccea02d439 100644
+--- a/toolkit/components/search/SearchEngineSelector.sys.mjs
++++ b/toolkit/components/search/SearchEngineSelector.sys.mjs
+@@ -24,6 +24,7 @@ const lazy = XPCOMUtils.declareLazy({
+   SearchUpdateChannel:
+     "moz-src:///toolkit/components/uniffi-bindgen-gecko-js/components/generated/RustSearch.sys.mjs",
+   SearchUtils: "moz-src:///toolkit/components/search/SearchUtils.sys.mjs",
++  ZenSearchEngines: "resource:///modules/ZenSearchEngines.sys.mjs",
+   logConsole: () =>
+     console.createInstance({
+       prefix: "SearchEngineSelector",
+@@ -96,7 +97,9 @@ export class SearchEngineSelector {
+       this.#getConfigurationOverrides(),
+     ]);
+     let remoteSettingsData = await this.#getConfigurationPromise;
+-    this.#configuration = remoteSettingsData[0];
++    this.#configuration = lazy.ZenSearchEngines.withBundledEngines(
++      remoteSettingsData[0]
++    );
+     this.#getConfigurationPromise = null;
+ 
+     if (!this.#configuration?.length) {
+@@ -366,7 +369,7 @@ export class SearchEngineSelector {
+    *   The new configuration object
+    */
+   _onConfigurationUpdated({ data: { current } }) {
+-    this.#configuration = current;
++    this.#configuration = lazy.ZenSearchEngines.withBundledEngines(current);
+ 
+     this.#selector.setSearchConfig(
+       JSON.stringify({ data: this.#configuration })

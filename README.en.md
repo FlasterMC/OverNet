@@ -16,7 +16,14 @@ Planned: Russian websites working without installing certificates, and voice-ove
 
 ## Installation
 
-macOS on Apple Silicon: download `Overwisp-<version>.dmg` from [releases](https://github.com/FlasterMC/Overwisp/releases) and drag Overwisp into Applications. The app is not signed with an Apple certificate, so on first launch open System Settings → Privacy & Security and click "Open Anyway".
+Everything is on the [releases](https://github.com/FlasterMC/Overwisp/releases) page.
+
+- **macOS on Apple Silicon (M1 and newer):** `Overwisp-<version>.dmg`.
+- **macOS on Intel:** `Overwisp-<version>-Intel.dmg`, requires macOS 10.15 or newer.
+- **Windows:** `Overwisp-Setup-<version>.exe`.
+- **Linux:** `Overwisp-<version>-linux-x86_64.tar.xz`, extract it and run `zen`.
+
+On macOS drag Overwisp into Applications. The app is not signed with an Apple certificate, so on first launch open System Settings → Privacy & Security and click "Open Anyway".
 
 ## License
 

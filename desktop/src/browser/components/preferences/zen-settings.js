@@ -790,6 +790,11 @@ Preferences.addAll([
     default: "switch",
   },
   {
+    id: "zen.tabs.sleep.timeout-minutes",
+    type: "int",
+    default: 30,
+  },
+  {
     id: "zen.workspaces.force-container-workspace",
     type: "bool",
     default: true,

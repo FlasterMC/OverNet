@@ -128,3 +128,9 @@
 }
 
 %include zen-essentials-promo.css
+
+@media -moz-pref('browser.tabs.fadeOutUnloadedTabs') {
+  .tabbrowser-tab[pending] .tab-icon-image {
+    filter: grayscale(1);
+  }
+}

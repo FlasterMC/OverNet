@@ -10,3 +10,5 @@ migration-wizard-progress-success-zen-spaces = { $quantity ->
     }
 migration-wizard-migrator-display-name-arc = Arc
 migration-wizard-migrator-display-name-dia = Dia
+migration-wizard-migrator-display-name-yandex = Yandex Browser
+migration-wizard-migrator-display-name-comet = Comet

@@ -44,6 +44,27 @@
             preference="zen.tabs.select-recently-used-on-close"/>
 </groupbox>
 
+<groupbox id="zenTabSleepGroup" data-category="paneOverwispTabManagement" hidden="true" class="highlighting-group">
+      <label><html:h2 data-l10n-id="zen-tab-sleep-header"/></label>
+      <description class="description-deemphasized" data-l10n-id="zen-tab-sleep-description" />
+
+      <hbox align="center">
+            <label control="zenTabSleepTimeout" data-l10n-id="zen-tab-sleep-timeout-label"/>
+            <menulist id="zenTabSleepTimeout" preference="zen.tabs.sleep.timeout-minutes">
+                  <menupopup>
+                        <menuitem data-l10n-id="zen-tab-sleep-timeout-never" value="0"/>
+                        <menuitem data-l10n-id="zen-tab-sleep-timeout-minutes" data-l10n-args='{"minutes": 5}' value="5"/>
+                        <menuitem data-l10n-id="zen-tab-sleep-timeout-minutes" data-l10n-args='{"minutes": 15}' value="15"/>
+                        <menuitem data-l10n-id="zen-tab-sleep-timeout-minutes" data-l10n-args='{"minutes": 30}' value="30"/>
+                        <menuitem data-l10n-id="zen-tab-sleep-timeout-hours" data-l10n-args='{"hours": 1}' value="60"/>
+                        <menuitem data-l10n-id="zen-tab-sleep-timeout-hours" data-l10n-args='{"hours": 2}' value="120"/>
+                        <menuitem data-l10n-id="zen-tab-sleep-timeout-hours" data-l10n-args='{"hours": 6}' value="360"/>
+                        <menuitem data-l10n-id="zen-tab-sleep-timeout-hours" data-l10n-args='{"hours": 12}' value="720"/>
+                  </menupopup>
+            </menulist>
+      </hbox>
+</groupbox>
+
 <hbox id="zenPinnedTabsManagerCategory"
       class="subcategory"
       hidden="true"

@@ -252,3 +252,18 @@ zen-browsing-video-resume =
     .label = Continue YouTube videos from where you stopped
 zen-browsing-video-resume-paused =
     .label = Keep a continued or restored YouTube video paused until you press play
+
+zen-tab-sleep-header = Tab sleep
+zen-tab-sleep-description = Tabs you have not opened for a while are put to sleep to save memory and battery. Their icons turn gray, and they wake up when you open them. Tabs playing sound, sharing the screen or with unsaved input stay awake.
+zen-tab-sleep-timeout-label = Put tabs to sleep after
+zen-tab-sleep-timeout-never = Never
+zen-tab-sleep-timeout-minutes =
+    { $minutes ->
+        [one] { $minutes } minute
+       *[other] { $minutes } minutes
+    }
+zen-tab-sleep-timeout-hours =
+    { $hours ->
+        [one] { $hours } hour
+       *[other] { $hours } hours
+    }

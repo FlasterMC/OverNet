@@ -162,32 +162,7 @@ jobs:
           cp dist/zen.installer.exe "$out/Overwisp-Setup-$VERSION.exe"
           cp "$(ls dist/zen-*.win64.zip | head -1)" "$out/Overwisp-$VERSION-win64.zip"
           cp dist/output.mar "$out/windows.mar"
-          if gh release view "$VERSION" > /dev/null 2>&1; then
-            gh release upload "$VERSION" "$out"/* --clobber
-          else
-            if [ -z "$NOTES" ]; then
-              previous="$(git describe --tags --abbrev=0 2>/dev/null || true)"
-              NOTES="$(git log --no-merges --format='- %s' ${previous:+$previous..}HEAD | grep -v '^- Squashed ' | head -50)"
-            fi
-            gh release create "$VERSION" "$out"/* --title "Overwisp $VERSION" --notes "${NOTES:-Overwisp $VERSION}" --target "$GITHUB_SHA"
-          fi
+          bash ../scripts/publish_release.sh "$VERSION" "$out"/*
 
       - name: Update manifest
-        run: |
-          site="$RUNNER_TEMP/updates"
-          for try in 1 2 3; do
-            rm -rf "$site"; git worktree prune
-            if git ls-remote --exit-code origin updates > /dev/null; then
-              git fetch origin updates
-              git worktree add "$site" origin/updates
-            else
-              git worktree add --detach "$site"
-              git -C "$site" checkout --orphan updates
-              git -C "$site" rm -rfq .
-            fi
-            mkdir -p "$site/updates"
-            cp -R dist/update/. "$site/updates/"
-            git -C "$site" add -A
-            git -C "$site" commit -qm "Overwisp $VERSION Windows"
-            git -C "$site" push origin HEAD:updates && break
-          done
+        run: bash ../scripts/publish_updates.sh "Overwisp $VERSION Windows"

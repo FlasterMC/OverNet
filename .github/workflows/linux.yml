@@ -1,0 +1,136 @@
+name: Linux
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version
+        required: true
+        type: string
+      notes:
+        description: What's new
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: linux-release
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    defaults:
+      run:
+        working-directory: desktop
+    env:
+      VERSION: ${{ inputs.version }}
+      SURFER_PLATFORM: linux
+      SURFER_COMPAT: x86_64
+      SURFER_FORCE_CANDIDATE: 1
+      ZEN_RELEASE: 1
+      ZEN_GA_DISABLE_PGO: 1
+      ZEN_DISABLE_LTO: 1
+      CARGO_TERM_COLOR: never
+      CARGO_INCREMENTAL: 0
+      SCCACHE_GHA_ENABLED: "true"
+    steps:
+      - uses: jlumbroso/free-disk-space@v1.3.1
+        with:
+          tool-cache: false
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: desktop/.nvmrc
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - uses: mozilla-actions/sccache-action@v0.0.9
+        with:
+          disable_annotations: true
+
+      - name: Dependencies
+        run: |
+          npm ci
+          sudo apt-get -o Acquire::Retries=3 update
+          sudo apt-get install -y zstd yasm nasm build-essential m4 uuid lld llvm libasound2-dev libcurl4-openssl-dev libdbus-1-dev libdbus-glib-1-dev libdrm-dev libgtk-3-dev libpulse-dev libx11-xcb-dev libxt-dev
+          pip install mar
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Rust
+        run: |
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain "$(sed -n 's/^channel *= *"\(.*\)"/\1/p' rust-toolchain.toml)"
+          "$HOME/.cargo/bin/rustup" target add x86_64-unknown-linux-gnu
+          echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
+
+      - name: Firefox
+        run: |
+          npm run surfer -- ci --brand release --display-version "$VERSION"
+          npm run download
+
+      - name: Import
+        run: |
+          npm run import
+          bash ../scripts/branding_prefs.sh
+          bash scripts/mar_sign.sh -i
+          npm run bootstrap
+          sh scripts/download-language-packs.sh
+
+      - name: Build
+        run: |
+          ulimit -n 4096
+          export MOZ_BUILD_DATE="$(date -u +%Y%m%d%H%M%S)"
+          npm run build
+          obj="$PWD/$(ls -d engine/obj-*)"
+          grep -q "BuildID=$MOZ_BUILD_DATE" "$obj/dist/bin/application.ini"
+          grep -q "^Version=$VERSION$" "$obj/dist/bin/application.ini"
+
+      - name: Package
+        run: |
+          npm run package
+          ls dist
+
+      - name: Sign update
+        env:
+          OVERWISP_MAR_KEY: ${{ secrets.OVERNET_MAR_KEY }}
+        run: |
+          key="$RUNNER_TEMP/mar_key.pem"
+          printf '%s' "$OVERWISP_MAR_KEY" | base64 -d > "$key"
+          info="$(mar -T dist/output.mar)"
+          channel="$(sed -n 's/.*MAR channel name: //p' <<< "$info")"
+          product="$(sed -n 's/.*Product version: //p' <<< "$info")"
+          unpacked="$RUNNER_TEMP/mar"
+          mkdir -p "$unpacked"
+          mar -x dist/output.mar -C "$unpacked"
+          (cd "$unpacked" && find . -type f | sed 's#^\./##') > "$RUNNER_TEMP/mar_files"
+          rm dist/output.mar
+          xargs -d '\n' mar -c dist/output.mar -C "$unpacked" -k "$key" -H "$channel" -V "$product" < "$RUNNER_TEMP/mar_files"
+          openssl rsa -in "$key" -pubout -out "$RUNNER_TEMP/mar_pub.pem"
+          mar -v dist/output.mar -k "$RUNNER_TEMP/mar_pub.pem"
+          rm -f "$key"
+          npm run surfer -- updates-browser
+
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NOTES: ${{ inputs.notes }}
+        run: |
+          out="$RUNNER_TEMP/release"
+          mkdir -p "$out"
+          cp "$(ls dist/zen-*.tar.xz | head -1)" "$out/Overwisp-$VERSION-linux-x86_64.tar.xz"
+          cp dist/output.mar "$out/linux.mar"
+          bash ../scripts/publish_release.sh "$VERSION" "$out"/*
+
+      - name: Update manifest
+        run: bash ../scripts/publish_updates.sh "Overwisp $VERSION Linux"

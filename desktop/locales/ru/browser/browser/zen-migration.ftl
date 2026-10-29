@@ -4,6 +4,8 @@
 
 migration-wizard-migrator-display-name-arc = Arc
 migration-wizard-migrator-display-name-dia = Dia
+migration-wizard-migrator-display-name-yandex = Яндекс Браузер
+migration-wizard-migrator-display-name-comet = Comet
 migration-zen-spaces-option-label = Пространства и закреплённые вкладки
 migration-list-zen-spaces-label = пространства и закреплённые вкладки
 migration-wizard-progress-success-zen-spaces =

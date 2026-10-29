@@ -1,0 +1,5 @@
+- name: zen.tabs.sleep.timeout-minutes
+  value: 30
+
+- name: browser.tabs.fadeOutUnloadedTabs
+  value: true

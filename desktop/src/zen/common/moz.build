@@ -6,6 +6,8 @@ EXTRA_JS_MODULES += [
     "sys/ZenActorsManager.sys.mjs",
     "sys/ZenCustomizableUI.sys.mjs",
     "sys/ZenRussianSites.sys.mjs",
+    "sys/ZenSearchEngines.sys.mjs",
+    "sys/ZenTabSleep.sys.mjs",
     "sys/ZenUIMigration.sys.mjs",
     "sys/ZenVideoTranslation.sys.mjs",
 ]

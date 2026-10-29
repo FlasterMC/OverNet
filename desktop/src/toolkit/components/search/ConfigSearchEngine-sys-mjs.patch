@@ -1,0 +1,23 @@
+diff --git a/toolkit/components/search/ConfigSearchEngine.sys.mjs b/toolkit/components/search/ConfigSearchEngine.sys.mjs
+index 2186215520c2555b975631dae7411be03608dc30..ba64256df0bf396d2befc1b2d5641e2afa5b4134 100644
+--- a/toolkit/components/search/ConfigSearchEngine.sys.mjs
++++ b/toolkit/components/search/ConfigSearchEngine.sys.mjs
+@@ -26,6 +26,7 @@ const lazy = XPCOMUtils.declareLazy({
+     "moz-src:///toolkit/components/uniffi-bindgen-gecko-js/components/generated/RustSearch.sys.mjs",
+   SearchService: "moz-src:///toolkit/components/search/SearchService.sys.mjs",
+   SearchUtils: "moz-src:///toolkit/components/search/SearchUtils.sys.mjs",
++  ZenSearchEngines: "resource:///modules/ZenSearchEngines.sys.mjs",
+   idleService: {
+     service: "@mozilla.org/widget/useridleservice;1",
+     iid: Ci.nsIUserIdleService,
+@@ -579,6 +580,10 @@ export class ConfigSearchEngine extends SearchEngine {
+     let availableRecords =
+       await ConfigSearchEngine.iconHandler.getAvailableRecords(this.id);
+     if (!availableRecords.length) {
++      let bundledIconURL = await lazy.ZenSearchEngines.iconURL(this.id);
++      if (bundledIconURL) {
++        return bundledIconURL;
++      }
+       console.warn("No icon found for", this.id);
+       return null;
+     }
