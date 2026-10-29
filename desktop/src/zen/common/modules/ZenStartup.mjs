@@ -169,7 +169,42 @@ class ZenStartup {
     });
   }
 
-  #checkForWelcomePage() {
+  async #wasReinstalled() {
+    const lastBuildId = Services.prefs.getStringPref(
+      "zen.updates.last-build-id",
+      ""
+    );
+    const buildId = Services.appinfo.appBuildID;
+    if (
+      !lastBuildId ||
+      lastBuildId === buildId ||
+      !("@mozilla.org/updates/update-manager;1" in Cc)
+    ) {
+      return false;
+    }
+    try {
+      const installedUpdate = await Cc["@mozilla.org/updates/update-manager;1"]
+        .getService(Ci.nsIUpdateManager)
+        .lastUpdateInstalled();
+      return installedUpdate?.buildID !== buildId;
+    } catch (e) {
+      console.error("ZenStartup: Could not read the update history", e);
+      return false;
+    }
+  }
+
+  openBrowserImport() {
+    if (document.documentElement.hasAttribute("zen-welcome-stage")) {
+      return;
+    }
+    window.gZenWelcomeImportOnly = true;
+    Services.scriptloader.loadSubScript(
+      "chrome://browser/content/zen-components/ZenWelcome.mjs",
+      window
+    );
+  }
+
+  async #checkForWelcomePage() {
     const kWelcomeScreenSeenPref = "zen.welcome-screen.seen";
     const kWelcomeScreenAlwaysShowPref = "zen.welcome-screen.always-show";
     if (Services.env.get("MOZ_HEADLESS")) {
@@ -183,7 +218,8 @@ class ZenStartup {
     }
     if (
       !Services.prefs.getBoolPref(kWelcomeScreenSeenPref, false) ||
-      Services.prefs.getBoolPref(kWelcomeScreenAlwaysShowPref, false)
+      Services.prefs.getBoolPref(kWelcomeScreenAlwaysShowPref, false) ||
+      (await this.#wasReinstalled())
     ) {
       Services.prefs.setBoolPref(kWelcomeScreenSeenPref, true);
       Services.prefs.setStringPref(

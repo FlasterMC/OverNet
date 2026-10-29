@@ -8,6 +8,15 @@
 - name: browser.migrate.dia.enabled
   value: true
 
+- name: browser.migrate.yandex.enabled
+  value: true
+
+- name: browser.migrate.comet.enabled
+  value: true
+
+- name: browser.migrate.mozilla-firefox.enabled
+  value: true
+
 - name: browser.migrate.content-modal.import-all.enabled
   value: false
 

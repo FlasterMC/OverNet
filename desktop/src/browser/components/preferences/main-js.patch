@@ -1,8 +1,8 @@
 diff --git a/browser/components/preferences/main.js b/browser/components/preferences/main.js
-index 5a56d348146c1c37c088ced60327fffebcf8fac0..abd65594d365fbc0a74af3953c71f410301898ad 100644
+index 6dcfd4bd0ee2b0665afed9dad88df67bed1a2818..02f6f41816276de72470978f8ba3e592c4aebcd7 100644
 --- a/browser/components/preferences/main.js
 +++ b/browser/components/preferences/main.js
-@@ -529,6 +529,11 @@ function createStartupConfig(hidden = false) {
+@@ -528,6 +528,11 @@ function createStartupConfig(hidden = false) {
            },
          ],
        },
@@ -14,7 +14,7 @@ index 5a56d348146c1c37c088ced60327fffebcf8fac0..abd65594d365fbc0a74af3953c71f410
        {
          id: "windowsLaunchOnLogin",
          l10nId: "windows-launch-on-login",
-@@ -576,7 +581,7 @@ function createStartupConfig(hidden = false) {
+@@ -575,7 +580,7 @@ function createStartupConfig(hidden = false) {
  SettingGroupManager.registerGroups({
    defaultBrowser: createDefaultBrowserConfig(),
    startup: createStartupConfig(
@@ -23,7 +23,7 @@ index 5a56d348146c1c37c088ced60327fffebcf8fac0..abd65594d365fbc0a74af3953c71f410
    ),
  });
  
-@@ -636,7 +641,7 @@ function getBundleForLocales(newLocales) {
+@@ -635,7 +640,7 @@ function getBundleForLocales(newLocales) {
      ])
    );
    return new Localization(
@@ -32,3 +32,15 @@ index 5a56d348146c1c37c088ced60327fffebcf8fac0..abd65594d365fbc0a74af3953c71f410
      false,
      undefined,
      locales
+@@ -1561,6 +1566,11 @@ var gMainPane = {
+    * Displays the migration wizard dialog in an HTML dialog.
+    */
+   async showMigrationWizardDialog({ closeTabWhenDone = false } = {}) {
++    let zenBrowserWindow = window.browsingContext.topChromeWindow;
++    if (zenBrowserWindow?.gZenStartup) {
++      zenBrowserWindow.gZenStartup.openBrowserImport();
++      return;
++    }
+     let migrationWizardDialog = document.getElementById(
+       "migrationWizardDialog"
+     );

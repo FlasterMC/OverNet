@@ -32,6 +32,9 @@
 
   const kAdBlockerId = "uBlock0@raymondhill.net";
 
+  const kImportOnly = !!window.gZenWelcomeImportOnly;
+  delete window.gZenWelcomeImportOnly;
+
   const gChoices = {
     setDefaultBrowser: false,
     essentials: new Set(),
@@ -1111,7 +1114,9 @@ void main() {
       ++this.#buttonsToken;
       this.buttonsContainer.replaceChildren();
       this.backButton.toggleAttribute("disabled", true);
-      gZenWorkspaces.reorganizeTabsAfterWelcome();
+      if (!kImportOnly) {
+        gZenWorkspaces.reorganizeTabsAfterWelcome();
+      }
       const promises = [this.#applyChoices()];
       await animate("#zen-welcome", { opacity: [1, 0] });
       this.contentContainer.remove();
@@ -1422,8 +1427,10 @@ void main() {
               .querySelector("input[type='radio'][value]:checked")?.value ?? 0;
           const profile = source.profiles[profileIndex];
           MigrationUtils.showMigrationWizard(window, {
-            entrypoint: MigrationUtils.MIGRATION_ENTRYPOINTS.FIRSTRUN,
-            isStartupMigration: true,
+            entrypoint: kImportOnly
+              ? MigrationUtils.MIGRATION_ENTRYPOINTS.PREFERENCES
+              : MigrationUtils.MIGRATION_ENTRYPOINTS.FIRSTRUN,
+            isStartupMigration: !kImportOnly,
             migratorKey: source.key,
             profileId: profile?.id,
           });
@@ -1769,6 +1776,14 @@ void main() {
   }
 
   function startZenWelcome() {
+    if (kImportOnly) {
+      clearBrowserElements();
+      initializeZenWelcome();
+      new nsZenWelcomePages(
+        getWelcomePages().filter(page => page.id === "import")
+      );
+      return;
+    }
     fetchAdBlocker();
     clearBrowserElements();
     centerWindowOnScreen();
