@@ -84,9 +84,12 @@ async function readProfilesIni(dataDir) {
     const rootDir = isRelative
       ? PathUtils.join(dataDir, ...path.split("/"))
       : path;
-    if (await IOUtils.exists(PathUtils.join(rootDir, "places.sqlite"))) {
-      profiles.push({ id: rootDir, name });
-    }
+    try {
+      const { lastModified } = await IOUtils.stat(
+        PathUtils.join(rootDir, "places.sqlite")
+      );
+      profiles.push({ id: rootDir, name, lastModified });
+    } catch {}
   }
   return profiles;
 }
@@ -297,6 +300,30 @@ class FirefoxKeyDatabase {
   }
 }
 
+function isFirefoxDefaultFolder(node) {
+  const urls = [];
+  const collect = folder => {
+    for (const child of folder.children) {
+      if (child.type == BOOKMARK_TYPE_FOLDER) {
+        collect(child);
+      } else if (child.url) {
+        urls.push(child.url);
+      }
+    }
+  };
+  collect(node);
+  return (
+    !!urls.length &&
+    urls.every(url => {
+      try {
+        return /(^|\.)mozilla\.org$/.test(new URL(url).hostname);
+      } catch {
+        return false;
+      }
+    })
+  );
+}
+
 function convertBookmarkChildren(children) {
   const items = [];
   for (const node of children) {
@@ -306,6 +333,9 @@ function convertBookmarkChildren(children) {
       }
       items.push({ url: node.url, title: node.title ?? "" });
     } else if (node.type == BOOKMARK_TYPE_FOLDER) {
+      if (isFirefoxDefaultFolder(node)) {
+        continue;
+      }
       items.push({
         type: lazy.PlacesUtils.bookmarks.TYPE_FOLDER,
         title: node.title ?? "",
@@ -347,15 +377,32 @@ function bookmarksResource(placesPath) {
         const nodesByGuid = new Map(
           [...nodes.values()].map(node => [node.guid, node])
         );
+        const looseBookmarks = [];
         for (const [sourceGuid, targetGuidName] of BOOKMARK_ROOTS) {
           const root = nodesByGuid.get(sourceGuid);
           const bookmarks = root ? convertBookmarkChildren(root.children) : [];
-          if (bookmarks.length) {
+          const folders = bookmarks.filter(
+            item => item.type == lazy.PlacesUtils.bookmarks.TYPE_FOLDER
+          );
+          looseBookmarks.push(...bookmarks.filter(item => item.url));
+          if (folders.length) {
             await MigrationUtils.insertManyBookmarksWrapper(
-              bookmarks,
+              folders,
               lazy.PlacesUtils.bookmarks[targetGuidName]
             );
           }
+        }
+        if (looseBookmarks.length) {
+          await MigrationUtils.insertManyBookmarksWrapper(
+            [
+              {
+                type: lazy.PlacesUtils.bookmarks.TYPE_FOLDER,
+                title: "Firefox",
+                children: looseBookmarks,
+              },
+            ],
+            lazy.PlacesUtils.bookmarks.toolbarGuid
+          );
         }
       })().then(
         () => callback(true),
@@ -485,7 +532,9 @@ export class MozillaFirefoxProfileMigrator extends MigratorBase {
         console.error(error);
       }
     }
-    return profiles;
+    return profiles
+      .sort((a, b) => b.lastModified - a.lastModified)
+      .map(({ id, name }) => ({ id, name }));
   }
 
   async getLastUsedDate() {
