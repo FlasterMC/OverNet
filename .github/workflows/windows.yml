@@ -134,10 +134,10 @@ jobs:
 
       - name: Sign update
         env:
-          OVERNET_MAR_KEY: ${{ secrets.OVERNET_MAR_KEY }}
+          OVERWISP_MAR_KEY: ${{ secrets.OVERNET_MAR_KEY }}
         run: |
           key="$RUNNER_TEMP/mar_key.pem"
-          printf '%s' "$OVERNET_MAR_KEY" | base64 -d > "$key"
+          printf '%s' "$OVERWISP_MAR_KEY" | base64 -d > "$key"
           info="$(mar -T dist/output.mar)"
           channel="$(sed -n 's/.*MAR channel name: //p' <<< "$info")"
           product="$(sed -n 's/.*Product version: //p' <<< "$info")"
@@ -159,8 +159,8 @@ jobs:
         run: |
           out="$RUNNER_TEMP/release"
           mkdir -p "$out"
-          cp dist/zen.installer.exe "$out/OverNet-Setup-$VERSION.exe"
-          cp "$(ls dist/zen-*.win64.zip | head -1)" "$out/OverNet-$VERSION-win64.zip"
+          cp dist/zen.installer.exe "$out/Overwisp-Setup-$VERSION.exe"
+          cp "$(ls dist/zen-*.win64.zip | head -1)" "$out/Overwisp-$VERSION-win64.zip"
           cp dist/output.mar "$out/windows.mar"
           if gh release view "$VERSION" > /dev/null 2>&1; then
             gh release upload "$VERSION" "$out"/* --clobber
@@ -169,7 +169,7 @@ jobs:
               previous="$(git describe --tags --abbrev=0 2>/dev/null || true)"
               NOTES="$(git log --no-merges --format='- %s' ${previous:+$previous..}HEAD | grep -v '^- Squashed ' | head -50)"
             fi
-            gh release create "$VERSION" "$out"/* --title "OverNet $VERSION" --notes "${NOTES:-OverNet $VERSION}" --target "$GITHUB_SHA"
+            gh release create "$VERSION" "$out"/* --title "Overwisp $VERSION" --notes "${NOTES:-Overwisp $VERSION}" --target "$GITHUB_SHA"
           fi
 
       - name: Update manifest
@@ -188,6 +188,6 @@ jobs:
             mkdir -p "$site/updates"
             cp -R dist/update/. "$site/updates/"
             git -C "$site" add -A
-            git -C "$site" commit -qm "OverNet $VERSION Windows"
+            git -C "$site" commit -qm "Overwisp $VERSION Windows"
             git -C "$site" push origin HEAD:updates && break
           done

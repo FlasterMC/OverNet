@@ -248,3 +248,7 @@ zen-browsing-find-highlight-all =
     .label = Highlight all matches when finding in page
 zen-browsing-open-pdf-inline =
     .label = Open PDF attachments in the browser instead of downloading them
+zen-browsing-video-resume =
+    .label = Continue YouTube videos from where you stopped
+zen-browsing-video-resume-paused =
+    .label = Keep a continued or restored YouTube video paused until you press play

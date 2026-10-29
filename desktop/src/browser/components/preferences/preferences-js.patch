@@ -24,7 +24,7 @@ index 8b3acf475ad7be98c51eac0ddf65affb3c35846e..eeb0c711fdf4bb7e1bfcbd4a76500da7
        this._initted = true;
        let template = document.getElementById("template-" + categoryName);
 -      if (template && !srdSectionPrefs.all) {
-+      if (template && (!srdSectionPrefs.all || categoryName.startsWith("paneOvernet"))) {
++      if (template && (!srdSectionPrefs.all || categoryName.startsWith("paneOverwisp"))) {
          // Replace the template element with the nodes inside of it.
          template.replaceWith(template.content);
  
@@ -32,9 +32,9 @@ index 8b3acf475ad7be98c51eac0ddf65affb3c35846e..eeb0c711fdf4bb7e1bfcbd4a76500da7
    }
    register_module("paneSearch", gSearchPane);
    register_module("panePrivacy", gPrivacyPane);
-+  register_module("paneOvernetLooks", gZenLooksAndFeel);
-+  register_module("paneOvernetTabManagement", gZenWorkspacesSettings);
-+  register_module("paneOvernetMarketplace", gZenMarketplaceManager);
++  register_module("paneOverwispLooks", gZenLooksAndFeel);
++  register_module("paneOverwispTabManagement", gZenWorkspacesSettings);
++  register_module("paneOverwispMarketplace", gZenMarketplaceManager);
  
    // Restore the cached Firefox Labs nav button visibility so it shows
    // immediately when recipes are expected to be available, before

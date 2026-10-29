@@ -1,5 +1,5 @@
 {
-  "name": "OverNet",
+  "name": "Overwisp",
   "vendor": "OverClouds",
   "appId": "zen",
   "binaryName": "zen",
@@ -16,13 +16,13 @@
   "brands": {
     "release": {
       "backgroundColor": "#101010",
-      "brandShorterName": "OverNet",
-      "brandShortName": "OverNet",
-      "brandFullName": "OverNet",
+      "brandShorterName": "Overwisp",
+      "brandShortName": "Overwisp",
+      "brandFullName": "Overwisp",
       "release": {
         "displayVersion": "0.1.0",
         "github": {
-          "repo": "FlasterMC/OverNet"
+          "repo": "FlasterMC/Overwisp"
         },
         "archives": {
           "windows": "windows.mar",
@@ -36,13 +36,13 @@
     },
     "twilight": {
       "backgroundColor": "#101010",
-      "brandShorterName": "OverNet",
-      "brandShortName": "OverNet Beta",
-      "brandFullName": "OverNet Beta",
+      "brandShorterName": "Overwisp",
+      "brandShortName": "Overwisp Beta",
+      "brandFullName": "Overwisp Beta",
       "release": {
         "displayVersion": "1.24t",
         "github": {
-          "repo": "FlasterMC/OverNet"
+          "repo": "FlasterMC/Overwisp"
         }
       }
     }
@@ -53,5 +53,5 @@
     ],
     "licenseType": "MPL-2.0"
   },
-  "updateHostname": "raw.githubusercontent.com/FlasterMC/OverNet/updates"
+  "updateHostname": "raw.githubusercontent.com/FlasterMC/Overwisp/updates"
 }

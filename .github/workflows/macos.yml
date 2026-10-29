@@ -162,19 +162,19 @@ jobs:
           obj="$PWD/$(ls -d engine/obj-*)"
           branding="$PWD/engine/browser/branding/release"
           stage="$obj/dist/zen"
-          rcodesign sign "$stage/OverNet.app"
+          rcodesign sign "$stage/Overwisp.app"
           rm -f dist/*.dmg dist/output.mar
-          (cd engine && ./mach python -m mozbuild.action.make_dmg --dsstore "$branding/dsstore" --background "$branding/background.png" --icon "$branding/disk.icns" --volume-name OverNet "$stage" "$GITHUB_WORKSPACE/desktop/dist/OverNet-$VERSION.dmg")
-          rm -rf "$obj/dist/OverNet.app"
-          mv "$stage/OverNet.app" "$obj/dist/OverNet.app"
+          (cd engine && ./mach python -m mozbuild.action.make_dmg --dsstore "$branding/dsstore" --background "$branding/background.png" --icon "$branding/disk.icns" --volume-name Overwisp "$stage" "$GITHUB_WORKSPACE/desktop/dist/Overwisp-$VERSION.dmg")
+          rm -rf "$obj/dist/Overwisp.app"
+          mv "$stage/Overwisp.app" "$obj/dist/Overwisp.app"
           JUST_MAR=1 npm run package
 
       - name: Sign update
         env:
-          OVERNET_MAR_KEY: ${{ secrets.OVERNET_MAR_KEY }}
+          OVERWISP_MAR_KEY: ${{ secrets.OVERNET_MAR_KEY }}
         run: |
           key="$RUNNER_TEMP/mar_key.pem"
-          printf '%s' "$OVERNET_MAR_KEY" | base64 -d > "$key"
+          printf '%s' "$OVERWISP_MAR_KEY" | base64 -d > "$key"
           info="$(mar -T dist/output.mar)"
           channel="$(sed -n 's/.*MAR channel name: //p' <<< "$info")"
           product="$(sed -n 's/.*Product version: //p' <<< "$info")"
@@ -195,13 +195,13 @@ jobs:
           NOTES: ${{ inputs.notes }}
         run: |
           mkdir -p "$RUNNER_TEMP/release"
-          cp "$(ls -t dist/*.dmg | head -1)" "$RUNNER_TEMP/release/OverNet-$VERSION.dmg"
+          cp "$(ls -t dist/*.dmg | head -1)" "$RUNNER_TEMP/release/Overwisp-$VERSION.dmg"
           cp dist/output.mar "$RUNNER_TEMP/release/macos.mar"
           if [ -z "$NOTES" ]; then
             previous="$(git describe --tags --abbrev=0 2>/dev/null || true)"
             NOTES="$(git log --no-merges --format='- %s' ${previous:+$previous..}HEAD | grep -v '^- Squashed ' | head -50)"
           fi
-          gh release create "$VERSION" "$RUNNER_TEMP/release/OverNet-$VERSION.dmg" "$RUNNER_TEMP/release/macos.mar" --title "OverNet $VERSION" --notes "${NOTES:-OverNet $VERSION}" --target "$GITHUB_SHA"
+          gh release create "$VERSION" "$RUNNER_TEMP/release/Overwisp-$VERSION.dmg" "$RUNNER_TEMP/release/macos.mar" --title "Overwisp $VERSION" --notes "${NOTES:-Overwisp $VERSION}" --target "$GITHUB_SHA"
 
       - name: Update manifest
         run: |
@@ -217,7 +217,7 @@ jobs:
           mkdir -p "$site/updates"
           cp -R dist/update/. "$site/updates/"
           git -C "$site" add -A
-          git -C "$site" commit -qm "OverNet $VERSION"
+          git -C "$site" commit -qm "Overwisp $VERSION"
           git -C "$site" push origin HEAD:updates
 
       - name: Prune build

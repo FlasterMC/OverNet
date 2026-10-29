@@ -2,7 +2,7 @@
 set -euo pipefail
 
 cd "$(dirname "$0")/../desktop"
-releases="https://github.com/FlasterMC/OverNet/releases"
+releases="https://github.com/FlasterMC/Overwisp/releases"
 files=(engine/browser/branding/*/pref/firefox-branding.js)
 sed -i.orig -E \
   -e "s#https://(www\.)?zen-browser\.app/(release-notes/%VERSION%/|whatsnew\?v=%VERSION%)#$releases/tag/%VERSION%#" \

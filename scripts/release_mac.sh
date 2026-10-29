@@ -10,7 +10,7 @@ export ZEN_RELEASE=1
 export SURFER_FORCE_CANDIDATE=1
 export ZEN_GA_DISABLE_PGO=1
 export ZEN_DISABLE_LTO="${ZEN_DISABLE_LTO-1}"
-jobs="${OVERNET_JOBS:-4}"
+jobs="${OVERWISP_JOBS:-4}"
 export CARGO_BUILD_JOBS="$jobs"
 
 cd "$root/desktop"
@@ -20,5 +20,5 @@ nice -n 19 npx surfer build -j "$jobs"
 nice -n 19 npx surfer package
 
 mkdir -p "$out"
-cp "$(ls -t dist/*.dmg | head -1)" "$out/OverNet-$version.dmg"
+cp "$(ls -t dist/*.dmg | head -1)" "$out/Overwisp-$version.dmg"
 echo "$out"

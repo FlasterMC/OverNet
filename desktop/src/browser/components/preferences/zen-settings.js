@@ -248,10 +248,10 @@ var gZenMarketplaceManager = {
 
       fp.init(
         window.browsingContext,
-        "Export OverNet Mods",
+        "Export Overwisp Mods",
         nsIFilePicker.modeSave
       );
-      fp.defaultString = "overnet-mods-export";
+      fp.defaultString = "overwisp-mods-export";
       fp.defaultExtension = "json";
       fp.appendFilter("JSON Files", "*.json");
       fp.appendFilters(nsIFilePicker.filterAll);
@@ -882,6 +882,14 @@ Preferences.addAll([
   },
   {
     id: "browser.download.open_pdf_attachments_inline",
+    type: "bool",
+  },
+  {
+    id: "zen.video-resume.enabled",
+    type: "bool",
+  },
+  {
+    id: "zen.video-resume.pause-on-restore",
     type: "bool",
   },
 ]);

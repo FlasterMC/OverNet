@@ -16,12 +16,12 @@ index e8da75f2c27e312e0170520959d3daf883f56048..423d8a4069b17597760c6ceaaad1c10b
          data-l10n-id="pane-general-title">
        </html:moz-page-nav-button>
 +      <html:moz-page-nav-button id="category-zen-looks"
-+        view="paneOvernetLooks"
++        view="paneOverwispLooks"
 +        iconsrc="chrome://browser/skin/zen-icons/paintbrush.svg"
 +        data-l10n-id="pane-zen-looks-title">
 +      </html:moz-page-nav-button>
 +      <html:moz-page-nav-button id="category-zen-tabs-management"
-+        view="paneOvernetTabManagement"
++        view="paneOverwispTabManagement"
 +        iconsrc="chrome://browser/skin/window.svg"
 +        data-l10n-id="pane-zen-tabs-title">
 +      </html:moz-page-nav-button>
@@ -31,7 +31,7 @@ index e8da75f2c27e312e0170520959d3daf883f56048..423d8a4069b17597760c6ceaaad1c10b
 +        data-l10n-id="pane-zen-CKS-title">
 +      </html:moz-page-nav-button>
 +      <html:moz-page-nav-button id="category-zen-marketplace"
-+        view="paneOvernetMarketplace"
++        view="paneOverwispMarketplace"
 +        iconsrc="chrome://browser/skin/zen-icons/palette.svg"
 +        data-l10n-id="pane-zen-marketplace-title">
 +      </html:moz-page-nav-button>

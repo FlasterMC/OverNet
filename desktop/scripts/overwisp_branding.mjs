@@ -4,7 +4,7 @@ import { join } from "node:path";
 
 const root = new URL("..", import.meta.url).pathname;
 const brandingDir = join(root, "configs", "branding");
-const svg = readFileSync(join(brandingDir, "overnet.svg"));
+const svg = readFileSync(join(brandingDir, "overwisp.svg"));
 const render = (size) => sharp(svg, { density: Math.max(72, (72 * size) / 1024) }).resize(size, size);
 
 const padded = async (canvas, inner, width = canvas) =>
@@ -12,7 +12,7 @@ const padded = async (canvas, inner, width = canvas) =>
     .composite([{ input: await render(inner).png().toBuffer(), gravity: "center" }])
     .png();
 
-const wordmark = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56"><text x="0" y="44" font-family="-apple-system, system-ui, sans-serif" font-size="48" font-weight="700" fill="#fff">OverNet</text></svg>`;
+const wordmark = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56"><text x="0" y="44" font-family="-apple-system, system-ui, sans-serif" font-size="48" font-weight="700" fill="#fff">Overwisp</text></svg>`;
 
 for (const brand of ["release", "twilight"]) {
   const dir = join(brandingDir, brand);

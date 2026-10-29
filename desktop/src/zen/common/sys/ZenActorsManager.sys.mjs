@@ -74,6 +74,25 @@ let JSWINDOWACTORS = {
     safeForUntrustedWebProcess: true,
     enablePreference: "zen.view.drag-window-from-content",
   },
+  ZenVideoResume: {
+    parent: {
+      esModuleURI: "resource:///actors/ZenVideoResumeParent.sys.mjs",
+    },
+    child: {
+      esModuleURI: "resource:///actors/ZenVideoResumeChild.sys.mjs",
+      events: {
+        loadedmetadata: { capture: true },
+        timeupdate: { capture: true },
+        play: { capture: true },
+        pause: { capture: true },
+        pagehide: {},
+      },
+    },
+    matches: ["https://www.youtube.com/*", "https://m.youtube.com/*"],
+    remoteTypes: ["web"],
+    safeForUntrustedWebProcess: true,
+    enablePreference: "zen.video-resume.enabled",
+  },
 };
 
 if (!Services.appinfo.inSafeMode) {

@@ -1,0 +1,5 @@
+- name: zen.video-resume.enabled
+  value: true
+
+- name: zen.video-resume.pause-on-restore
+  value: true

@@ -1,4 +1,4 @@
-# OverNet
+# Overwisp
 
 **English** · [Русский](README.md)
 
@@ -16,7 +16,7 @@ Planned: Russian websites working without installing certificates, and voice-ove
 
 ## Installation
 
-macOS on Apple Silicon: download `OverNet-<version>.dmg` from [releases](https://github.com/FlasterMC/OverNet/releases) and drag OverNet into Applications. The app is not signed with an Apple certificate, so on first launch open System Settings → Privacy & Security and click "Open Anyway".
+macOS on Apple Silicon: download `Overwisp-<version>.dmg` from [releases](https://github.com/FlasterMC/Overwisp/releases) and drag Overwisp into Applications. The app is not signed with an Apple certificate, so on first launch open System Settings → Privacy & Security and click "Open Anyway".
 
 ## License
 

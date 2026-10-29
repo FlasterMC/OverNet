@@ -346,3 +346,7 @@ zen-browsing-find-highlight-all =
     .label = Подсвечивать все совпадения при поиске на странице
 zen-browsing-open-pdf-inline =
     .label = Открывать PDF-вложения в браузере, а не скачивать их
+zen-browsing-video-resume =
+    .label = Продолжать видео на YouTube с места, где вы остановились
+zen-browsing-video-resume-paused =
+    .label = Ставить на паузу продолженное или восстановленное видео на YouTube, пока вы сами не запустите его

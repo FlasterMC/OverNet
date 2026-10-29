@@ -5,7 +5,7 @@ ChromeUtils.defineESModuleGetters(lazy, {
 });
 
 const LIST_URL =
-  "https://raw.githubusercontent.com/FlasterMC/OverNet/updates/russian-sites.json";
+  "https://raw.githubusercontent.com/FlasterMC/Overwisp/updates/russian-sites.json";
 const LIST_PREF = "zen.russian-sites.list";
 const DISABLED_PREF = "zen.russian-sites.disabled";
 const CUSTOM_PREF = "zen.russian-sites.custom";

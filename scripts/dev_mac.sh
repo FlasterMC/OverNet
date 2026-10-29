@@ -4,12 +4,12 @@ set -euo pipefail
 root="$(cd "$(dirname "$0")/.." && pwd)"
 desktop="$root/desktop"
 engine="$desktop/engine"
-state="$engine/.overnet-dev"
+state="$engine/.overwisp-dev"
 patch_args=(--ignore-space-change --ignore-whitespace)
 ui_pattern='\.(mjs|js|css|ftl|html|xhtml|svg|png|jpg|webp|json)$'
 
 export PATH="/opt/homebrew/opt/node@22/bin:/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
-jobs="${OVERNET_JOBS:-4}"
+jobs="${OVERWISP_JOBS:-4}"
 export CARGO_BUILD_JOBS="$jobs"
 unset ZEN_RELEASE
 
@@ -28,7 +28,7 @@ if test -z "$ZEN_RELEASE"; then
   ac_add_options --disable-crashreporter
   ac_add_options --disable-updater
   ac_add_options --disable-lto
-  mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-overnet-dev
+  mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-overwisp-dev
   mk_add_options 'export SCCACHE_CACHE_SIZE=30G'
 fi
 EOF
@@ -81,7 +81,7 @@ fi
 (cd src && find . -name '*.patch' | wc -l | tr -d ' ') > .surfer/patchCount
 
 l10n_commit="$(cat build/firefox-cache/l10n-last-commit-hash)"
-l10n_cache="$HOME/Library/Caches/overnet-firefox-l10n"
+l10n_cache="$HOME/Library/Caches/overwisp-firefox-l10n"
 if [ "$(git -C "$l10n_cache" rev-parse HEAD 2>/dev/null)" != "$l10n_commit" ]; then
   rm -rf "$l10n_cache"
   git clone -q --filter=blob:none --sparse --no-checkout https://github.com/mozilla-l10n/firefox-l10n "$l10n_cache"
@@ -99,10 +99,10 @@ else
   nice -n 19 npx surfer build --ui
 fi
 (cd "$engine" && MOZ_CHROME_MULTILOCALE=ru nice -n 19 ./mach build chrome-ru)
-echo "ru,en-US" > "$engine/obj-overnet-dev/toolkit/locales/multilocale.txt"
-(cd "$engine/obj-overnet-dev/dist/bin" && rsync -aR chrome.manifest chrome/ru.manifest chrome/ru localization/ru browser/chrome.manifest browser/chrome/ru.manifest browser/chrome/ru browser/chrome/browser/locale/ru browser/localization/ru ../OverNet.app/Contents/Resources/)
-mkdir -p "$engine/obj-overnet-dev/tmp/profile-default"
-printf 'user_pref("security.sandbox.content.mac.testing_read_path1", "%s");\n' "$desktop/src" > "$engine/obj-overnet-dev/tmp/profile-default/user.js"
+echo "ru,en-US" > "$engine/obj-overwisp-dev/toolkit/locales/multilocale.txt"
+(cd "$engine/obj-overwisp-dev/dist/bin" && rsync -aR chrome.manifest chrome/ru.manifest chrome/ru localization/ru browser/chrome.manifest browser/chrome/ru.manifest browser/chrome/ru browser/chrome/browser/locale/ru browser/localization/ru ../Overwisp.app/Contents/Resources/)
+mkdir -p "$engine/obj-overwisp-dev/tmp/profile-default"
+printf 'user_pref("security.sandbox.content.mac.testing_read_path1", "%s");\n' "$desktop/src" > "$engine/obj-overwisp-dev/tmp/profile-default/user.js"
 touch "$state/stamp"
 
 if [ "${1:-}" = run ]; then
