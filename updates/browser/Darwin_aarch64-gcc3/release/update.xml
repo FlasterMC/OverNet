@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <updates>
-  <update type="minor" displayVersion="0.3.1" appVersion="0.3.1" platformVersion="159.0" buildID="20261029103117">
-    <patch type="complete" URL="https://github.com/FlasterMC/Overwisp/releases/download/0.3.1/macos.mar" hashFunction="sha512" hashValue="0af49a7f1feee7b943e80b48b3b5d5dd245e8d808e8da8392cd2fb7b08b375c4bd4b05fc630d604234fbc6641b3543e763a9ba248414c4d916f805a68b3f0e59" size="88634649"/>
+  <update type="minor" displayVersion="0.3.1" appVersion="0.3.1" platformVersion="159.0" buildID="20261029133838">
+    <patch type="complete" URL="https://github.com/FlasterMC/Overwisp/releases/download/0.3.1/macos.mar" hashFunction="sha512" hashValue="73ab4eb6b4d5c9303dadc0bf3e151cb4e688c46abf815ccff7e1270ffe721b252231ce9bbfabe7fcb8dbbfa6c442ede7a41335c5ee1f02e4d44bc2aabe6608d2" size="88634849"/>
   </update>
 </updates>
