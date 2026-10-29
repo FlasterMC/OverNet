@@ -996,9 +996,25 @@ var gZenRussianSitesSettings = {
   },
 };
 
+var gZenBrowserImportSettings = {
+  init() {
+    const button = document.getElementById("zenBrowserImportButton");
+    if (this._initialized || !button) {
+      return;
+    }
+    this._initialized = true;
+    button.addEventListener("command", () =>
+      gMainPane.showMigrationWizardDialog()
+    );
+  },
+};
+
 document.addEventListener("paneshown", event => {
   if (event.detail.category == "panePrivacy") {
     gZenRussianSitesSettings.init();
+  }
+  if (event.detail.category == "paneGeneral") {
+    gZenBrowserImportSettings.init();
   }
 });
 

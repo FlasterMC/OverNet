@@ -267,3 +267,8 @@ zen-tab-sleep-timeout-hours =
         [one] { $hours } hour
        *[other] { $hours } hours
     }
+
+zen-browser-import-header = Import from another browser
+zen-browser-import-description = Bring over bookmarks, history and passwords from Firefox, Chrome, Yandex Browser, Arc, Safari and other browsers installed on this computer.
+zen-browser-import-button =
+    .label = Import data…

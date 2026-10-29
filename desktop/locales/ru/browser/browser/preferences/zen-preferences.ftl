@@ -367,3 +367,8 @@ zen-tab-sleep-timeout-hours =
         [few] { $hours } часа
        *[many] { $hours } часов
     }
+
+zen-browser-import-header = Перенос из другого браузера
+zen-browser-import-description = Перенесите закладки, историю и пароли из Firefox, Chrome, Яндекс Браузера, Arc, Safari и других браузеров, установленных на этом компьютере.
+zen-browser-import-button =
+    .label = Перенести данные…

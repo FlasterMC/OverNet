@@ -1426,14 +1426,25 @@ void main() {
               .closest(".zen-welcome-import-source")
               .querySelector("input[type='radio'][value]:checked")?.value ?? 0;
           const profile = source.profiles[profileIndex];
-          MigrationUtils.showMigrationWizard(window, {
+          const options = {
             entrypoint: kImportOnly
               ? MigrationUtils.MIGRATION_ENTRYPOINTS.PREFERENCES
               : MigrationUtils.MIGRATION_ENTRYPOINTS.FIRSTRUN,
             isStartupMigration: !kImportOnly,
             migratorKey: source.key,
             profileId: profile?.id,
-          });
+          };
+          if (kImportOnly) {
+            Services.ww.openWindow(
+              window,
+              "chrome://browser/content/migration/migration-dialog-window.html",
+              "_blank",
+              "dialog,centerscreen,resizable=no",
+              { options }
+            );
+            return;
+          }
+          MigrationUtils.showMigrationWizard(window, options);
         },
       },
       {
